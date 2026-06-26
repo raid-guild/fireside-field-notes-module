@@ -34,7 +34,7 @@ export const buildJourneyFlair = (leg: number, count = 4): FlairEvent[] => {
     const side: FlairEvent['side'] =
       sideRoll < 0.28 ? 'left' : sideRoll < 0.56 ? 'right' : 'center'
     const kind = FLAIR_KINDS[Math.floor(rng() * FLAIR_KINDS.length)] ?? 'sparkles'
-    const laneOffset = 12 + Math.floor(rng() * 28)
+    const laneOffset = 8 + Math.floor(rng() * 16)
 
     return {
       id: `leg-${leg}-flair-${index}`,

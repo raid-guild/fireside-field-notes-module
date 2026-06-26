@@ -22,6 +22,11 @@ export const metadata: Metadata = {
     'A scroll expedition through June 2026 cohort fireside interviews on how builders adapt AI in real work.',
 }
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html className={`${fraunces.variable} ${vt323.variable}`} lang="en">

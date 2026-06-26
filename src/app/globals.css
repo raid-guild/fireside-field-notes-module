@@ -8,10 +8,14 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   @apply bg-trail-parchment text-trail-ink antialiased;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 .bg-dungeon-deep {
@@ -39,7 +43,7 @@ body {
   background-image: url(/backgrounds/arena-dungeon.png);
   background-repeat: repeat-y;
   background-position: center top;
-  background-size: min(920px, 100vw) auto;
+  background-size: min(920px, 100%) auto;
 }
 
 .dungeon-wall {

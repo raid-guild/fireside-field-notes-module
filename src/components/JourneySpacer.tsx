@@ -33,7 +33,7 @@ export const JourneySpacer = ({ leg, totalLegs, crossCut }: JourneySpacerProps) 
   const flairEvents = useMemo(() => buildJourneyFlair(leg, isTrailhead ? 3 : 5), [isTrailhead, leg])
 
   return (
-    <div className="relative min-h-[240vh] sm:min-h-[280vh]">
+    <div className="relative min-h-[240vh] w-full overflow-x-hidden sm:min-h-[280vh]">
       <div className="journey-path-line absolute bottom-16 left-1/2 top-16 w-px -translate-x-1/2" />
 
       {flairEvents.map((event) => (
@@ -53,7 +53,7 @@ export const JourneySpacer = ({ leg, totalLegs, crossCut }: JourneySpacerProps) 
       </div>
 
       {crossCut ? (
-        <div className="absolute left-1/2 top-[92vh] z-10 w-full max-w-4xl -translate-x-1/2">
+        <div className="absolute left-1/2 top-[92vh] z-10 w-full max-w-4xl -translate-x-1/2 px-4 sm:px-6">
           <CrossCutParchment embedded question={crossCut.question} sequence={crossCut.sequence} />
         </div>
       ) : null}

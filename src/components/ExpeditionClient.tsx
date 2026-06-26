@@ -56,7 +56,7 @@ export const ExpeditionClient = ({ data }: ExpeditionClientProps) => {
   let crossCutSequence = 0
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen w-full max-w-[100vw] overflow-x-hidden">
       <RaiderPath
         activeIndex={activeIndex}
         progress={scrollProgress}
@@ -67,7 +67,7 @@ export const ExpeditionClient = ({ data }: ExpeditionClientProps) => {
 
       <ExpeditionNav activeIndex={activeIndex} encounters={data.encounters} />
 
-      <div className="relative" ref={walkRef}>
+      <div className="relative w-full overflow-x-hidden" ref={walkRef}>
         <ParallaxDungeon scrollY={journeyScrollY} />
 
         <div className="relative z-10">

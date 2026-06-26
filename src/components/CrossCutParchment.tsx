@@ -64,7 +64,7 @@ export const CrossCutParchment = ({ question, sequence, embedded = false }: Cros
 
   if (embedded) {
     return (
-      <div className={`w-full px-4 sm:px-6 ${EXPEDITION_SCROLL_MARGIN}`} id={`cross-cut-${question.id}`}>
+      <div className={`w-full ${EXPEDITION_SCROLL_MARGIN}`} id={`cross-cut-${question.id}`}>
         {panel}
       </div>
     )
