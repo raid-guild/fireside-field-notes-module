@@ -10,6 +10,7 @@ import { ExpeditionNav } from '@/components/ExpeditionNav'
 import { JourneySpacer } from '@/components/JourneySpacer'
 import { ParallaxDungeon } from '@/components/ParallaxDungeon'
 import { RaiderPath } from '@/components/RaiderPath'
+import { ExpeditionFooter } from '@/components/ExpeditionFooter'
 import { Trailhead } from '@/components/Trailhead'
 
 type ExpeditionClientProps = {
@@ -98,14 +99,7 @@ export const ExpeditionClient = ({ data }: ExpeditionClientProps) => {
 
       <AnalysisCamp encounters={data.encounters} throughLines={data.throughLines} />
 
-      <footer className="relative z-10 bg-trail-parchment px-4 py-12 text-center text-sm text-trail-ink/60 sm:px-6">
-        <p>Edge Report module · local dev preview · auth gating deferred</p>
-        <p className="mt-2">
-          <a className="underline-offset-4 hover:underline" href={data.meta.threadURL}>
-            Cohort thread on Portal
-          </a>
-        </p>
-      </footer>
+      <ExpeditionFooter threadURL={data.meta.threadURL} />
     </main>
   )
 }
