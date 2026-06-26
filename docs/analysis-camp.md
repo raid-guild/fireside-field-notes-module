@@ -17,6 +17,10 @@ Analysis camp hero
 ├── Concern vs leverage — highlight tone split
 ├── Output funnel — session → field note → recap → full interview
 ├── Publication lag — session to first Portal field note
+├── Cohort vs industry — dual-sided contrast pairs (#analysis-camp-contrast)
+├── Industry signals — big-name stats grid (#analysis-camp-industry)
+├── Field voice on X — curated link cards (#analysis-camp-field-voice)
+├── Portal wiki further reading (#analysis-camp-wiki)
 └── Through-line pattern cards — qualitative synthesis
 ```
 
@@ -33,8 +37,16 @@ Implemented in:
 | Tone split | `src/components/analysis/ConcernLeverageChart.tsx` |
 | Output funnel | `src/components/analysis/OutputFunnelChart.tsx` |
 | Publication lag | `src/components/analysis/PublicationLagChart.tsx` |
+| External context | `src/components/analysis/ExternalContextSection.tsx` |
+| Cohort vs industry | `src/components/analysis/CohortIndustryContrast.tsx` |
+| Industry signals | `src/components/analysis/IndustrySignalsGrid.tsx` |
+| Field voice X | `src/components/analysis/FieldVoicePosts.tsx` |
+| Wiki further reading | `src/components/analysis/WikiFurtherReading.tsx` |
 | Curated data | `content/analysis-curated.json` |
+| Industry signals data | `content/industry-signals.json` |
+| X research data | `content/x-post-research.json` |
 | Curated loader | `src/lib/analysisCurated.ts` |
+| External context builder | `src/lib/externalContext.ts` |
 
 Charts are CSS bar charts (no chart library) to match the pixel expedition aesthetic and keep dependencies minimal.
 
@@ -131,11 +143,18 @@ Build script `scripts/sync-portal-sessions.mjs` should refresh encounter snapsho
 
 ---
 
-## Slice 4 (planned) — external context
+## Slice 4 (shipped) — external context
 
-Raw X research pass saved in `content/x-post-research.json` (2026-06-26). Editorial shortlist in `recommendedEmbeds` (6 posts). Wiki companion links in same file for further-reading rows.
+Two research files:
 
-External stats are **comparison cards only** — always labeled with source, date, and geography. Never presented as cohort voice.
+| File | Contents |
+|------|----------|
+| `content/x-post-research.json` | Field-voice + adjacent-builder X posts; `recommendedEmbeds` (6) |
+| `content/industry-signals.json` | Big-name opinions and hard-number surveys/RCTs; `recommendedForCamp` (6) |
+
+Wiki companion links live in `x-post-research.json` for further-reading rows.
+
+External stats are **comparison cards only** — always labeled with source, date, and geography. Never presented as cohort voice. Prefer `cohortContrastPairs` in `industry-signals.json` for dual-bar “cohort claim vs industry datapoint” copy.
 
 | External datapoint | Pairs with through-line |
 |--------------------|-------------------------|

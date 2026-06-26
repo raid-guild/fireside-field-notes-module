@@ -1,12 +1,14 @@
 import { ConcernLeverageChart } from '@/components/analysis/ConcernLeverageChart'
+import { ExternalContextSection } from '@/components/analysis/ExternalContextSection'
 import { GuestLensChart } from '@/components/analysis/GuestLensChart'
 import { OutputFunnelChart } from '@/components/analysis/OutputFunnelChart'
 import { PublicationLagChart } from '@/components/analysis/PublicationLagChart'
 import { StatCard } from '@/components/analysis/StatCard'
 import { ThemeFrequencyChart } from '@/components/analysis/ThemeFrequencyChart'
 import { ToolMentionsChart } from '@/components/analysis/ToolMentionsChart'
-import type { Encounter, ThroughLine } from '@/lib/encounters'
 import { buildAnalysisCampData } from '@/lib/analysisCamp'
+import { buildExternalContextData } from '@/lib/externalContext'
+import type { Encounter, ThroughLine } from '@/lib/encounters'
 import { EXPEDITION_SCROLL_MARGIN } from '@/lib/expeditionNav'
 
 type AnalysisCampProps = {
@@ -16,6 +18,7 @@ type AnalysisCampProps = {
 
 export const AnalysisCamp = ({ encounters, throughLines }: AnalysisCampProps) => {
   const analysis = buildAnalysisCampData(encounters)
+  const externalContext = buildExternalContextData(encounters)
 
   return (
     <section
@@ -51,11 +54,12 @@ export const AnalysisCamp = ({ encounters, throughLines }: AnalysisCampProps) =>
           <PublicationLagChart medianDays={analysis.medianPublicationLagDays} rows={analysis.publicationLag} />
         </div>
 
+        <ExternalContextSection data={externalContext} />
+
         <div className="mt-14">
           <h3 className="font-display text-2xl font-semibold">Through-lines across the trail</h3>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-trail-parchment/75">
-            Early synthesis from session summaries and published field notes. Portal wiki ingest and
-            wider-field context cards ship in later slices.
+            Early synthesis from session summaries and published field notes.
           </p>
 
           <div className="mt-8 grid gap-4 md:grid-cols-2">

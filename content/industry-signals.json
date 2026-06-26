@@ -1,0 +1,317 @@
+{
+  "meta": {
+    "researchedAt": "2026-06-26",
+    "purpose": "Big-name AI opinions and hard-number external context for Analysis Camp slice 4 comparison cards",
+    "note": "Complements content/x-post-research.json (field-voice X posts). These are surveys, RCTs, and executive claims — never cohort voice."
+  },
+  "searchNotes": [
+    "First X pass targeted RaidGuild field voice and adjacent builders; it did not systematically search executive timelines or survey archives.",
+    "Hard numbers here come from primary reports (Stack Overflow, METR, HEPI, Gallup, Anthropic Institute) and on-record CEO statements (CNBC LlamaCon, Anthropic paper).",
+    "Stack Overflow 2026 Developer Survey is open (Jun 2026); 2025 data is the latest published archive.",
+    "Executive code-authorship claims (30%, 80%) are self-reported and vendor-skewed — label clearly as industry claims, not independent measurement."
+  ],
+  "recommendedForCamp": [
+    "stackoverflow-trust-gap-2025",
+    "metr-rct-slowdown-2025",
+    "anthropic-code-review-bottleneck-2026",
+    "hepi-assessment-proxy-2026",
+    "nadella-ms-code-share-2025",
+    "karpathy-verifiability-2025"
+  ],
+  "signals": [
+    {
+      "id": "stackoverflow-adoption-2025",
+      "sourceType": "survey",
+      "speaker": "Stack Overflow Developer Survey",
+      "organization": "Stack Overflow",
+      "publishedAt": "2025",
+      "headline": "84% of developers use or plan to use AI tools; 51% of professionals use them daily",
+      "metrics": [
+        { "label": "Using or planning AI tools", "value": "84%", "context": "All respondents, n≈33,662" },
+        { "label": "Daily use (professionals)", "value": "51%", "context": "Professional developers, n≈26,004" },
+        { "label": "Favorable sentiment", "value": "60%", "context": "Down from 70%+ in 2023–2024" }
+      ],
+      "quote": null,
+      "opinion": "Adoption is mainstream; enthusiasm is cooling even as usage rises.",
+      "primaryUrl": "https://survey.stackoverflow.co/2025/ai",
+      "pairsWithThroughLine": "bottleneck-shift",
+      "pairsWithCohortEncounter": "adam-kerpelman",
+      "campUse": "comparison-card",
+      "campSection": "industry-adoption",
+      "caveats": ["Self-reported survey", "Global developer population, not RaidGuild cohort"]
+    },
+    {
+      "id": "stackoverflow-trust-gap-2025",
+      "sourceType": "survey",
+      "speaker": "Stack Overflow Developer Survey",
+      "organization": "Stack Overflow",
+      "publishedAt": "2025",
+      "headline": "More developers distrust AI output accuracy (46%) than trust it (33%)",
+      "metrics": [
+        { "label": "Distrust accuracy", "value": "46%", "context": "All respondents" },
+        { "label": "Trust accuracy", "value": "33%", "context": "All respondents" },
+        { "label": "Highly trust", "value": "3%", "context": "All respondents" },
+        { "label": "Highly distrust (10+ yr exp)", "value": "20%", "context": "Experienced developers most cautious" }
+      ],
+      "quote": "Only a fraction (3%) report highly trusting the output, indicating a widespread need for human verification for those in roles with accountability.",
+      "opinion": "Verification moved upstream in practice before it moved upstream in hype.",
+      "primaryUrl": "https://survey.stackoverflow.co/2025/ai",
+      "pairsWithThroughLine": "verification",
+      "pairsWithCohortEncounter": "travis-mccutcheon",
+      "campUse": "dual-bar",
+      "campSection": "industry-verification",
+      "caveats": ["Attitudinal, not measured defect rates"]
+    },
+    {
+      "id": "metr-rct-slowdown-2025",
+      "sourceType": "research-rct",
+      "speaker": "Joel Becker et al.",
+      "organization": "METR",
+      "publishedAt": "2025-07-10",
+      "headline": "Experienced OSS developers were 19% slower with AI tools in a randomized trial",
+      "metrics": [
+        { "label": "Observed slowdown", "value": "19%", "context": "246 issues, 16 developers, RCT" },
+        { "label": "Expected speedup (before)", "value": "+24%", "context": "Developer forecasts pre-task" },
+        { "label": "Perceived speedup (after)", "value": "+20%", "context": "Developers still believed AI helped after experiencing slowdown" }
+      ],
+      "quote": "When developers are allowed to use AI tools, they take 19% longer to complete issues—a significant slowdown that goes against developer beliefs and expert forecasts.",
+      "opinion": "The perception–reality gap on productivity is itself a field finding worth citing next to cohort claims about review and judgment.",
+      "primaryUrl": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+      "pairsWithThroughLine": "verification",
+      "pairsWithCohortEncounter": "spencer-graham",
+      "campUse": "comparison-card",
+      "campSection": "industry-productivity-paradox",
+      "caveats": ["Early-2025 models/tools; METR notes Feb 2026 follow-up shows likely speedup now", "OSS maintainers on familiar repos only"]
+    },
+    {
+      "id": "metr-selection-review-2026",
+      "sourceType": "research-rct",
+      "speaker": "Joel Becker et al.",
+      "organization": "METR",
+      "publishedAt": "2026-02-24",
+      "headline": "Human code review became the bottleneck as agents spread; RCT design broke under selection",
+      "metrics": [
+        { "label": "Developers avoiding no-AI arm", "value": "30–50%", "context": "Chose not to submit some tasks if AI disallowed" },
+        { "label": "Claude Code share of public GitHub commits", "value": "~4%", "context": "Cited by METR from SemiAnalysis newsletter" }
+      ],
+      "quote": "As Claude generates more code, human code review has become the constraint.",
+      "opinion": "Industry data now echoes the cohort fireside line: execution cheapens, review and gates do not.",
+      "primaryUrl": "https://metr.org/blog/2026-02-24-uplift-update/",
+      "secondaryUrl": "https://www.anthropic.com/institute/recursive-self-improvement",
+      "pairsWithThroughLine": "bottleneck-shift",
+      "pairsWithCohortEncounter": "adam-kerpelman",
+      "campUse": "comparison-card",
+      "campSection": "industry-productivity-paradox",
+      "caveats": ["Review bottleneck quote paraphrased from Anthropic Institute paper, echoed in METR update"]
+    },
+    {
+      "id": "metr-self-report-survey-2026",
+      "sourceType": "research-survey",
+      "speaker": "Joel Becker",
+      "organization": "METR",
+      "publishedAt": "2026-05-11",
+      "headline": "Technical workers self-report median 1.4–2× value uplift; METR warns perceptions overstate reality",
+      "metrics": [
+        { "label": "Median value uplift", "value": "1.4–2×", "context": "349 technical workers, Feb–Apr 2026" },
+        { "label": "Median speed uplift", "value": "3×", "context": "Self-reported; METR expects speed > value" },
+        { "label": "Forecast Mar 2027", "value": "2.5×", "context": "Same respondents, retrospective + forecast" }
+      ],
+      "quote": "Our study in early 2025 found that people overestimated AI's effect on their time spent on tasks by 40 percentage points on average.",
+      "opinion": "Use as a skeptical counterweight to CEO code-share claims — big numbers, explicit methodology caveats.",
+      "primaryUrl": "https://metr.org/blog/2026-05-11-ai-usage-survey/",
+      "pairsWithThroughLine": "bottleneck-shift",
+      "pairsWithCohortEncounter": "graven-prest",
+      "campUse": "comparison-card",
+      "campSection": "industry-productivity-paradox",
+      "caveats": ["Convenience sample", "Self-reported counterfactuals"]
+    },
+    {
+      "id": "nadella-ms-code-share-2025",
+      "sourceType": "executive-claim",
+      "speaker": "Satya Nadella",
+      "organization": "Microsoft",
+      "publishedAt": "2025-04-29",
+      "headline": "20–30% of code in Microsoft repos is now written by software (AI)",
+      "metrics": [
+        { "label": "AI-authored code in repos", "value": "20–30%", "context": "On-stage at Meta LlamaCon" }
+      ],
+      "quote": "I'd say maybe 20%, 30% of the code that is inside of our repos today and some of our projects are probably all written by software.",
+      "opinion": "Sets the executive ceiling on the 'code is cheap' narrative — pair with cohort review-gate warnings.",
+      "primaryUrl": "https://www.cnbc.com/2025/04/29/satya-nadella-says-as-much-as-30percent-of-microsoft-code-is-written-by-ai.html",
+      "pairsWithThroughLine": "bottleneck-shift",
+      "pairsWithCohortEncounter": "justice-conder",
+      "campUse": "comparison-card",
+      "campSection": "industry-executive-claims",
+      "caveats": ["Self-reported", "No independent audit", "Definition of 'written by' unclear"]
+    },
+    {
+      "id": "pichai-google-code-share-2025",
+      "sourceType": "executive-claim",
+      "speaker": "Sundar Pichai",
+      "organization": "Google",
+      "publishedAt": "2025-10",
+      "headline": "More than 25% of new code at Google is generated by AI",
+      "metrics": [
+        { "label": "New code AI-generated", "value": ">25%", "context": "Reported Oct 2025 earnings commentary" }
+      ],
+      "quote": null,
+      "opinion": "Corroborates the big-tech code-generation race; cite alongside Nadella and Anthropic for a triad, not as ground truth.",
+      "primaryUrl": "https://www.cnbc.com/2025/04/29/satya-nadella-says-as-much-as-30percent-of-microsoft-code-is-written-by-ai.html",
+      "pairsWithThroughLine": "bottleneck-shift",
+      "pairsWithCohortEncounter": "bill-warren",
+      "campUse": "further-reading",
+      "campSection": "industry-executive-claims",
+      "caveats": ["Secondary citation via CNBC roundup", "Self-reported"]
+    },
+    {
+      "id": "zuckerberg-meta-ai-dev-2025",
+      "sourceType": "executive-claim",
+      "speaker": "Mark Zuckerberg",
+      "organization": "Meta",
+      "publishedAt": "2025-04-29",
+      "headline": "Maybe half of Meta's Llama development could be done by AI within a year",
+      "metrics": [
+        { "label": "AI share of dev (forecast)", "value": "~50%", "context": "Next-year bet at LlamaCon" }
+      ],
+      "quote": "Our bet is sort of that in the next year probably … maybe half the development is going to be done by AI, as opposed to people, and then that will just kind of increase from there.",
+      "opinion": "Forward-looking hype anchor — useful contrast to METR slowdown and Stack Overflow distrust.",
+      "primaryUrl": "https://www.cnbc.com/2025/04/29/satya-nadella-says-as-much-as-30percent-of-microsoft-code-is-written-by-ai.html",
+      "pairsWithThroughLine": "bottleneck-shift",
+      "pairsWithCohortEncounter": "victor-ginelli",
+      "campUse": "further-reading",
+      "campSection": "industry-executive-claims",
+      "caveats": ["Forecast, not measured outcome"]
+    },
+    {
+      "id": "anthropic-code-review-bottleneck-2026",
+      "sourceType": "executive-claim",
+      "speaker": "Anthropic Institute",
+      "organization": "Anthropic",
+      "publishedAt": "2026-05",
+      "headline": "80%+ of Anthropic production code merged by Claude; human review is now the constraint",
+      "metrics": [
+        { "label": "Claude-authored merged code", "value": ">80%", "context": "Anthropic production codebase, May 2026" },
+        { "label": "Engineer code merged per day", "value": "8×", "context": "Q2 2026 vs 2024 baseline" },
+        { "label": "Automated reviewer bug catch rate", "value": "~⅓", "context": "Would have caught past claude.ai incidents" },
+        { "label": "Claude Code public GitHub commits", "value": "4.5%", "context": "~2.6M commits/week mid-2026" }
+      ],
+      "quote": "As Claude generates more code, human code review has become the constraint.",
+      "opinion": "Strongest big-name package for the module thesis: volume up, verification gates tighten.",
+      "primaryUrl": "https://www.anthropic.com/institute/recursive-self-improvement",
+      "pairsWithThroughLine": "verification",
+      "pairsWithCohortEncounter": "spencer-graham",
+      "campUse": "dual-bar",
+      "campSection": "industry-executive-claims",
+      "caveats": ["Vendor self-report", "Internal codebase may not generalize", "Paper also advocates global pause — cite selectively"]
+    },
+    {
+      "id": "hepi-assessment-proxy-2026",
+      "sourceType": "survey",
+      "speaker": "HEPI / Savanta",
+      "organization": "Higher Education Policy Institute",
+      "publishedAt": "2026-03",
+      "headline": "95% of UK undergrads use AI; 12% paste AI text into assessed work (up from 3% in 2024)",
+      "metrics": [
+        { "label": "Any AI use", "value": "95%", "context": "1,054 UK full-time undergraduates" },
+        { "label": "AI for assessed work", "value": "94%", "context": "Includes encouraged/required use" },
+        { "label": "Direct AI text in submissions", "value": "12%", "context": "Up from 8% (2025), 3% (2024)" },
+        { "label": "Assessment changed for AI", "value": "65%", "context": "Students report significant change" },
+        { "label": "Institution encourages AI", "value": "36%", "context": "Policy lag vs student behavior" }
+      ],
+      "quote": "Reflection papers used to proxy for understanding — AI makes those proxies unreliable.",
+      "opinion": "Hard education-pressure numbers that mirror Kerp's proxy-collapse framing; quote line is cohort paraphrase for pairing.",
+      "primaryUrl": "https://www.hepi.ac.uk/reports/student-generative-ai-survey-2026/",
+      "pairsWithThroughLine": "education-pressure",
+      "pairsWithCohortEncounter": "adam-kerpelman",
+      "campUse": "dual-bar",
+      "campSection": "industry-education",
+      "caveats": ["UK undergrads only", "Self-reported misconduct"]
+    },
+    {
+      "id": "gallup-college-ai-routine-2026",
+      "sourceType": "survey",
+      "speaker": "Lumina Foundation–Gallup",
+      "organization": "Gallup",
+      "publishedAt": "2026-04-02",
+      "headline": "57% of U.S. college students use AI weekly; 53% say schools discourage or prohibit it",
+      "metrics": [
+        { "label": "Weekly+ AI use in coursework", "value": "57%", "context": "U.S. college students, Oct 2025 fielding" },
+        { "label": "Daily use", "value": "20%", "context": "All students" },
+        { "label": "School discourages AI", "value": "42%", "context": "Plus 11% prohibit outright" }
+      ],
+      "quote": "AI is already a routine part of college students' academic work, even as institutional guidance has not fully caught up.",
+      "opinion": "Policy–behavior gap supports Kerp + HEPI triangulation for education cards.",
+      "primaryUrl": "https://news.gallup.com/poll/704090/routine-college-students-despite-campus-limits.aspx",
+      "pairsWithThroughLine": "education-pressure",
+      "pairsWithCohortEncounter": "adam-kerpelman",
+      "campUse": "comparison-card",
+      "campSection": "industry-education",
+      "caveats": ["U.S. students", "Opt-in panel"]
+    },
+    {
+      "id": "karpathy-verifiability-2025",
+      "sourceType": "thought-leader",
+      "speaker": "Andrej Karpathy",
+      "organization": "Independent / ex-OpenAI, ex-Tesla AI",
+      "publishedAt": "2025-11-16",
+      "headline": "Verifiability is the predictive feature — domains with reward functions get agentic leverage",
+      "metrics": [],
+      "quote": "In this new programming paradigm then, the new most predictive feature to look at is verifiability. If a task/job is verifiable, then it is optimizable directly or via reinforcement learning.",
+      "opinion": "Big-name framing that validates the cohort's verification-through-line without vendor spin.",
+      "primaryUrl": "https://x.com/karpathy/status/1990116666194456651",
+      "pairsWithThroughLine": "verification",
+      "pairsWithCohortEncounter": "victor-ginelli",
+      "campUse": "quote-card",
+      "campSection": "industry-thought-leaders",
+      "caveats": ["Opinion, not empirical measurement"]
+    },
+    {
+      "id": "karpathy-agents-inflection-2026",
+      "sourceType": "thought-leader",
+      "speaker": "Andrej Karpathy",
+      "organization": "Independent",
+      "publishedAt": "2026-02-26",
+      "headline": "Coding agents 'basically didn't work before December' and 'basically work since'",
+      "metrics": [],
+      "quote": "Coding agents basically didn't work before December and basically work since — the models have significantly higher quality, long-term coherence and tenacity.",
+      "opinion": "Useful hype-counterweight timing marker; pair with METR selection-effects post from same winter.",
+      "primaryUrl": "https://x.com/karpathy/status/2026731645169185220",
+      "pairsWithThroughLine": "bottleneck-shift",
+      "pairsWithCohortEncounter": "elco",
+      "campUse": "quote-card",
+      "campSection": "industry-thought-leaders",
+      "caveats": ["Subjective inflection claim"]
+    }
+  ],
+  "cohortContrastPairs": [
+    {
+      "cohortClaim": "Execution got cheaper; taste, sequencing, and assessment got expensive",
+      "cohortVoice": "Adam Kerpelman",
+      "industrySignalId": "stackoverflow-trust-gap-2025",
+      "contrastNote": "84% adoption vs 46% distrust — industry data supports the bottleneck shift to judgment and QA."
+    },
+    {
+      "cohortClaim": "Agentic coding works better as doer/reviewer pipeline with deterministic checks",
+      "cohortVoice": "Spencer Graham",
+      "industrySignalId": "anthropic-code-review-bottleneck-2026",
+      "contrastNote": "Anthropic reports 80% AI-authored merges but names human review as the constraint."
+    },
+    {
+      "cohortClaim": "Proxy collapse — assignments no longer prove understanding",
+      "cohortVoice": "Adam Kerpelman",
+      "industrySignalId": "hepi-assessment-proxy-2026",
+      "contrastNote": "12% direct AI paste into assessed work; 65% say assessment already changed."
+    },
+    {
+      "cohortClaim": "Speed without review makes work lonelier and harder to verify",
+      "cohortVoice": "Raid Guild field notes",
+      "industrySignalId": "metr-rct-slowdown-2025",
+      "contrastNote": "RCT found 19% slowdown while developers still felt 20% faster — perception gap is measurable."
+    }
+  ],
+  "gapsRemaining": [
+    "No curated X posts yet from @sama, @gdb, @demis_hassabis, @drfeifei with hard numbers in-window — add in pass 2 via handle search.",
+    "Product-compression spend-vs-productivity stats (McKinsey, etc.) not yet sourced — needed for Graven/Bill contrast.",
+    "OSS security AI-review adoption rates still missing — Travis/open-source leg needs a cited survey."
+  ]
+}

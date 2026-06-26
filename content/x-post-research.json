@@ -80,7 +80,7 @@
       "text": "1/ One thing that stuck from our fireside with @singularityhack \n\nAgents don’t just need wallets 🤖\n\nIf they’re going to do real work, they eventually need the boring stuff too: legal wrappers, trust, deployment paths, security, accountability, and people who actually know where",
       "sourceType": "raidguild",
       "pairsWithThroughLine": "verification",
-      "pairsWithEncounterSlug": null,
+      "pairsWithEncounterSlug": "andrej-berlin",
       "whySelected": "Grounded claim that agent work needs trust, deployment paths, security, accountability, and human operators. Good contrast to agent autonomy hype.",
       "hasMedia": false,
       "outboundLinks": [],
@@ -261,14 +261,33 @@
   ],
   "gapsSummary": [
     "Strongest coverage: context-crisis, verification, community-tooling, and bottleneck-shift.",
-    "Weakest coverage: education-pressure and product-compression; X rate limits blocked broader searches here.",
+    "Weakest coverage in this X pass: education-pressure and product-compression; X rate limits blocked broader searches here.",
+    "Big-name AI voices with hard numbers were not in scope for this X pass — see content/industry-signals.json for Stack Overflow, METR, HEPI, Gallup, Nadella, Anthropic, Karpathy.",
     "Cohort guest direct posts were sparse in this pass; most field-voice candidates are RaidGuild or Queen Raida posts referencing sessions.",
     "Run a second pass closer to 2026-07-15 for July posts and guest timelines."
   ],
-  "guessedHandlesForHumanVerification": [
-    { "person": "Adam Kerpelman", "guessedHandle": "@thekerp", "basis": "Mentioned by @RaidGuild in fireside post." },
-    { "person": "Spencer Graham", "guessedHandle": "@spengrah", "basis": "Mentioned by @raidguildish in Portal event post." },
-    { "person": "Andrej Berlin or related guest", "guessedHandle": "@singularityhack", "basis": "Mentioned as a fireside account by @RaidGuild; needs human verification against event records." }
+  "verifiedGuestHandles": [
+    {
+      "person": "Adam Kerpelman",
+      "encounterSlug": "adam-kerpelman",
+      "xHandle": "@thekerp",
+      "verifiedAt": "2026-06-26",
+      "verifiedBy": "cohort editor"
+    },
+    {
+      "person": "Spencer Graham",
+      "encounterSlug": "spencer-graham",
+      "xHandle": "@spengrah",
+      "verifiedAt": "2026-06-26",
+      "verifiedBy": "cohort editor"
+    },
+    {
+      "person": "Andrej Berlin",
+      "encounterSlug": "andrej-berlin",
+      "xHandle": "@singularityhack",
+      "verifiedAt": "2026-06-26",
+      "verifiedBy": "cohort editor"
+    }
   ],
   "wikiCompanion": [
     {
