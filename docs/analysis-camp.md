@@ -133,6 +133,8 @@ Build script `scripts/sync-portal-sessions.mjs` should refresh encounter snapsho
 
 ## Slice 4 (planned) — external context
 
+Raw X research pass saved in `content/x-post-research.json` (2026-06-26). Editorial shortlist in `recommendedEmbeds` (6 posts). Wiki companion links in same file for further-reading rows.
+
 External stats are **comparison cards only** — always labeled with source, date, and geography. Never presented as cohort voice.
 
 | External datapoint | Pairs with through-line |

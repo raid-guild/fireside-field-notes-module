@@ -1,0 +1,323 @@
+{
+  "meta": {
+    "researchedAt": "2026-06-26",
+    "searchWindowStart": "2026-06-01",
+    "searchWindowEnd": "2026-06-26",
+    "searchWindowEndNote": "Requested end 2026-07-15 is still in the future; rerun closer to mid-July for guest timelines.",
+    "source": "X API research pass (manual curation for Edge Report Analysis Camp slice 4)"
+  },
+  "searchNotes": [
+    "Current date is 2026-06-26, so this pass covers 2026-06-01 through 2026-06-26 only; the requested 2026-07-15 end date is still in the future.",
+    "X search rate-limited broader education/product queries, so education-pressure coverage is weak in this first pass."
+  ],
+  "recommendedEmbeds": [
+    "2064810976310853687",
+    "2065117957584519558",
+    "2064381858532700497",
+    "2062299561566286179",
+    "2070537321716363276",
+    "2070474656788910183"
+  ],
+  "deferredEmbeds": [
+    {
+      "id": "2066974829966991636",
+      "reason": "Strong thread opener but truncated; embed tweet 1 of thread or pair with follow-up."
+    },
+    {
+      "id": "2064381848361513339",
+      "reason": "Good context-debt thread starter; better as further-reading link than lone embed unless thread context is shown."
+    },
+    {
+      "id": "2062206979909517515",
+      "reason": "Portal promo — useful link card, less analytical than field-voice synthesis."
+    },
+    {
+      "id": "2070536180714635631",
+      "reason": "Industry/vendor framing; keep as further-reading with clear non-cohort label."
+    }
+  ],
+  "posts": [
+    {
+      "id": "2064810976310853687",
+      "url": "https://x.com/raidguildish/status/2064810976310853687",
+      "authorHandle": "@raidguildish",
+      "authorDisplayName": "queen raida",
+      "createdAt": "2026-06-10T20:44:33.000Z",
+      "text": "AI dev nightmare: every builder alone in a cave.\n\n@spengrah points at the better path: shared context, public artifacts, reviewer loops, and tools that make work social, not lonely.\n\nexecution is cheapening. context is not.\n\nhttps://t.co/8BtAtiOE35",
+      "sourceType": "raidguild",
+      "pairsWithThroughLine": "context-crisis",
+      "pairsWithEncounterSlug": "spencer-graham",
+      "whySelected": "Directly pairs the fireside framing with shared context, public artifacts, and reviewer loops. Strongest field-voice bridge between cohort signal and the Edge Report thesis.",
+      "hasMedia": false,
+      "outboundLinks": ["https://portal.raidguild.org/events/49"],
+      "metrics": { "likes": 14, "reposts": 1, "replies": 0 },
+      "embedRecommended": true,
+      "campSection": "field-voice"
+    },
+    {
+      "id": "2065117957584519558",
+      "url": "https://x.com/RaidGuild/status/2065117957584519558",
+      "authorHandle": "@RaidGuild",
+      "authorDisplayName": "Raid Guild",
+      "createdAt": "2026-06-11T17:04:23.000Z",
+      "text": "sure ai makes builders 10x faster.  \n\nbut it can also make the work 10x lonelier, messier, and impossible to review. \n\nwe’re choosing the other path.  \n\njoin us for today’s Fireside w/@thekerp followed by @singularityhack: shared context, better questions, and builders actually",
+      "sourceType": "raidguild",
+      "pairsWithThroughLine": "verification",
+      "pairsWithEncounterSlug": "adam-kerpelman",
+      "whySelected": "Cleanly contrasts speed gains with reviewability and shared context. Useful as a setup post for the fireside section.",
+      "hasMedia": false,
+      "outboundLinks": [],
+      "metrics": { "likes": 9, "reposts": 2, "replies": 0 },
+      "embedRecommended": true,
+      "campSection": "field-voice"
+    },
+    {
+      "id": "2066974829966991636",
+      "url": "https://x.com/RaidGuild/status/2066974829966991636",
+      "authorHandle": "@RaidGuild",
+      "authorDisplayName": "Raid Guild",
+      "createdAt": "2026-06-16T20:02:56.000Z",
+      "text": "1/ One thing that stuck from our fireside with @singularityhack \n\nAgents don’t just need wallets 🤖\n\nIf they’re going to do real work, they eventually need the boring stuff too: legal wrappers, trust, deployment paths, security, accountability, and people who actually know where",
+      "sourceType": "raidguild",
+      "pairsWithThroughLine": "verification",
+      "pairsWithEncounterSlug": null,
+      "whySelected": "Grounded claim that agent work needs trust, deployment paths, security, accountability, and human operators. Good contrast to agent autonomy hype.",
+      "hasMedia": false,
+      "outboundLinks": [],
+      "metrics": { "likes": 8, "reposts": 0, "replies": 3 },
+      "embedRecommended": true,
+      "campSection": "field-voice"
+    },
+    {
+      "id": "2064381848361513339",
+      "url": "https://x.com/RaidGuild/status/2064381848361513339",
+      "authorHandle": "@RaidGuild",
+      "authorDisplayName": "Raid Guild",
+      "createdAt": "2026-06-09T16:19:21.000Z",
+      "text": "1/ Every mature protocol has a ghost problem 👻\n\nThe people who built it are gone. Knowledge lives in dead Discord threads, forked repos, and fading memories.\n\nNow someone wants to “add AI agents.”\n\nHere’s what actually happens 👇 https://t.co/bGt7Y5AHFx",
+      "sourceType": "raidguild",
+      "pairsWithThroughLine": "context-crisis",
+      "pairsWithEncounterSlug": null,
+      "whySelected": "Strong field claim about context debt in mature protocols before adding agents. Good thread starter with media.",
+      "hasMedia": true,
+      "outboundLinks": ["https://x.com/RaidGuild/status/2064381848361513339/photo/1"],
+      "metrics": { "likes": 15, "reposts": 2, "replies": 1 },
+      "embedRecommended": true,
+      "campSection": "field-voice"
+    },
+    {
+      "id": "2064381858532700497",
+      "url": "https://x.com/RaidGuild/status/2064381858532700497",
+      "authorHandle": "@RaidGuild",
+      "authorDisplayName": "Raid Guild",
+      "createdAt": "2026-06-09T16:19:24.000Z",
+      "text": "4/ The lazy modernization pitch: bolt on agents and pray 🤖🙏 \n\nWe don’t buy it.\n\nBefore any AI helps, a human must know:\n\n• What’s active vs deprecated\n• What breaks if you touch it\n• Who actually signs off",
+      "sourceType": "raidguild",
+      "pairsWithThroughLine": "verification",
+      "pairsWithEncounterSlug": null,
+      "whySelected": "Sharp checklist for readiness before agent-assisted maintenance. Best paired with repo cleanup and approval-gate discussion.",
+      "hasMedia": false,
+      "outboundLinks": [],
+      "metrics": { "likes": 2, "reposts": 0, "replies": 1 },
+      "embedRecommended": true,
+      "campSection": "field-voice"
+    },
+    {
+      "id": "2062299561566286179",
+      "url": "https://x.com/RaidGuild/status/2062299561566286179",
+      "authorHandle": "@RaidGuild",
+      "authorDisplayName": "Raid Guild",
+      "createdAt": "2026-06-03T22:25:05.000Z",
+      "text": "4/ Prism/Refactory is the memory.\n\nMeeting notes become artifacts. Knowledge survives contributor turnover. AI stays in the loop with workflows and scheduled tasks, but humans hold the gates.\n\nMost “AI for communities” pitches skip that last part.",
+      "sourceType": "raidguild",
+      "pairsWithThroughLine": "community-tooling",
+      "pairsWithEncounterSlug": null,
+      "whySelected": "Directly names durable artifacts, contributor turnover, workflows, scheduled tasks, and human gates. Strong internal connective tissue for the module.",
+      "hasMedia": false,
+      "outboundLinks": [],
+      "metrics": { "likes": 0, "reposts": 0, "replies": 1 },
+      "embedRecommended": true,
+      "campSection": "field-voice"
+    },
+    {
+      "id": "2062206979909517515",
+      "url": "https://x.com/raidguildish/status/2062206979909517515",
+      "authorHandle": "@raidguildish",
+      "authorDisplayName": "queen raida",
+      "createdAt": "2026-06-03T16:17:12.000Z",
+      "text": "I build in public, and the Portal is open.\n\nRaidGuild now has a live activity hub for current briefs, sessions, projects, posts, spotlights, member profiles, and the work moving right now.\n\nhttps://t.co/VIqzAeQBTY https://t.co/aI4Xy9MmHc",
+      "sourceType": "raidguild",
+      "pairsWithThroughLine": "community-tooling",
+      "pairsWithEncounterSlug": null,
+      "whySelected": "Useful Portal/field-research anchor with public link and media. More product-facing than analytical, but citable.",
+      "hasMedia": true,
+      "outboundLinks": ["https://portal.raidguild.org/posts/the-portal-is-open", "https://x.com/raidguildish/status/2062206979909517515/video/1"],
+      "metrics": { "likes": 8, "reposts": 1, "replies": 1 },
+      "embedRecommended": true,
+      "campSection": "field-voice"
+    },
+    {
+      "id": "2070537321716363276",
+      "url": "https://x.com/adamisnotroman/status/2070537321716363276",
+      "authorHandle": "@adamisnotroman",
+      "authorDisplayName": "adam roman",
+      "createdAt": "2026-06-26T15:59:00.000Z",
+      "text": "Since code is cheap and easy to generate now (as many of you have noticed), the bottleneck has become code review and validations. It may seem like open source would become less valuable based on that, but I think the reality is the opposite.\n\nIt is a little bit counterintuitive,",
+      "sourceType": "adjacent-builder",
+      "pairsWithThroughLine": "bottleneck-shift",
+      "pairsWithEncounterSlug": null,
+      "whySelected": "Concise external echo of the core bottleneck-shift thesis: generation is cheap, review and validation get expensive.",
+      "hasMedia": false,
+      "outboundLinks": [],
+      "metrics": { "likes": 0, "reposts": 0, "replies": 0 },
+      "embedRecommended": true,
+      "campSection": "wider-discourse"
+    },
+    {
+      "id": "2070474656788910183",
+      "url": "https://x.com/no_stp_on_snek/status/2070474656788910183",
+      "authorHandle": "@no_stp_on_snek",
+      "authorDisplayName": "Tom Turney",
+      "createdAt": "2026-06-26T11:50:00.000Z",
+      "text": "a new 35B coder dropped (Ornith-1.0) and a promo blog says it \"crushes\" the benchmarks. my first instinct was benchmaxx, public test sets like SWE-Bench and Terminal-Bench are easy to overfit. so i ignored the benchmarks and ran it head-to-head against stock Qwen3.6-35B on my own https://t.co/eGbLC1XiQF",
+      "sourceType": "adjacent-builder",
+      "pairsWithThroughLine": "verification",
+      "pairsWithEncounterSlug": null,
+      "whySelected": "Strong lived verification stance: distrust benchmark hype, run local evals. Good wider-discourse contrast for QA/review sections.",
+      "hasMedia": true,
+      "outboundLinks": ["https://x.com/no_stp_on_snek/status/2070474656788910183/photo/1"],
+      "metrics": { "likes": 135, "reposts": 22, "replies": 19 },
+      "embedRecommended": true,
+      "campSection": "wider-discourse"
+    },
+    {
+      "id": "2070407823624658972",
+      "url": "https://x.com/deer_avenger/status/2070407823624658972",
+      "authorHandle": "@deer_avenger",
+      "authorDisplayName": "Dmitry Kuznetsov",
+      "createdAt": "2026-06-26T07:24:26.000Z",
+      "text": "I decided to migrate the @econumo backend from PHP to Go, as it has a lot of benefits and, in my opinion, is generally more suitable for agentic coding.\n\nSo I made a loop which: 1/ mirrors API 2/ compares responses of a new API towards the old one on the same database 3/ fixes",
+      "sourceType": "adjacent-builder",
+      "pairsWithThroughLine": "open-source",
+      "pairsWithEncounterSlug": null,
+      "whySelected": "Concrete builder workflow: migration loop, API mirroring, response comparison, and repair. Useful as a practical example of verification-driven agentic coding.",
+      "hasMedia": false,
+      "outboundLinks": [],
+      "metrics": { "likes": 0, "reposts": 0, "replies": 0 },
+      "embedRecommended": true,
+      "campSection": "wider-discourse"
+    },
+    {
+      "id": "2070536404757790776",
+      "url": "https://x.com/Suryanshti777/status/2070536404757790776",
+      "authorHandle": "@Suryanshti777",
+      "authorDisplayName": "Suryansh Tiwari",
+      "createdAt": "2026-06-26T15:55:22.000Z",
+      "text": "A weird thing happens when you spend enough time with Claude.\n\nYou stop caring about the next model.\n\nYou start caring about the system behind the model.\n\nMost people are still searching for the perfect prompt.\n\nMeanwhile, the best builders I know are creating memory layers, https://t.co/TXZ5pnT8Lc https://t.co/uaKuvYTmEl",
+      "sourceType": "adjacent-builder",
+      "pairsWithThroughLine": "context-crisis",
+      "pairsWithEncounterSlug": null,
+      "whySelected": "External builder framing around systems, memory layers, and context over prompt tricks. Matches the Portal/Prism thesis well.",
+      "hasMedia": true,
+      "outboundLinks": ["https://x.com/Suryanshti777/status/2070536404757790776/photo/1", "https://twitter.com/NainsiDwiv50980/status/2070536172808581528"],
+      "metrics": { "likes": 10, "reposts": 4, "replies": 2 },
+      "embedRecommended": true,
+      "campSection": "wider-discourse"
+    },
+    {
+      "id": "2070536180714635631",
+      "url": "https://x.com/origin_trail/status/2070536180714635631",
+      "authorHandle": "@origin_trail",
+      "authorDisplayName": "OriginTrail",
+      "createdAt": "2026-06-26T15:54:28.000Z",
+      "text": "⚕️Five AI agents converged on the same medical findings, without being told to agree. \n\nEach drew from PubMed, https://t.co/ech5roaGkW &amp; safety data on a shared context graph.\n\nVerifiable, provenance-stamped knowledge that holds up.\n\n@JureSkornik breaks down the DKG v10 Node: https://t.co/3s4okAWYkf",
+      "sourceType": "industry",
+      "pairsWithThroughLine": "verification",
+      "pairsWithEncounterSlug": null,
+      "whySelected": "Industry-facing example of shared context graphs and provenance-stamped claims. Good further-reading contrast if presented cautiously.",
+      "hasMedia": true,
+      "outboundLinks": ["http://ClinicalTrials.gov", "https://x.com/origin_trail/status/2070536180714635631/video/1"],
+      "metrics": { "likes": 17, "reposts": 9, "replies": 2 },
+      "embedRecommended": true,
+      "campSection": "further-reading"
+    },
+    {
+      "id": "2070469770013561336",
+      "url": "https://x.com/GustavHartz/status/2070469770013561336",
+      "authorHandle": "@GustavHartz",
+      "authorDisplayName": "Gustav Hartz",
+      "createdAt": "2026-06-26T11:30:35.000Z",
+      "text": "I wrote a new blogpost for @CecuroAudit on how to build effective penetration testing agents and our learnings from 10K agent transcripts generated by running EVMBench by @OpenAI \n\nYou don't need to fine-tune models, it's still about context engineering\n\nhttps://t.co/AxayBmyEc4",
+      "sourceType": "industry",
+      "pairsWithThroughLine": "open-source",
+      "pairsWithEncounterSlug": null,
+      "whySelected": "Links to primary material and mentions learnings from 10K agent transcripts. Useful for source-backed technical context.",
+      "hasMedia": false,
+      "outboundLinks": ["https://cecuro.ai/blog/building-effective-pen-testing-agents"],
+      "metrics": { "likes": 2, "reposts": 0, "replies": 0 },
+      "embedRecommended": true,
+      "campSection": "further-reading"
+    }
+  ],
+  "gapsSummary": [
+    "Strongest coverage: context-crisis, verification, community-tooling, and bottleneck-shift.",
+    "Weakest coverage: education-pressure and product-compression; X rate limits blocked broader searches here.",
+    "Cohort guest direct posts were sparse in this pass; most field-voice candidates are RaidGuild or Queen Raida posts referencing sessions.",
+    "Run a second pass closer to 2026-07-15 for July posts and guest timelines."
+  ],
+  "guessedHandlesForHumanVerification": [
+    { "person": "Adam Kerpelman", "guessedHandle": "@thekerp", "basis": "Mentioned by @RaidGuild in fireside post." },
+    { "person": "Spencer Graham", "guessedHandle": "@spengrah", "basis": "Mentioned by @raidguildish in Portal event post." },
+    { "person": "Andrej Berlin or related guest", "guessedHandle": "@singularityhack", "basis": "Mentioned as a fireside account by @RaidGuild; needs human verification against event records." }
+  ],
+  "wikiCompanion": [
+    {
+      "throughLine": "context-crisis",
+      "wikiTitle": "Context Systems",
+      "wikiUrl": "https://portal.raidguild.org/wiki/context-systems",
+      "reason": "Pairs with shared memory, scoped context, and model-system framing."
+    },
+    {
+      "throughLine": "context-crisis",
+      "wikiTitle": "Shared AI Context For Teams",
+      "wikiUrl": "https://portal.raidguild.org/wiki/shared-ai-context-for-teams",
+      "reason": "Direct match for team memory, handoff, and context governance."
+    },
+    {
+      "throughLine": "community-tooling",
+      "wikiTitle": "Structured Community Memory",
+      "wikiUrl": "https://portal.raidguild.org/wiki/structured-community-memory",
+      "reason": "Pairs with Portal/Prism posts about making guild activity inspectable and reusable."
+    },
+    {
+      "throughLine": "verification",
+      "wikiTitle": "Human-In-The-Loop AI Workflows",
+      "wikiUrl": "https://portal.raidguild.org/wiki/human-in-the-loop-ai-workflows",
+      "reason": "Companion for review gates, approvals, and non-silent publishing."
+    },
+    {
+      "throughLine": "verification",
+      "wikiTitle": "Human-Governed Agent Handoff Protocols",
+      "wikiUrl": "https://portal.raidguild.org/wiki/human-governed-agent-handoff-protocols",
+      "reason": "Good pairing for agent work that needs explicit human decision boundaries."
+    },
+    {
+      "throughLine": "open-source",
+      "wikiTitle": "Agentic Maintenance Readiness Assessments",
+      "wikiUrl": "https://portal.raidguild.org/wiki/agentic-maintenance-readiness-assessments",
+      "reason": "Fits repo cleanup, docs, runbooks, support paths, and agent-safe maintenance."
+    },
+    {
+      "throughLine": "bottleneck-shift",
+      "wikiTitle": "Product Judgment After Execution Scarcity",
+      "wikiUrl": "https://portal.raidguild.org/wiki/product-judgment-after-execution-scarcity",
+      "reason": "Maps to code/execution becoming cheaper while judgment and QA become scarce."
+    },
+    {
+      "throughLine": "education-pressure",
+      "wikiTitle": "Assessment After Proxy Collapse",
+      "wikiUrl": "https://portal.raidguild.org/wiki/assessment-after-proxy-collapse",
+      "reason": "Use as a hand-curation anchor until stronger X posts are found."
+    }
+  ]
+}
