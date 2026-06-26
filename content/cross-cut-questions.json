@@ -1,0 +1,76 @@
+{
+  "questions": [
+    {
+      "id": "working-on-now",
+      "insertAfterEncounterIndex": 1,
+      "question": "What are you working on right now?",
+      "eyebrow": "Cross-interview synthesis",
+      "body": [
+        "The cohort was not a single kind of builder. Spencer is wiring a self-hosted personal CRM that ingests messages, transcripts, and relationship context without handing a full life archive to a third party. Kerp is running applied-AI teaching experiments at UVA — course tooling, oral exams, and classroom workflows that assume AI is already in the room. Hunter runs a consultancy building custom, often self-hosted operational software for medium-sized businesses. Graven sits at the intersection of public goods, builder relations, and protocol work around Octant and Flow State.",
+        "Bill Warren compresses product loops inside Protocol Labs-style network experiments. Sara Brown works ad ops and programmatic QA. Jake Winckowski builds reviewed support automation. Elco, Justice, Victor, Travis, Cj, and Andrej each brought a different edge: orchestration harnesses, engineering identity, senior review workflows, repo hygiene, human editorial craft, and community alignment tools.",
+        "What repeats is not one stack or one job title. People are building relationship memory, classroom infrastructure, client-owned software, product prototypes, domain QA, and coordination surfaces — all while AI is becoming part of the delivery path, not a side experiment."
+      ],
+      "voices": ["Spencer Graham", "Adam Kerpelman", "0xHunter", "Graven Prest", "Bill Warren", "Sara Brown"]
+    },
+    {
+      "id": "workflow-changed",
+      "insertAfterEncounterIndex": 3,
+      "question": "How has AI or automation changed your workflow?",
+      "eyebrow": "Cross-interview synthesis",
+      "body": [
+        "Nearly everyone reported a shift in where time goes — not necessarily less work, but different work. Product and engineering loops compressed: brain dump to PRD scaffold to prototype arrived repeatedly, from Bill and Graven to Jake and Justice. Small teams described shipping overnight what used to take a week, then hitting harder stops at testing, scope, production readiness, and \"should we?\" decisions.",
+        "Developers consistently described an identity move. Victor and Spencer talked about orchestrating and reviewing rather than typing every line. Justice framed engineering as moving up the stack. Kerp said execution got cheaper while taste, sequencing, and assessment got more expensive. Cj argued the premium moved to the human edit when production sped up.",
+        "The emotional texture varied. Some guests felt more leverage and enjoyment once tooling improved; others flagged existential unease when hand-coding felt less central. Nobody described a clean replacement story. The through-line is a workflow rewrite: faster middle, heavier edges, more judgment."
+      ],
+      "voices": ["Bill Warren", "Graven Prest", "Victor Ginelli", "Adam Kerpelman", "Justice Conder", "Cj Miller"]
+    },
+    {
+      "id": "useful-tools",
+      "insertAfterEncounterIndex": 5,
+      "question": "What tools, prompts, agents, or processes are actually useful?",
+      "eyebrow": "Cross-interview synthesis",
+      "body": [
+        "Useful patterns were more about process than magic prompts. Spencer's doer/reviewer pipeline — coordinate, implement, review, repeat, with deterministic pre-push checks — was the clearest agentic coding pattern. Hunter praised Codex for reliable full-stack and browser-facing workflows. Victor emphasized small CLIs and command surfaces agents can actually run. Travis argued agent readiness starts with repo cleanup, not a better prompt.",
+        "Kerp got mileage from AI as a patient tutor and from course infrastructure like Canvas-integrated tooling, not from one omnibus model call. Jake and Sara both pointed at narrow, domain-reviewed agents: support coworkers and ad-ops QA auditors rather than general copilots. Elco's lesson was orchestration with observable shared state, not more autonomous actors.",
+        "What did not earn trust: one-shot frontend polish, unreviewed support automation, giant-context models without real project awareness, and all-purpose agents asked to own entire workflows. The useful layer is bounded tools, review gates, and repeatable internal interfaces."
+      ],
+      "voices": ["Spencer Graham", "0xHunter", "Victor Ginelli", "Travis McCutcheon", "Jake Winckowski", "Sara Brown", "Elco"]
+    },
+    {
+      "id": "broken-risky",
+      "insertAfterEncounterIndex": 7,
+      "question": "What still feels broken, risky, or confusing?",
+      "eyebrow": "Cross-interview synthesis",
+      "body": [
+        "Context transfer was the loudest shared pain. Hunter said teams still copy-paste between agent sessions; Spencer worried about atomized developers and thinning shared context; Elco named shared state as the hard part of orchestration. Everyone had a version of: private agent loops work locally, but the team cannot see or inherit the process.",
+        "Verification showed up everywhere in different costumes. Frontend QA remains distrusted without human review. Kerp described proxy collapse in education — assignments that no longer prove understanding. Sara wanted audited checks instead of blind generation in operations work. Graven and Bill both warned that speed invites bloated products without judgment gates.",
+        "Model orchestration is still guesswork for power users: which model for which task, when to escalate, how to preserve memory across machines and tools. Andrej and Victor added social risk — coordination, taste, governance, and the edges of projects (deploy, infra, maintenance) remain stubbornly human-heavy."
+      ],
+      "voices": ["0xHunter", "Spencer Graham", "Elco", "Adam Kerpelman", "Sara Brown", "Graven Prest", "Victor Ginelli"]
+    },
+    {
+      "id": "builders-should-learn",
+      "insertAfterEncounterIndex": 9,
+      "question": "What should other builders learn from your experience?",
+      "eyebrow": "Cross-interview synthesis",
+      "body": [
+        "The cohort advice was practical, not futurist. Clean up repos and docs before expecting agents to be dependable. Build review into the workflow — second model, human checkpoint, oral exam, QA auditor, or coworker-not-replacement support pattern. Keep scope small enough that someone with taste can still say no.",
+        "Invest in interfaces agents can use: CLIs, narrow commands, internal tools, and explicit handoffs beat giant prompts. Treat relationship and organizational context as infrastructure, not chat history. For teams, shared memory and scoped context matter as much as model choice.",
+        "Several guests pushed back on hype. Friction can be a moat. Open source may strengthen if bug-finding is paired with repair loops. Community tools may need to matchmake contributors, not just host more chat. The lesson for other builders: AI amplifies whatever process you already have — strong or weak."
+      ],
+      "voices": ["Travis McCutcheon", "Spencer Graham", "Jake Winckowski", "Justice Conder", "Andrej Berlin", "Victor Ginelli"]
+    },
+    {
+      "id": "future-outlook",
+      "insertAfterEncounterIndex": 11,
+      "question": "Where do you see the future — optimistic or doomer?",
+      "eyebrow": "Cross-interview synthesis",
+      "body": [
+        "Most firesides ended with a futures question, and the answers were mixed without being nihilistic. Bill was bullish on democratized creation but cautious about AGI hype cycles and cultural fallout from layoff narratives. Spencer rejected \"open source is dead\" and argued security could improve if discovery is paired with repair. Kerp pushed back on simple job-collapse stories while acknowledging real student anxiety.",
+        "Optimism clustered around leverage for small teams, cheaper custom software, better tutoring, faster alignment on prototypes, and stronger OSS repair loops. Doom-leaning notes clustered around atomized work, lost shared context, proxy collapse in institutions, frontend trust gaps, and vendors overclaiming autonomy.",
+        "The balanced take across sessions: roles shift rather than vanish; taste, judgment, distribution, and verification become the durable professions inside the stack. The future is not one camp. It is a rearrangement where builders who can coordinate agents, review output, and preserve human context do better than builders who only type faster."
+      ],
+      "voices": ["Bill Warren", "Spencer Graham", "Adam Kerpelman", "Graven Prest", "0xHunter", "Andrej Berlin"]
+    }
+  ]
+}

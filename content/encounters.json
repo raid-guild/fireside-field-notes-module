@@ -1,0 +1,589 @@
+{
+  "meta": {
+    "title": "Field Experience from the Edge",
+    "subtitle": "How builders are adapting AI in real work",
+    "sessionCount": 13,
+    "threadURL": "https://portal.raidguild.org/threads/how-to-raidguild-field-experience-from-the-edge"
+  },
+  "throughLines": [
+    {
+      "id": "bottleneck-shift",
+      "title": "The bottleneck moved upstream",
+      "summary": "Execution got cheaper. Taste, judgment, QA, and production readiness became the scarce work."
+    },
+    {
+      "id": "role-change",
+      "title": "Developer identity is changing",
+      "summary": "From hand-coding to orchestrating agents, reviewing output, and building CLI surfaces agents can use."
+    },
+    {
+      "id": "context-crisis",
+      "title": "Context is the unsolved layer",
+      "summary": "Shared memory, scoped context, and atomized private agent loops threaten coordination."
+    },
+    {
+      "id": "verification",
+      "title": "Verification everywhere",
+      "summary": "Frontend QA, oral exams, PR review, and coworker-not-replacement support agents."
+    }
+  ],
+  "encounters": [
+    {
+      "eventId": 49,
+      "guestName": "Spencer Graham",
+      "slug": "spencer-graham",
+      "startsAt": "2026-06-10T16:30:00.000Z",
+      "npcArchetype": "Scribe",
+      "spriteSlug": "scribe",
+      "hook": "Personal CRM, doer/reviewer agentic coding, and the risk that private agent loops thin shared context.",
+      "highlights": [
+        {
+          "text": "Agentic coding works better as a doer/reviewer pipeline with deterministic pre-push checks.",
+          "source": "summary"
+        },
+        {
+          "text": "A self-hosted personal CRM ingests messages and transcripts without handing full history to third parties.",
+          "source": "summary"
+        },
+        {
+          "text": "More work mediated by personal agents could unbundle project work from the relationships that make collaboration meaningful.",
+          "source": "summary"
+        },
+        {
+          "text": "Open source may get stronger in the AI era when bug-finding is paired with repair and verification loops.",
+          "source": "summary"
+        }
+      ],
+      "tags": [
+        "personal-crm",
+        "agentic-coding",
+        "context-systems",
+        "open-source"
+      ],
+      "media": {
+        "recapYouTubeId": "0GrJo-mb70k",
+        "fullInterviewURL": "https://youtu.be/GAT4oMhf8Tk"
+      },
+      "links": {
+        "eventURL": "https://portal.raidguild.org/events/49",
+        "posts": [
+          {
+            "title": "The Atomized Developer",
+            "url": "https://portal.raidguild.org/posts/field-notes-spencer-graham-atomized-developer"
+          },
+          {
+            "title": "Agentic Coding Works Better as a Doer/Reviewer Pipeline",
+            "url": "https://portal.raidguild.org/posts/agentic-coding-doer-reviewer-pipeline"
+          }
+        ]
+      },
+      "bio": "RaidGuild veteran and DAOhaus alum building a self-hosted personal CRM. Daily driver: Claude Code with doer/reviewer agent loops."
+    },
+    {
+      "eventId": 53,
+      "guestName": "Adam Kerpelman",
+      "slug": "adam-kerpelman",
+      "startsAt": "2026-06-11T17:30:00.000Z",
+      "npcArchetype": "Wizard",
+      "spriteSlug": "wizard",
+      "hook": "Proxy collapse in education, AI as patient tutor, and the shift from execution scarcity to taste and judgment.",
+      "highlights": [
+        {
+          "text": "Reflection papers used to proxy for understanding — AI makes those proxies unreliable.",
+          "source": "summary"
+        },
+        {
+          "text": "Oral exams and interview-style assessment move evaluation closer to live explanation.",
+          "source": "summary"
+        },
+        {
+          "text": "When execution gets cheap, taste, sequencing, and distribution get expensive.",
+          "source": "summary"
+        },
+        {
+          "text": "Model orchestration and context management remain daily pain points even for power users.",
+          "source": "summary"
+        }
+      ],
+      "tags": [
+        "ai-in-education",
+        "proxy-collapse",
+        "taste",
+        "assessment"
+      ],
+      "media": {
+        "recapYouTubeId": "PqHWbPfOZmw",
+        "fullInterviewURL": "https://youtu.be/LNOk_voJNkg"
+      },
+      "links": {
+        "eventURL": "https://portal.raidguild.org/events/53",
+        "posts": [
+          {
+            "title": "When Execution Gets Cheap, Taste Gets Expensive",
+            "url": "https://portal.raidguild.org/posts/when-execution-gets-cheap-taste-gets-expensive"
+          },
+          {
+            "title": "Proxy Collapse Came For The Reflection Paper",
+            "url": "https://portal.raidguild.org/posts/proxy-collapse-came-for-the-reflection-paper"
+          }
+        ]
+      },
+      "bio": "UVA McIntire professor teaching applied AI and entrepreneurship. Running live experiments on assessment after proxy collapse."
+    },
+    {
+      "eventId": 50,
+      "guestName": "Justice Conder",
+      "slug": "justice-conder",
+      "startsAt": "2026-06-11T18:30:00.000Z",
+      "npcArchetype": "Warrior",
+      "spriteSlug": "warrior",
+      "hook": "Engineering did not end — it moved up the stack. Friction still matters.",
+      "highlights": [
+        {
+          "text": "Agents change product and engineering work without removing the need for judgment at the edges.",
+          "source": "summary"
+        },
+        {
+          "text": "Without friction, there is no moat — some resistance still shapes durable work.",
+          "source": "summary"
+        },
+        {
+          "text": "The grind of hand-coding feels less central, but specification and review gain leverage.",
+          "source": "summary"
+        }
+      ],
+      "tags": [
+        "engineering",
+        "friction",
+        "agents",
+        "product"
+      ],
+      "media": {
+        "recapYouTubeId": "exVWxi4vSBE",
+        "fullInterviewURL": "https://youtu.be/-zAISJjU2RQ"
+      },
+      "links": {
+        "eventURL": "https://portal.raidguild.org/events/50",
+        "posts": [
+          {
+            "title": "Engineering Did Not End. It Moved Up the Stack.",
+            "url": "https://portal.raidguild.org/posts/engineering-did-not-end-it-moved-up-the-stack"
+          },
+          {
+            "title": "Without Friction, There Is No Moat",
+            "url": "https://portal.raidguild.org/posts/without-friction-there-is-no-moat"
+          }
+        ]
+      },
+      "bio": "Engineer and builder thinking about agents, product friction, and where judgment still lives in the stack."
+    },
+    {
+      "eventId": 51,
+      "guestName": "Elco",
+      "slug": "elco",
+      "startsAt": "2026-06-12T16:30:00.000Z",
+      "npcArchetype": "Alchemist",
+      "spriteSlug": "alchemist",
+      "hook": "The hard part of agent orchestration is shared state — not the prompt.",
+      "highlights": [
+        {
+          "text": "Multi-agent workflows break when state and handoffs are implicit.",
+          "source": "summary"
+        },
+        {
+          "text": "Coordination harnesses need observable checkpoints humans can inspect.",
+          "source": "summary"
+        },
+        {
+          "text": "Local agent loops are powerful but can hide process from the team.",
+          "source": "summary"
+        }
+      ],
+      "tags": [
+        "agent-orchestration",
+        "shared-state",
+        "coordination"
+      ],
+      "media": {
+        "recapYouTubeId": "jBbT-nxAwX4",
+        "fullInterviewURL": "https://youtu.be/TYrT7HPUbPg"
+      },
+      "links": {
+        "eventURL": "https://portal.raidguild.org/events/51",
+        "posts": [
+          {
+            "title": "The Hard Part Of Agent Orchestration Is Shared State",
+            "url": "https://portal.raidguild.org/posts/hard-part-agent-orchestration-shared-state"
+          }
+        ]
+      },
+      "bio": "RaidGuild builder working on agent orchestration, shared state, and coordination harnesses for multi-agent work."
+    },
+    {
+      "eventId": 67,
+      "guestName": "Cj Miller",
+      "slug": "cj-miller",
+      "startsAt": "2026-06-16T16:30:00.000Z",
+      "npcArchetype": "Monk",
+      "spriteSlug": "monk",
+      "hook": "When production gets cheap, the premium is the human edit.",
+      "highlights": [
+        {
+          "text": "AI-assisted production still needs a human gate for taste and final cut.",
+          "source": "summary"
+        },
+        {
+          "text": "Speed without editorial judgment produces volume, not signal.",
+          "source": "summary"
+        }
+      ],
+      "tags": [
+        "creative-work",
+        "human-edit",
+        "judgment"
+      ],
+      "media": {
+        "recapYouTubeId": "lGj9YsVIruw",
+        "fullInterviewURL": null
+      },
+      "links": {
+        "eventURL": "https://portal.raidguild.org/events/67",
+        "posts": [
+          {
+            "title": "The Premium Is the Human Edit",
+            "url": "https://portal.raidguild.org/posts/fireside-cj-miller-premium-human-edit"
+          }
+        ]
+      },
+      "bio": "Creative producer focused on editorial craft — the human edit as premium when AI accelerates production."
+    },
+    {
+      "eventId": 65,
+      "guestName": "Andrej Berlin",
+      "slug": "andrej-berlin",
+      "startsAt": "2026-06-17T17:00:00.000Z",
+      "npcArchetype": "Paladin",
+      "spriteSlug": "paladin",
+      "hook": "AI can shorten alignment, but it cannot choose the taste.",
+      "highlights": [
+        {
+          "text": "Community tools may need to matchmake contributors, not just host chat.",
+          "source": "summary"
+        },
+        {
+          "text": "Alignment work compresses with AI; aesthetic and values choices do not.",
+          "source": "summary"
+        }
+      ],
+      "tags": [
+        "community",
+        "alignment",
+        "taste"
+      ],
+      "media": {
+        "recapYouTubeId": "0k59966ivMw",
+        "fullInterviewURL": null
+      },
+      "links": {
+        "eventURL": "https://portal.raidguild.org/events/65",
+        "posts": [
+          {
+            "title": "AI Can Shorten Alignment, But It Cannot Choose The Taste",
+            "url": "https://portal.raidguild.org/posts/ai-can-shorten-alignment-but-it-cannot-choose-the-taste"
+          }
+        ]
+      },
+      "bio": "Community and alignment builder exploring taste, contributor matchmaking, and tools beyond chat rooms."
+    },
+    {
+      "eventId": 58,
+      "guestName": "Victor Ginelli",
+      "slug": "victor-ginelli",
+      "startsAt": "2026-06-17T22:00:00.000Z",
+      "npcArchetype": "Ranger",
+      "spriteSlug": "ranger",
+      "hook": "The new senior dev job is reviewing the machines — building CLIs and wrappers agents can run.",
+      "highlights": [
+        {
+          "text": "Trust in AI coding built gradually; early output needed as much verification as manual work.",
+          "source": "summary"
+        },
+        {
+          "text": "The middle of a project is easier now; edges like deploy, infra, and governance remain human-heavy.",
+          "source": "summary"
+        },
+        {
+          "text": "Small command surfaces and internal CLIs become high-leverage agent interfaces.",
+          "source": "summary"
+        }
+      ],
+      "tags": [
+        "developer-workflows",
+        "review",
+        "cli",
+        "orchestration"
+      ],
+      "media": {
+        "recapYouTubeId": null,
+        "fullInterviewURL": "https://youtu.be/Ds4EZ4Jpt9I"
+      },
+      "links": {
+        "eventURL": "https://portal.raidguild.org/events/58",
+        "posts": [
+          {
+            "title": "The Middle Is Easy Now. The Edges Are The Work.",
+            "url": "https://portal.raidguild.org/posts/the-middle-is-easy-now-the-edges-are-the-work"
+          }
+        ]
+      },
+      "bio": "Experienced developer moving from hand-coding toward orchestrating AI coworkers and CLI surfaces agents can run."
+    },
+    {
+      "eventId": 69,
+      "guestName": "0xHunter",
+      "slug": "0xhunter",
+      "startsAt": "2026-06-23T16:00:00.000Z",
+      "npcArchetype": "Hunter",
+      "spriteSlug": "hunter",
+      "hook": "Context transfer is the new agency bottleneck — teams still copy-paste between agent sessions.",
+      "highlights": [
+        {
+          "text": "Custom software gets cheaper; medium businesses may own more of their stack.",
+          "source": "summary"
+        },
+        {
+          "text": "Codex-heavy workflows work when scope is clear; frontend QA still needs human review.",
+          "source": "summary"
+        },
+        {
+          "text": "Scoped context sharing between clients, projects, and teammates remains unsolved.",
+          "source": "summary"
+        },
+        {
+          "text": "Some clients now open PRs on internal tools that the consultancy reviews.",
+          "source": "summary"
+        }
+      ],
+      "tags": [
+        "context-transfer",
+        "consulting",
+        "self-hosting",
+        "codex"
+      ],
+      "media": {
+        "recapYouTubeId": "Y-Xlv84NbTA",
+        "fullInterviewURL": "https://youtu.be/iTCxYD5pM4A"
+      },
+      "links": {
+        "eventURL": "https://portal.raidguild.org/events/69",
+        "posts": [
+          {
+            "title": "Context Transfer Is The New Agency Bottleneck",
+            "url": "https://portal.raidguild.org/posts/context-transfer-is-the-new-agency-bottleneck"
+          }
+        ]
+      },
+      "bio": "Founder of Datalist Consulting — custom software, self-hosting, and Codex-heavy workflows for operational clients."
+    },
+    {
+      "eventId": 68,
+      "guestName": "Jake Winckowski",
+      "slug": "jake-winckowski",
+      "startsAt": "2026-06-23T17:00:00.000Z",
+      "npcArchetype": "Healer",
+      "spriteSlug": "healer",
+      "hook": "The first useful AI support agent is a coworker, not a replacement.",
+      "highlights": [
+        {
+          "text": "Reviewed automation in support workflows beats magic all-purpose agents.",
+          "source": "summary"
+        },
+        {
+          "text": "Domain-specific tooling and human checkpoints matter more than generic prompts.",
+          "source": "summary"
+        }
+      ],
+      "tags": [
+        "support-workflows",
+        "coworker-agent",
+        "qa"
+      ],
+      "media": {
+        "recapYouTubeId": "nzEe5-Rm3Ic",
+        "fullInterviewURL": "https://youtu.be/GbUmUQtjli4"
+      },
+      "links": {
+        "eventURL": "https://portal.raidguild.org/events/68",
+        "posts": [
+          {
+            "title": "Reviewed AI Support Agents Start As Coworkers",
+            "url": "https://portal.raidguild.org/posts/the-first-useful-ai-support-agent-is-a-coworker-not-a-replacement"
+          }
+        ]
+      },
+      "bio": "Builder of reviewed support workflows — useful AI agents start as coworkers with human checkpoints."
+    },
+    {
+      "eventId": 52,
+      "guestName": "Graven Prest",
+      "slug": "graven-prest",
+      "startsAt": "2026-06-24T17:00:00.000Z",
+      "npcArchetype": "Druid",
+      "spriteSlug": "druid",
+      "hook": "Product bottlenecks are moving — speed and ambition rose, but testing and should-we decisions got harder.",
+      "highlights": [
+        {
+          "text": "Small teams can ship overnight what used to take a week — bottlenecks shift to QA and judgment.",
+          "source": "summary"
+        },
+        {
+          "text": "Public goods and builder-relations work still needs distribution and production readiness.",
+          "source": "summary"
+        },
+        {
+          "text": "Maybe yes we could, but should we? becomes the recurring product question.",
+          "source": "summary"
+        }
+      ],
+      "tags": [
+        "product-management",
+        "public-goods",
+        "testing",
+        "bottlenecks"
+      ],
+      "media": {
+        "recapYouTubeId": "m02tfKU3azw",
+        "fullInterviewURL": "https://youtu.be/U-9XKvwsNrU"
+      },
+      "links": {
+        "eventURL": "https://portal.raidguild.org/events/52",
+        "posts": [
+          {
+            "title": "Product Bottlenecks Are Moving",
+            "url": "https://portal.raidguild.org/posts/product-bottlenecks-are-moving"
+          }
+        ]
+      },
+      "bio": "Product and builder-relations work around public goods, Octant, and Flow State. Claude Code in the terminal."
+    },
+    {
+      "eventId": 66,
+      "guestName": "Travis McCutcheon",
+      "slug": "travis-mccutcheon",
+      "startsAt": "2026-06-24T20:30:00.000Z",
+      "npcArchetype": "Cleric",
+      "spriteSlug": "cleric",
+      "hook": "Agent readiness starts with cleanup — not magic prompts.",
+      "highlights": [
+        {
+          "text": "Repos and docs need hygiene before agents can operate reliably.",
+          "source": "summary"
+        },
+        {
+          "text": "Realistic automation gates beat aspirational full-agent replacement.",
+          "source": "summary"
+        }
+      ],
+      "tags": [
+        "agent-readiness",
+        "cleanup",
+        "operations"
+      ],
+      "media": {
+        "recapYouTubeId": "3W6HqjzB6TE",
+        "fullInterviewURL": "https://youtu.be/ReRgmFTJtQE"
+      },
+      "links": {
+        "eventURL": "https://portal.raidguild.org/events/66",
+        "posts": [
+          {
+            "title": "Agent Readiness Starts With Cleanup, Not Magic",
+            "url": "https://portal.raidguild.org/posts/agent-readiness-starts-with-cleanup-not-magic"
+          }
+        ]
+      },
+      "bio": "Operator focused on repo hygiene, cleanup, and realistic gates before agents can do reliable work."
+    },
+    {
+      "eventId": 76,
+      "guestName": "Bill Warren",
+      "slug": "bill-warren",
+      "startsAt": "2026-06-25T16:30:00.000Z",
+      "npcArchetype": "Tavern Keeper",
+      "spriteSlug": "tavern-keeper",
+      "hook": "After the prototype, judgment does the work — PRDs compress into testable builds fast.",
+      "highlights": [
+        {
+          "text": "Brain dump → PRD scaffold → agent prompts → prototype is the new product loop.",
+          "source": "summary"
+        },
+        {
+          "text": "AI can bloat products unless someone keeps scope simple and the experience delightful.",
+          "source": "summary"
+        },
+        {
+          "text": "Bullish on democratized creation; cautious about hype cycles and AGI timelines.",
+          "source": "summary"
+        }
+      ],
+      "tags": [
+        "product-workflows",
+        "prototyping",
+        "judgment",
+        "scope"
+      ],
+      "media": {
+        "recapYouTubeId": "mYHv8Dcjb64",
+        "fullInterviewURL": "https://youtu.be/Fi28v2nRzTE"
+      },
+      "links": {
+        "eventURL": "https://portal.raidguild.org/events/76",
+        "posts": [
+          {
+            "title": "After the Prototype, Judgment Does the Work",
+            "url": "https://portal.raidguild.org/posts/after-the-prototype-judgment-does-the-work"
+          }
+        ]
+      },
+      "bio": "Product lead with Protocol Labs background — brain dump to PRD to prototype is the new loop."
+    },
+    {
+      "eventId": 59,
+      "guestName": "Sara Brown",
+      "slug": "sara-brown",
+      "startsAt": "2026-06-25T19:00:00.000Z",
+      "npcArchetype": "Archer",
+      "spriteSlug": "archer",
+      "hook": "The first useful ad ops agent is a QA auditor — domain judgment beats generic automation.",
+      "highlights": [
+        {
+          "text": "Programmatic ad workflows need audited checks, not blind generation.",
+          "source": "summary"
+        },
+        {
+          "text": "Domain-specific QA agents outperform all-purpose copilots in operations work.",
+          "source": "summary"
+        }
+      ],
+      "tags": [
+        "ad-ops",
+        "qa",
+        "domain-agents"
+      ],
+      "media": {
+        "recapYouTubeId": null,
+        "fullInterviewURL": null
+      },
+      "links": {
+        "eventURL": "https://portal.raidguild.org/events/59",
+        "posts": [
+          {
+            "title": "The First Useful Ad Ops Agent Is A QA Auditor",
+            "url": "https://portal.raidguild.org/posts/first-useful-ad-ops-agent-qa-auditor"
+          }
+        ]
+      },
+      "bio": "Ad ops practitioner building domain QA agents — audited checks beat blind generation in programmatic workflows."
+    }
+  ]
+}

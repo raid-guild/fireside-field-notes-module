@@ -1,0 +1,109 @@
+{
+  "tools": [
+    {
+      "id": "claude-code",
+      "label": "Claude Code",
+      "kind": "tool",
+      "sessions": ["spencer-graham", "graven-prest"]
+    },
+    {
+      "id": "codex",
+      "label": "OpenAI Codex",
+      "kind": "tool",
+      "sessions": ["0xhunter"]
+    },
+    {
+      "id": "doer-reviewer",
+      "label": "Doer / reviewer pipeline",
+      "kind": "process",
+      "sessions": ["spencer-graham"]
+    },
+    {
+      "id": "personal-crm",
+      "label": "Self-hosted personal CRM",
+      "kind": "process",
+      "sessions": ["spencer-graham"]
+    },
+    {
+      "id": "cli-surfaces",
+      "label": "CLI & command surfaces",
+      "kind": "process",
+      "sessions": ["victor-ginelli"]
+    },
+    {
+      "id": "canvas-tooling",
+      "label": "Canvas-integrated tooling",
+      "kind": "tool",
+      "sessions": ["adam-kerpelman"]
+    },
+    {
+      "id": "repo-hygiene",
+      "label": "Repo cleanup & hygiene",
+      "kind": "process",
+      "sessions": ["travis-mccutcheon"]
+    },
+    {
+      "id": "domain-qa-agents",
+      "label": "Domain QA agents",
+      "kind": "process",
+      "sessions": ["jake-winckowski", "sara-brown"]
+    },
+    {
+      "id": "orchestration-harness",
+      "label": "Orchestration harness",
+      "kind": "process",
+      "sessions": ["elco"]
+    },
+    {
+      "id": "prd-prototype-loop",
+      "label": "PRD → prototype loop",
+      "kind": "process",
+      "sessions": ["bill-warren", "graven-prest"]
+    },
+    {
+      "id": "oral-assessment",
+      "label": "Oral / live assessment",
+      "kind": "process",
+      "sessions": ["adam-kerpelman"]
+    },
+    {
+      "id": "coworker-agent",
+      "label": "Coworker-style agents",
+      "kind": "process",
+      "sessions": ["jake-winckowski"]
+    }
+  ],
+  "highlightTones": {
+    "spencer-graham": ["leverage", "leverage", "friction", "open"],
+    "adam-kerpelman": ["friction", "leverage", "friction", "friction"],
+    "justice-conder": ["leverage", "leverage", "open"],
+    "elco": ["friction", "leverage", "friction"],
+    "cj-miller": ["leverage", "friction"],
+    "andrej-berlin": ["leverage", "leverage"],
+    "victor-ginelli": ["friction", "friction", "leverage"],
+    "0xhunter": ["leverage", "leverage", "friction", "leverage"],
+    "jake-winckowski": ["leverage", "leverage"],
+    "graven-prest": ["leverage", "friction", "friction"],
+    "travis-mccutcheon": ["leverage", "leverage"],
+    "bill-warren": ["leverage", "friction", "open"],
+    "sara-brown": ["leverage", "leverage"]
+  },
+  "firstPostPublishedAt": {
+    "spencer-graham": "2026-06-10T19:09:55.401Z",
+    "adam-kerpelman": "2026-06-11T18:32:36.524Z",
+    "justice-conder": "2026-06-11T22:15:43.017Z",
+    "elco": "2026-06-12T18:18:35.572Z",
+    "cj-miller": "2026-06-16T21:48:27.975Z",
+    "andrej-berlin": "2026-06-17T18:40:05.280Z",
+    "victor-ginelli": "2026-06-18T03:14:35.420Z",
+    "0xhunter": "2026-06-23T19:08:25.792Z",
+    "jake-winckowski": "2026-06-23T20:33:13.456Z",
+    "graven-prest": "2026-06-24T19:00:34.481Z",
+    "travis-mccutcheon": "2026-06-24T22:35:22.415Z",
+    "bill-warren": "2026-06-25T18:44:43.341Z",
+    "sara-brown": "2026-06-25T23:12:09.907Z"
+  },
+  "sources": {
+    "firstPostPublishedAt": "Portal /api/posts createdAt — earliest linked field note per session (fetched 2026-06-26)"
+  }
+}
