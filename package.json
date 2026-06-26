@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "clean": "rm -rf .next",
     "dev": "next dev --port 3310",
+    "dev:clean": "pnpm clean && pnpm dev",
     "build": "next build",
+    "build:clean": "pnpm clean && pnpm build",
     "start": "next start -H 0.0.0.0 -p ${PORT:-3310}",
     "typecheck": "tsc --noEmit"
   },
