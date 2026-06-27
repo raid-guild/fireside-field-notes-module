@@ -624,7 +624,12 @@
       },
       "links": {
         "eventURL": "https://portal.raidguild.org/events/78",
-        "posts": []
+        "posts": [
+          {
+            "title": "The Hard Part Of AI Production Is Stopping",
+            "url": "https://portal.raidguild.org/posts/the-hard-part-of-ai-production-is-stopping"
+          }
+        ]
       },
       "bio": "UX Magazine editor and co-author of Age of Invisible Machines — rebuilding publishing with Cursor and Claude while keeping narrative control."
     }
