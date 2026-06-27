@@ -36,6 +36,7 @@ export const guestLensBySlug: Record<string, GuestLens> = {
   'travis-mccutcheon': 'operations',
   'bill-warren': 'product',
   'sara-brown': 'operations',
+  'josh-tyson': 'education',
 }
 
 export type AnalysisStatCard = {

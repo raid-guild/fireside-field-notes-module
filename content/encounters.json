@@ -2,7 +2,7 @@
   "meta": {
     "title": "Field Experience from the Edge",
     "subtitle": "How builders are adapting AI in real work",
-    "sessionCount": 13,
+    "sessionCount": 14,
     "threadURL": "https://portal.raidguild.org/threads/how-to-raidguild-field-experience-from-the-edge"
   },
   "throughLines": [
@@ -584,6 +584,49 @@
         ]
       },
       "bio": "Ad ops practitioner building domain QA agents — audited checks beat blind generation in programmatic workflows."
+    },
+    {
+      "eventId": 78,
+      "guestName": "Josh Tyson",
+      "slug": "josh-tyson",
+      "startsAt": "2026-06-26T18:30:00.000Z",
+      "npcArchetype": "Rogue",
+      "spriteSlug": "rogue",
+      "hook": "Creative labor after LLMs — synthesis and taste over raw drafting, with agent-first design and stopping rules.",
+      "highlights": [
+        {
+          "text": "Writer value shifted to rumination, research, and synthesis — not competing on raw drafting volume.",
+          "source": "summary"
+        },
+        {
+          "text": "Individual AI productivity is often wasted without organizational source-of-truth and scoped data access.",
+          "source": "summary"
+        },
+        {
+          "text": "Agent-first experiences and trusted personal agents may mediate how people interact with other systems.",
+          "source": "summary"
+        },
+        {
+          "text": "When everything is possible, the production skill is knowing when to stop — scope creep and token maxing dilute the work.",
+          "source": "summary"
+        }
+      ],
+      "tags": [
+        "agent-first-design",
+        "creative-labor",
+        "source-of-truth",
+        "scope-creep",
+        "content-workflows"
+      ],
+      "media": {
+        "recapYouTubeId": "_YVeBGhbY_s",
+        "fullInterviewURL": null
+      },
+      "links": {
+        "eventURL": "https://portal.raidguild.org/events/78",
+        "posts": []
+      },
+      "bio": "UX Magazine editor and co-author of Age of Invisible Machines — rebuilding publishing with Cursor and Claude while keeping narrative control."
     }
   ]
 }

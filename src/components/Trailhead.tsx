@@ -24,8 +24,8 @@ export const Trailhead = ({ meta }: TrailheadProps) => {
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-trail-ink/80">{meta.subtitle}</p>
           <p className="mt-4 max-w-2xl text-base leading-7 text-trail-ink/70">
-            Thirteen ~30-minute fireside interviews with RaidGuild members and adjacent builders. Scroll
-            the trail to meet each guest, watch recap clips, and read what surfaced across sessions.
+            {meta.sessionCount} ~30-minute fireside interviews with RaidGuild members and adjacent builders.
+            Scroll the trail to meet each guest, watch recap clips, and read what surfaced across sessions.
           </p>
           <div className="mt-8 flex flex-wrap gap-3 font-pixel text-base">
             <span className="rounded-full border border-trail-border bg-trail-parchment px-4 py-2">
