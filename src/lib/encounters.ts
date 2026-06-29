@@ -16,7 +16,7 @@ export type Encounter = {
   guestName: string
   slug: string
   startsAt: string
-  npcArchetype: string
+  heroArchetype: string
   spriteSlug: string
   bio?: string
   hook: string

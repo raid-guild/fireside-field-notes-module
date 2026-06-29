@@ -8,7 +8,8 @@
   },
   "searchNotes": [
     "Current date is 2026-06-26, so this pass covers 2026-06-01 through 2026-06-26 only; the requested 2026-07-15 end date is still in the future.",
-    "X search rate-limited broader education/product queries, so education-pressure coverage is weak in this first pass."
+    "X search rate-limited broader education/product queries, so education-pressure coverage is weak in this first pass.",
+    "Wiki companions audited 2026-06-29 against Portal /api/wikiPages published slugs. Replaced two invented candidate titles (404) with live articles: agent-role-orchestration, agent-ready-business-systems."
   ],
   "recommendedEmbeds": [
     "2064810976310853687",
@@ -316,15 +317,15 @@
     },
     {
       "throughLine": "verification",
-      "wikiTitle": "Human-Governed Agent Handoff Protocols",
-      "wikiUrl": "https://portal.raidguild.org/wiki/human-governed-agent-handoff-protocols",
-      "reason": "Good pairing for agent work that needs explicit human decision boundaries."
+      "wikiTitle": "Agent Role Orchestration",
+      "wikiUrl": "https://portal.raidguild.org/wiki/agent-role-orchestration",
+      "reason": "Published Portal topic on explicit roles, handoffs, and orchestration boundaries."
     },
     {
       "throughLine": "open-source",
-      "wikiTitle": "Agentic Maintenance Readiness Assessments",
-      "wikiUrl": "https://portal.raidguild.org/wiki/agentic-maintenance-readiness-assessments",
-      "reason": "Fits repo cleanup, docs, runbooks, support paths, and agent-safe maintenance."
+      "wikiTitle": "Agent-Ready Business Systems",
+      "wikiUrl": "https://portal.raidguild.org/wiki/agent-ready-business-systems",
+      "reason": "Published Portal topic on docs, runbooks, support paths, and systems agents can safely maintain."
     },
     {
       "throughLine": "bottleneck-shift",

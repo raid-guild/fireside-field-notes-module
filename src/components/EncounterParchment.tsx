@@ -16,12 +16,12 @@ export const EncounterParchment = ({ encounter, index }: EncounterParchmentProps
           <div className="rounded-2xl border border-trail-border bg-trail-parchment p-4">
             <PixelSprite
               direction={index % 2 === 0 ? 'right' : 'left'}
-              label={`${encounter.guestName} as ${encounter.npcArchetype}`}
+              label={`${encounter.guestName} as ${encounter.heroArchetype}`}
               scale={1.2}
               slug={encounter.spriteSlug}
             />
           </div>
-          <p className="font-pixel text-sm uppercase tracking-wide text-trail-moss">{encounter.npcArchetype}</p>
+          <p className="font-pixel text-sm uppercase tracking-wide text-trail-moss">{encounter.heroArchetype}</p>
         </div>
 
         <div className="min-w-0 flex-1">

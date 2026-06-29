@@ -10,18 +10,17 @@ import { EncounterLinks } from '@/components/EncounterParchment'
 import { PixelSprite } from '@/components/PixelSprite'
 import { YouTubeEmbed } from '@/components/YouTubeEmbed'
 
-type NpcDialogueProps = {
+type HeroDialogueProps = {
   encounter: Encounter
   index: number
 }
 
-export const NpcDialogue = ({ encounter, index }: NpcDialogueProps) => {
+export const HeroDialogue = ({ encounter, index }: HeroDialogueProps) => {
   const [greetingLine, setGreetingLine] = useState(() => pickRandomGreeting(encounter.guestName))
   const steps = useMemo(() => buildDialogSteps(encounter, greetingLine), [encounter, greetingLine])
   const [stepIndex, setStepIndex] = useState(0)
   const [bubbleKey, setBubbleKey] = useState(0)
   const step = steps[stepIndex]
-  const isOnLinks = step?.kind === 'links'
   const isRecapStep = step?.kind === 'recap'
   const canAdvanceByClick =
     step && (step.kind === 'greeting' || step.kind === 'highlight' || step.kind === 'recap-missing')
@@ -84,7 +83,7 @@ export const NpcDialogue = ({ encounter, index }: NpcDialogueProps) => {
               slug={encounter.spriteSlug}
             />
           </div>
-          <p className="font-pixel text-xs uppercase tracking-wide text-trail-moss">{encounter.npcArchetype}</p>
+          <p className="font-pixel text-xs uppercase tracking-wide text-trail-moss">{encounter.heroArchetype}</p>
         </div>
 
         <div className="min-w-0 flex-1">

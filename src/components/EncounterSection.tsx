@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 import type { Encounter } from '@/lib/encounters'
 import { EXPEDITION_SCROLL_MARGIN } from '@/lib/expeditionNav'
 import { EncounterParchment } from '@/components/EncounterParchment'
-import { NpcDialogue } from '@/components/NpcDialogue'
+import { HeroDialogue } from '@/components/HeroDialogue'
 
 type ViewMode = 'dialogue' | 'parchment'
 
@@ -91,7 +91,7 @@ export const EncounterSection = ({ encounter, index, onVisible }: EncounterSecti
         </div>
 
         {viewMode === 'dialogue' ? (
-          <NpcDialogue encounter={encounter} index={index} />
+          <HeroDialogue encounter={encounter} index={index} />
         ) : (
           <EncounterParchment encounter={encounter} index={index} />
         )}

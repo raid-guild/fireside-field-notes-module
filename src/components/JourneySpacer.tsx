@@ -31,49 +31,92 @@ export const JourneySpacer = ({ leg, totalLegs, crossCut }: JourneySpacerProps) 
     ? 'Thirteen camps line the corridor. Each holds a fireside voice from the edge.'
     : FLAVOR_LINES[(leg - 1) % FLAVOR_LINES.length]
   const flairEvents = useMemo(() => buildJourneyFlair(leg, isTrailhead ? 3 : 5), [isTrailhead, leg])
+  const usesScrollLayout = !crossCut
+
+  const legPlaque = (
+    <div className="journey-plaque px-5 py-3 text-center">
+      <p className="font-pixel text-sm uppercase tracking-[0.2em] text-trail-ink/70">
+        {isTrailhead ? 'Trail begins' : `Leg ${leg} of ${totalLegs}`}
+      </p>
+    </div>
+  )
+
+  const pathWalker = (
+    <div className="opacity-80">
+      <PixelSprite direction="right" label="" scale={0.55} slug="warrior" />
+    </div>
+  )
+
+  const transitionPlaque = (
+    <div className="journey-plaque flex flex-col items-center gap-4 px-6 py-8 text-center">
+      <div className="flex items-center gap-3">
+        <PixelSprite direction="right" label="" scale={0.7} slug="warrior" />
+        <span className="font-pixel text-2xl text-trail-accent/80">···</span>
+        <PixelSprite direction="left" label="" scale={0.7} slug="ranger" />
+      </div>
+      <p className="font-display text-lg leading-8 text-trail-ink">{flavor}</p>
+      <p className="font-pixel text-sm uppercase tracking-wide text-trail-ink/55">
+        {isTrailhead
+          ? 'Scroll to reach the first camp.'
+          : crossCut
+            ? 'Read the field notes — another camp lies ahead.'
+            : 'Keep walking — the next voice is close.'}
+      </p>
+    </div>
+  )
 
   return (
-    <div className="relative min-h-[240vh] w-full overflow-x-hidden sm:min-h-[280vh]">
-      <div className="journey-path-line absolute bottom-16 left-1/2 top-16 w-px -translate-x-1/2" />
+    <div
+      className={
+        usesScrollLayout
+          ? 'relative min-h-[240vh] w-full overflow-x-hidden sm:min-h-[280vh]'
+          : 'relative w-full overflow-x-hidden py-12 sm:min-h-[360vh] sm:py-0'
+      }
+    >
+      <div
+        className={`journey-path-line absolute bottom-16 left-1/2 top-16 w-px -translate-x-1/2 ${
+          crossCut ? 'hidden sm:block' : ''
+        }`}
+      />
 
       {flairEvents.map((event) => (
         <JourneyFlairEvent event={event} key={event.id} />
       ))}
 
-      <div className="absolute left-1/2 top-[12vh] z-10 -translate-x-1/2">
-        <div className="journey-plaque px-5 py-3 text-center">
-          <p className="font-pixel text-sm uppercase tracking-[0.2em] text-trail-ink/70">
-            {isTrailhead ? 'Trail begins' : `Leg ${leg} of ${totalLegs}`}
-          </p>
-        </div>
+      <div
+        className={
+          usesScrollLayout
+            ? 'absolute left-1/2 top-[12vh] z-10 -translate-x-1/2'
+            : 'relative z-10 mx-auto w-full max-w-md px-4 sm:absolute sm:left-1/2 sm:top-[12vh] sm:-translate-x-1/2 sm:px-0'
+        }
+      >
+        {legPlaque}
       </div>
 
-      <div className="absolute left-1/2 top-[48vh] z-10 -translate-x-1/2 opacity-80">
-        <PixelSprite direction="right" label="" scale={0.55} slug="warrior" />
+      <div
+        className={
+          usesScrollLayout
+            ? 'absolute left-1/2 top-[48vh] z-10 -translate-x-1/2 opacity-80'
+            : 'relative z-10 mx-auto mt-8 sm:absolute sm:left-1/2 sm:top-[48vh] sm:mt-0 sm:-translate-x-1/2'
+        }
+      >
+        {pathWalker}
       </div>
 
       {crossCut ? (
-        <div className="absolute left-1/2 top-[92vh] z-10 w-full max-w-4xl -translate-x-1/2 px-4 sm:px-6">
+        <div className="relative z-10 mx-auto mt-10 w-full max-w-4xl px-4 sm:absolute sm:left-1/2 sm:top-[92vh] sm:mt-0 sm:-translate-x-1/2 sm:px-6">
           <CrossCutParchment embedded question={crossCut.question} sequence={crossCut.sequence} />
         </div>
       ) : null}
 
-      <div className="absolute bottom-[18vh] left-1/2 z-10 w-full max-w-md -translate-x-1/2 px-4">
-        <div className="journey-plaque flex flex-col items-center gap-4 px-6 py-8 text-center">
-          <div className="flex items-center gap-3">
-            <PixelSprite direction="right" label="" scale={0.7} slug="warrior" />
-            <span className="font-pixel text-2xl text-trail-accent/80">···</span>
-            <PixelSprite direction="left" label="" scale={0.7} slug="ranger" />
-          </div>
-          <p className="font-display text-lg leading-8 text-trail-ink">{flavor}</p>
-          <p className="font-pixel text-sm uppercase tracking-wide text-trail-ink/55">
-            {isTrailhead
-              ? 'Scroll to reach the first camp.'
-              : crossCut
-                ? 'Read the field notes — another camp lies ahead.'
-                : 'Keep walking — the next voice is close.'}
-          </p>
-        </div>
+      <div
+        className={
+          usesScrollLayout
+            ? 'absolute bottom-[18vh] left-1/2 z-10 w-full max-w-md -translate-x-1/2 px-4'
+            : 'relative z-10 mx-auto mt-10 w-full max-w-md px-4 sm:absolute sm:bottom-[18vh] sm:left-1/2 sm:mt-0 sm:-translate-x-1/2'
+        }
+      >
+        {transitionPlaque}
       </div>
     </div>
   )

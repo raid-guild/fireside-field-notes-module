@@ -4,7 +4,7 @@
       "id": "claude-code",
       "label": "Claude Code",
       "kind": "tool",
-      "sessions": ["spencer-graham", "graven-prest", "josh-tyson"]
+      "sessions": ["spencer-graham", "graven-prest"]
     },
     {
       "id": "codex",
@@ -73,9 +73,15 @@
       "sessions": ["jake-winckowski"]
     },
     {
-      "id": "cursor-publish",
-      "label": "Cursor + Claude publishing",
+      "id": "cursor-claude-workflow",
+      "label": "Cursor + Claude (site rebuild)",
       "kind": "process",
+      "sessions": ["josh-tyson"]
+    },
+    {
+      "id": "onereach-ai",
+      "label": "OneReach.ai",
+      "kind": "tool",
       "sessions": ["josh-tyson"]
     },
     {
@@ -99,7 +105,7 @@
     "travis-mccutcheon": ["leverage", "leverage"],
     "bill-warren": ["leverage", "friction", "open"],
     "sara-brown": ["leverage", "leverage"],
-    "josh-tyson": ["leverage", "friction", "leverage", "friction"]
+    "josh-tyson": ["leverage", "friction", "leverage", "friction", "leverage"]
   },
   "firstPostPublishedAt": {
     "spencer-graham": "2026-06-10T19:09:55.401Z",

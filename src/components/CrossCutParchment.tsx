@@ -32,7 +32,7 @@ export const CrossCutParchment = ({ question, sequence, embedded = false }: Cros
 
   const panel = (
     <div
-      className={`cross-cut-panel mx-auto max-w-4xl rounded-3xl border-2 border-trail-border bg-trail-parchment p-8 shadow-panel sm:p-12 ${
+      className={`cross-cut-panel mx-auto max-w-4xl rounded-3xl border-2 border-trail-border bg-trail-parchment p-6 shadow-panel sm:p-12 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-70'
       } transition-all duration-700 motion-reduce:transition-none`}
       ref={panelRef}

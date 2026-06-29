@@ -33,7 +33,7 @@
       "guestName": "Spencer Graham",
       "slug": "spencer-graham",
       "startsAt": "2026-06-10T16:30:00.000Z",
-      "npcArchetype": "Scribe",
+      "heroArchetype": "Scribe",
       "spriteSlug": "scribe",
       "hook": "Personal CRM, doer/reviewer agentic coding, and the risk that private agent loops thin shared context.",
       "highlights": [
@@ -84,7 +84,7 @@
       "guestName": "Adam Kerpelman",
       "slug": "adam-kerpelman",
       "startsAt": "2026-06-11T17:30:00.000Z",
-      "npcArchetype": "Wizard",
+      "heroArchetype": "Wizard",
       "spriteSlug": "wizard",
       "hook": "Proxy collapse in education, AI as patient tutor, and the shift from execution scarcity to taste and judgment.",
       "highlights": [
@@ -135,7 +135,7 @@
       "guestName": "Justice Conder",
       "slug": "justice-conder",
       "startsAt": "2026-06-11T18:30:00.000Z",
-      "npcArchetype": "Warrior",
+      "heroArchetype": "Warrior",
       "spriteSlug": "warrior",
       "hook": "Engineering did not end — it moved up the stack. Friction still matters.",
       "highlights": [
@@ -182,7 +182,7 @@
       "guestName": "Elco",
       "slug": "elco",
       "startsAt": "2026-06-12T16:30:00.000Z",
-      "npcArchetype": "Alchemist",
+      "heroArchetype": "Alchemist",
       "spriteSlug": "alchemist",
       "hook": "The hard part of agent orchestration is shared state — not the prompt.",
       "highlights": [
@@ -224,7 +224,7 @@
       "guestName": "Cj Miller",
       "slug": "cj-miller",
       "startsAt": "2026-06-16T16:30:00.000Z",
-      "npcArchetype": "Monk",
+      "heroArchetype": "Monk",
       "spriteSlug": "monk",
       "hook": "When production gets cheap, the premium is the human edit.",
       "highlights": [
@@ -262,7 +262,7 @@
       "guestName": "Andrej Berlin",
       "slug": "andrej-berlin",
       "startsAt": "2026-06-17T17:00:00.000Z",
-      "npcArchetype": "Paladin",
+      "heroArchetype": "Paladin",
       "spriteSlug": "paladin",
       "hook": "AI can shorten alignment, but it cannot choose the taste.",
       "highlights": [
@@ -300,7 +300,7 @@
       "guestName": "Victor Ginelli",
       "slug": "victor-ginelli",
       "startsAt": "2026-06-17T22:00:00.000Z",
-      "npcArchetype": "Ranger",
+      "heroArchetype": "Ranger",
       "spriteSlug": "ranger",
       "hook": "The new senior dev job is reviewing the machines — building CLIs and wrappers agents can run.",
       "highlights": [
@@ -343,7 +343,7 @@
       "guestName": "0xHunter",
       "slug": "0xhunter",
       "startsAt": "2026-06-23T16:00:00.000Z",
-      "npcArchetype": "Hunter",
+      "heroArchetype": "Hunter",
       "spriteSlug": "hunter",
       "hook": "Context transfer is the new agency bottleneck — teams still copy-paste between agent sessions.",
       "highlights": [
@@ -390,7 +390,7 @@
       "guestName": "Jake Winckowski",
       "slug": "jake-winckowski",
       "startsAt": "2026-06-23T17:00:00.000Z",
-      "npcArchetype": "Healer",
+      "heroArchetype": "Healer",
       "spriteSlug": "healer",
       "hook": "The first useful AI support agent is a coworker, not a replacement.",
       "highlights": [
@@ -428,7 +428,7 @@
       "guestName": "Graven Prest",
       "slug": "graven-prest",
       "startsAt": "2026-06-24T17:00:00.000Z",
-      "npcArchetype": "Druid",
+      "heroArchetype": "Druid",
       "spriteSlug": "druid",
       "hook": "Product bottlenecks are moving — speed and ambition rose, but testing and should-we decisions got harder.",
       "highlights": [
@@ -471,7 +471,7 @@
       "guestName": "Travis McCutcheon",
       "slug": "travis-mccutcheon",
       "startsAt": "2026-06-24T20:30:00.000Z",
-      "npcArchetype": "Cleric",
+      "heroArchetype": "Cleric",
       "spriteSlug": "cleric",
       "hook": "Agent readiness starts with cleanup — not magic prompts.",
       "highlights": [
@@ -509,7 +509,7 @@
       "guestName": "Bill Warren",
       "slug": "bill-warren",
       "startsAt": "2026-06-25T16:30:00.000Z",
-      "npcArchetype": "Tavern Keeper",
+      "heroArchetype": "Tavern Keeper",
       "spriteSlug": "tavern-keeper",
       "hook": "After the prototype, judgment does the work — PRDs compress into testable builds fast.",
       "highlights": [
@@ -552,7 +552,7 @@
       "guestName": "Sara Brown",
       "slug": "sara-brown",
       "startsAt": "2026-06-25T19:00:00.000Z",
-      "npcArchetype": "Archer",
+      "heroArchetype": "Archer",
       "spriteSlug": "archer",
       "hook": "The first useful ad ops agent is a QA auditor — domain judgment beats generic automation.",
       "highlights": [
@@ -590,7 +590,7 @@
       "guestName": "Josh Tyson",
       "slug": "josh-tyson",
       "startsAt": "2026-06-26T18:30:00.000Z",
-      "npcArchetype": "Rogue",
+      "heroArchetype": "Rogue",
       "spriteSlug": "rogue",
       "hook": "Creative labor after LLMs — synthesis and taste over raw drafting, with agent-first design and stopping rules.",
       "highlights": [
@@ -609,6 +609,10 @@
         {
           "text": "When everything is possible, the production skill is knowing when to stop — scope creep and token maxing dilute the work.",
           "source": "summary"
+        },
+        {
+          "text": "Built the Fuzzy novel digital companion on OneReach.ai — an agentic reader experience, not just a static ebook.",
+          "source": "summary"
         }
       ],
       "tags": [
@@ -616,7 +620,9 @@
         "creative-labor",
         "source-of-truth",
         "scope-creep",
-        "content-workflows"
+        "content-workflows",
+        "onereach-ai",
+        "agentic-companion"
       ],
       "media": {
         "recapYouTubeId": "_YVeBGhbY_s",
@@ -631,7 +637,7 @@
           }
         ]
       },
-      "bio": "UX Magazine editor and co-author of Age of Invisible Machines — rebuilding publishing with Cursor and Claude while keeping narrative control."
+      "bio": "UX Magazine editor and co-author of Age of Invisible Machines. Rebuilt the magazine with Cursor and Claude; built the Fuzzy novel companion on the OneReach.ai platform."
     }
   ]
 }
