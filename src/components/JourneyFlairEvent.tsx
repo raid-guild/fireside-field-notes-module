@@ -41,7 +41,9 @@ export const JourneyFlairEvent = ({ event }: JourneyFlairEventProps) => {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setRevealed(entry?.isIntersecting ?? false)
+        if (entry?.isIntersecting) {
+          setRevealed(true)
+        }
       },
       { threshold: 0.01, rootMargin: '0px 0px 0px 0px' },
     )
@@ -59,7 +61,7 @@ export const JourneyFlairEvent = ({ event }: JourneyFlairEventProps) => {
 
   return (
     <div
-      className={`journey-flair pointer-events-none absolute z-20 ${
+      className={`journey-flair pointer-events-none absolute z-[5] ${
         event.side === 'center' ? 'journey-flair-center' : ''
       } ${revealed ? 'journey-flair-revealed' : ''}`}
       data-kind={event.kind}
@@ -78,18 +80,18 @@ export const JourneyFlairEvent = ({ event }: JourneyFlairEventProps) => {
 const CoinsFlair = () => (
   <div className="flair-coins">
     {COIN_OFFSETS.map((offset, i) => (
-      <FlairSprite
-        className="flair-sprite-particle flair-sprite-coin"
-        frame="coin"
+      <span
+        className="flair-particle-track flair-particle-track-coin"
         key={i}
-        scale={0.55}
         style={{
           ['--i' as string]: i,
           ['--tx' as string]: offset.tx,
           ['--ty' as string]: offset.ty,
           ['--rot' as string]: offset.rot,
         }}
-      />
+      >
+        <FlairSprite frame="coin" scale={0.55} />
+      </span>
     ))}
   </div>
 )
@@ -97,17 +99,17 @@ const CoinsFlair = () => (
 const SparklesFlair = () => (
   <div className="flair-sparkles">
     {SPARK_OFFSETS.map((offset, i) => (
-      <FlairSprite
-        className="flair-sprite-particle flair-sprite-sparkle"
-        frame="sparkle"
+      <span
+        className="flair-particle-track flair-particle-track-sparkle"
         key={i}
-        scale={0.5}
         style={{
           ['--i' as string]: i,
           ['--tx' as string]: offset.tx,
           ['--ty' as string]: offset.ty,
         }}
-      />
+      >
+        <FlairSprite frame="sparkle" scale={0.5} />
+      </span>
     ))}
   </div>
 )
@@ -118,17 +120,17 @@ const ChestFlair = () => (
     <ItemSprite className="flair-chest-open" frame="chest-open" scale={1.2} />
     <div className="flair-chest-sparkles">
       {SPARK_OFFSETS.slice(0, 5).map((offset, i) => (
-        <FlairSprite
-          className="flair-sprite-particle flair-sprite-sparkle flair-sprite-sparkle-small"
-          frame="sparkle"
+        <span
+          className="flair-particle-track flair-particle-track-sparkle flair-particle-track-sparkle-small"
           key={i}
-          scale={0.38}
           style={{
             ['--i' as string]: i,
             ['--tx' as string]: offset.tx,
             ['--ty' as string]: offset.ty,
           }}
-        />
+        >
+          <FlairSprite frame="sparkle" scale={0.38} />
+        </span>
       ))}
     </div>
   </div>
@@ -140,16 +142,24 @@ const FireballFlair = ({ side }: { side: FlairEvent['side'] }) => (
   </div>
 )
 
-const ArrowsFlair = ({ side }: { side: FlairEvent['side'] }) => (
-  <div className={`flair-arrows ${side === 'right' ? 'flair-arrows-right' : ''}`}>
-    {Array.from({ length: 3 }).map((_, i) => (
-      <FlairSprite
-        className="flair-sprite-particle flair-sprite-arrow"
-        frame="arrow"
-        key={i}
-        scale={0.65}
-        style={{ ['--i' as string]: i }}
-      />
-    ))}
-  </div>
-)
+const ArrowsFlair = ({ side }: { side: FlairEvent['side'] }) => {
+  const fromRight = side === 'right'
+
+  return (
+    <div className={`flair-arrows ${fromRight ? 'flair-arrows-right' : 'flair-arrows-left'}`}>
+      {Array.from({ length: 3 }).map((_, i) => (
+        <span
+          className={`flair-arrow-track ${fromRight ? 'flair-arrow-track-right' : 'flair-arrow-track-left'}`}
+          key={i}
+          style={{ ['--i' as string]: i }}
+        >
+          <FlairSprite
+            className={fromRight ? 'flair-arrow-sprite-mirror' : ''}
+            frame="arrow"
+            scale={0.65}
+          />
+        </span>
+      ))}
+    </div>
+  )
+}

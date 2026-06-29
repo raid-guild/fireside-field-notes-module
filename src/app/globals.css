@@ -214,12 +214,12 @@ body {
 }
 
 .journey-flair[data-kind='fireball'].journey-flair-revealed .flair-sprite-fireball,
-.journey-flair[data-kind='arrows'].journey-flair-revealed .flair-sprite-arrow,
-.journey-flair[data-kind='coins'].journey-flair-revealed .flair-sprite-coin,
-.journey-flair[data-kind='sparkles'].journey-flair-revealed .flair-sprite-sparkle,
+.journey-flair[data-kind='arrows'].journey-flair-revealed .flair-arrow-track,
+.journey-flair[data-kind='coins'].journey-flair-revealed .flair-particle-track-coin,
+.journey-flair[data-kind='sparkles'].journey-flair-revealed .flair-particle-track-sparkle,
 .journey-flair[data-kind='chest'].journey-flair-revealed .flair-chest-closed,
 .journey-flair[data-kind='chest'].journey-flair-revealed .flair-chest-open,
-.journey-flair[data-kind='chest'].journey-flair-revealed .flair-chest-sparkles .flair-sprite-sparkle {
+.journey-flair[data-kind='chest'].journey-flair-revealed .flair-chest-sparkles .flair-particle-track-sparkle {
   animation-play-state: running;
 }
 
@@ -229,29 +229,38 @@ body {
   height: 5.75rem;
 }
 
-.flair-sprite-particle {
+.flair-particle-track {
   --i: 0;
   --rot: 0deg;
   position: absolute;
   top: 50%;
   left: 50%;
+  display: inline-block;
   opacity: 0;
   animation-play-state: paused;
 }
 
-.flair-sprite-coin {
+.flair-particle-track-coin {
   margin: -13px -13px;
-  animation: coin-burst 1.2s ease-out forwards, coin-shimmer 2.8s ease-in-out 1.2s infinite;
+  animation-name: coin-burst, coin-shimmer;
+  animation-duration: 1.2s, 2.8s;
+  animation-timing-function: ease-out, ease-in-out;
+  animation-fill-mode: forwards, none;
+  animation-iteration-count: 1, infinite;
   animation-delay: calc(var(--i) * 75ms), calc(1.2s + var(--i) * 75ms);
 }
 
-.flair-sprite-sparkle {
+.flair-particle-track-sparkle {
   margin: -12px -12px;
-  animation: sparkle-burst 1.2s ease-out forwards, sparkle-twinkle 2.2s ease-in-out 1.2s infinite;
+  animation-name: sparkle-burst, sparkle-twinkle;
+  animation-duration: 1.2s, 2.2s;
+  animation-timing-function: ease-out, ease-in-out;
+  animation-fill-mode: forwards, none;
+  animation-iteration-count: 1, infinite;
   animation-delay: calc(var(--i) * 65ms), calc(1.2s + var(--i) * 65ms);
 }
 
-.flair-sprite-sparkle-small {
+.flair-particle-track-sparkle-small {
   margin: -9px -9px;
 }
 
@@ -290,8 +299,8 @@ body {
   inset: -1rem;
 }
 
-.flair-chest-sparkles .flair-sprite-sparkle {
-  animation-delay: calc(520ms + var(--i) * 70ms);
+.flair-chest-sparkles .flair-particle-track-sparkle {
+  animation-delay: calc(520ms + var(--i) * 70ms), calc(1.72s + var(--i) * 70ms);
 }
 
 .flair-fireball {
@@ -321,20 +330,31 @@ body {
   height: 4.5rem;
 }
 
-.flair-sprite-arrow {
+.flair-arrow-track {
+  --i: 0;
+  position: absolute;
   top: calc(6px + var(--i) * 16px);
-  left: -40px;
+  left: 50%;
+  display: inline-block;
   margin: -16px -16px;
-  animation: arrow-shot 1.8s ease-out infinite;
+  opacity: 0;
+  animation-duration: 1.8s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
   animation-delay: calc(var(--i) * 110ms);
+  animation-play-state: paused;
 }
 
-.flair-arrows-right {
+.flair-arrow-track-left {
+  animation-name: arrow-shot-left;
+}
+
+.flair-arrow-track-right {
+  animation-name: arrow-shot-right;
+}
+
+.flair-arrow-sprite-mirror {
   transform: scaleX(-1);
-}
-
-.flair-arrows-right .flair-sprite-arrow {
-  animation-name: arrow-shot;
 }
 
 @keyframes coin-burst {
@@ -469,23 +489,43 @@ body {
   }
 }
 
-/* Sprite tip points right — fire into corridor from the left wall */
-@keyframes arrow-shot {
+/* Sprite tip points right — left lane fires toward corridor center */
+@keyframes arrow-shot-left {
   0% {
     opacity: 0;
-    transform: translateX(-36px) scale(0.9);
+    transform: translateX(-72px) scale(0.9);
   }
   12% {
     opacity: 1;
-    transform: translateX(-18px) scale(1);
+    transform: translateX(-48px) scale(1);
   }
   88% {
     opacity: 1;
-    transform: translateX(120px) scale(1);
+    transform: translateX(88px) scale(1);
   }
   100% {
     opacity: 0;
-    transform: translateX(132px) scale(0.9);
+    transform: translateX(104px) scale(0.9);
+  }
+}
+
+/* Mirrored sprite tip points left — right lane fires toward corridor center */
+@keyframes arrow-shot-right {
+  0% {
+    opacity: 0;
+    transform: translateX(72px) scale(0.9);
+  }
+  12% {
+    opacity: 1;
+    transform: translateX(48px) scale(1);
+  }
+  88% {
+    opacity: 1;
+    transform: translateX(-88px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-104px) scale(0.9);
   }
 }
 
@@ -499,7 +539,8 @@ body {
     transform: translateX(-50%) scale(1);
   }
 
-  .journey-flair-revealed .flair-sprite-particle,
+  .journey-flair-revealed .flair-particle-track,
+  .journey-flair-revealed .flair-arrow-track,
   .journey-flair-revealed .flair-sprite-fireball {
     opacity: 0.9;
     animation: none;
