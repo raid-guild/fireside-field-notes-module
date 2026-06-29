@@ -213,6 +213,83 @@ body {
   opacity: 1;
 }
 
+.journey-footprint-button {
+  display: grid;
+  height: 2.5rem;
+  width: 2.5rem;
+  place-items: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(196, 92, 42, 0.35);
+  background: rgba(255, 249, 240, 0.9);
+  color: #c45c2a;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.journey-footprint-button:hover:not(:disabled) {
+  border-color: rgba(196, 92, 42, 0.85);
+  background: rgba(196, 92, 42, 0.12);
+  color: #1a2233;
+  transform: translateY(-1px);
+}
+
+.journey-footprint-button:focus-visible {
+  outline: 2px solid #c45c2a;
+  outline-offset: 3px;
+}
+
+.journey-footprint-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.38;
+}
+
+.footprint-icon {
+  position: relative;
+  display: block;
+  height: 1.55rem;
+  width: 1.2rem;
+  transform: rotate(12deg);
+}
+
+.footprint-icon-back {
+  transform: rotate(192deg);
+}
+
+.footprint-icon span {
+  position: absolute;
+  display: block;
+  border-radius: 9999px;
+  background: currentColor;
+}
+
+.footprint-icon span:nth-child(1) {
+  bottom: 0.08rem;
+  left: 0.12rem;
+  height: 0.5rem;
+  width: 0.36rem;
+  transform: rotate(-18deg);
+}
+
+.footprint-icon span:nth-child(2) {
+  bottom: 0.58rem;
+  right: 0.1rem;
+  height: 0.5rem;
+  width: 0.36rem;
+  transform: rotate(18deg);
+}
+
+.footprint-icon span:nth-child(3) {
+  left: 0.38rem;
+  top: 0.08rem;
+  height: 0.42rem;
+  width: 0.32rem;
+  opacity: 0.82;
+  transform: rotate(-8deg);
+}
+
 .journey-flair[data-kind='fireball'].journey-flair-revealed .flair-sprite-fireball,
 .journey-flair[data-kind='arrows'].journey-flair-revealed .flair-arrow-track,
 .journey-flair[data-kind='coins'].journey-flair-revealed .flair-particle-track-coin,
@@ -243,11 +320,11 @@ body {
 .flair-particle-track-coin {
   margin: -13px -13px;
   animation-name: coin-burst, coin-shimmer;
-  animation-duration: 1.2s, 2.8s;
+  animation-duration: 1.9s, 2.8s;
   animation-timing-function: ease-out, ease-in-out;
-  animation-fill-mode: forwards, none;
-  animation-iteration-count: 1, infinite;
-  animation-delay: calc(var(--i) * 75ms), calc(1.2s + var(--i) * 75ms);
+  animation-fill-mode: both, none;
+  animation-iteration-count: infinite, infinite;
+  animation-delay: calc(var(--i) * 75ms), calc(500ms + var(--i) * 75ms);
 }
 
 .flair-particle-track-sparkle {
@@ -346,15 +423,12 @@ body {
 }
 
 .flair-arrow-track-left {
-  animation-name: arrow-shot-left;
+  animation-name: arrow-shot-from-left-wall;
 }
 
 .flair-arrow-track-right {
-  animation-name: arrow-shot-right;
-}
-
-.flair-arrow-sprite-mirror {
-  transform: scaleX(-1);
+  animation-name: arrow-shot-from-right-wall;
+  transform-origin: center center;
 }
 
 @keyframes coin-burst {
@@ -362,17 +436,21 @@ body {
     opacity: 0;
     transform: translate(-50%, calc(-50% + 16px)) scale(0.35) rotate(0deg);
   }
-  28% {
+  16% {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 12px)) scale(0.45) rotate(0deg);
+  }
+  34% {
     opacity: 1;
     transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1.05) rotate(var(--rot));
   }
-  62% {
+  70% {
     opacity: 1;
     transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1) rotate(var(--rot));
   }
   100% {
-    opacity: 0.95;
-    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1) rotate(var(--rot));
+    opacity: 0;
+    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty) - 8px)) scale(0.86) rotate(var(--rot));
   }
 }
 
@@ -489,8 +567,8 @@ body {
   }
 }
 
-/* Sprite tip points right — left lane fires toward corridor center */
-@keyframes arrow-shot-left {
+/* Arrow frame points left by default; left-wall shots flip the sprite in markup. */
+@keyframes arrow-shot-from-left-wall {
   0% {
     opacity: 0;
     transform: translateX(-72px) scale(0.9);
@@ -509,8 +587,7 @@ body {
   }
 }
 
-/* Mirrored sprite tip points left — right lane fires toward corridor center */
-@keyframes arrow-shot-right {
+@keyframes arrow-shot-from-right-wall {
   0% {
     opacity: 0;
     transform: translateX(72px) scale(0.9);

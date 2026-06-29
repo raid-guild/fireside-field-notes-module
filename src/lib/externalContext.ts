@@ -17,7 +17,6 @@ export type EnrichedContrastPair = {
 
 export type ExternalContextData = {
   contrastPairs: EnrichedContrastPair[]
-  industrySignals: IndustrySignal[]
   fieldVoicePosts: XResearchPost[]
   wikiCompanions: WikiCompanion[]
 }
@@ -73,17 +72,12 @@ export const buildExternalContextData = (encounters: Encounter[]): ExternalConte
     .map((pair) => enrichContrastPair(pair, encounters))
     .filter((pair): pair is EnrichedContrastPair => pair !== null)
 
-  const industrySignals = industrySignalsData.recommendedForCamp
-    .map((id) => signalById.get(id))
-    .filter((signal): signal is IndustrySignal => signal !== undefined)
-
   const fieldVoicePosts = xPostResearchData.recommendedEmbeds
     .map((id) => postById.get(id))
     .filter((post): post is XResearchPost => post !== undefined)
 
   return {
     contrastPairs,
-    industrySignals,
     fieldVoicePosts,
     wikiCompanions: xPostResearchData.wikiCompanion,
   }

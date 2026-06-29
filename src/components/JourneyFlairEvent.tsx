@@ -143,21 +143,17 @@ const FireballFlair = ({ side }: { side: FlairEvent['side'] }) => (
 )
 
 const ArrowsFlair = ({ side }: { side: FlairEvent['side'] }) => {
-  const fromRight = side === 'right'
+  const shootFromRight = side === 'right'
 
   return (
-    <div className={`flair-arrows ${fromRight ? 'flair-arrows-right' : 'flair-arrows-left'}`}>
+    <div className={`flair-arrows ${shootFromRight ? 'flair-arrows-right' : 'flair-arrows-left'}`}>
       {Array.from({ length: 3 }).map((_, i) => (
         <span
-          className={`flair-arrow-track ${fromRight ? 'flair-arrow-track-right' : 'flair-arrow-track-left'}`}
+          className={`flair-arrow-track ${shootFromRight ? 'flair-arrow-track-right' : 'flair-arrow-track-left'}`}
           key={i}
           style={{ ['--i' as string]: i }}
         >
-          <FlairSprite
-            className={fromRight ? 'flair-arrow-sprite-mirror' : ''}
-            frame="arrow"
-            scale={0.65}
-          />
+          <FlairSprite frame="arrow" flipX={!shootFromRight} scale={0.65} />
         </span>
       ))}
     </div>

@@ -6,6 +6,7 @@ type FlairSpriteProps = {
   frame: FlairSpriteFrame
   scale?: number
   className?: string
+  flipX?: boolean
   style?: CSSProperties
 }
 
@@ -18,7 +19,13 @@ const frameIndex: Record<FlairSpriteFrame, number> = {
 
 const BASE_SIZE = 48
 
-export const FlairSprite = ({ frame, scale = 1, className = '', style }: FlairSpriteProps) => {
+export const FlairSprite = ({
+  frame,
+  scale = 1,
+  className = '',
+  flipX = false,
+  style,
+}: FlairSpriteProps) => {
   const index = frameIndex[frame]
   const size = BASE_SIZE * scale
 
@@ -33,6 +40,7 @@ export const FlairSprite = ({ frame, scale = 1, className = '', style }: FlairSp
         backgroundPosition: `-${index * BASE_SIZE * scale}px 0px`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: `${BASE_SIZE * 4 * scale}px ${size}px`,
+        transform: flipX ? 'scaleX(-1)' : undefined,
         ...style,
       }}
     />

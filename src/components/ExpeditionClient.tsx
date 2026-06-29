@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import type { ExpeditionData } from '@/lib/encounters'
 import { crossCutByInsertIndex } from '@/lib/crossCut'
@@ -8,11 +8,17 @@ import { AnalysisCamp } from '@/components/AnalysisCamp'
 import { EncounterSection } from '@/components/EncounterSection'
 import { ExpeditionNav } from '@/components/ExpeditionNav'
 import { JourneySpacer } from '@/components/JourneySpacer'
+import { JourneyFootprintsNav, type JourneyFootprintStop } from '@/components/JourneyFootprintsNav'
 import { ParallaxDungeon } from '@/components/ParallaxDungeon'
 import { RaiderPath } from '@/components/RaiderPath'
 import { ExpeditionFooter } from '@/components/ExpeditionFooter'
 import { Trailhead } from '@/components/Trailhead'
-import { EXPEDITION_HEADER_OFFSET_CLASS, EXPEDITION_HEADER_OFFSET_VAR } from '@/lib/expeditionNav'
+import {
+  crossCutNavLabel,
+  crossCutNavQuestions,
+  EXPEDITION_HEADER_OFFSET_CLASS,
+  EXPEDITION_HEADER_OFFSET_VAR,
+} from '@/lib/expeditionNav'
 import { getHeaderHeight, resolveActiveEncounterIndex } from '@/lib/expeditionScroll'
 
 type ExpeditionClientProps = {
@@ -25,6 +31,32 @@ export const ExpeditionClient = ({ data }: ExpeditionClientProps) => {
   const [scrollProgress, setScrollProgress] = useState(0)
   const [journeyScrollY, setJourneyScrollY] = useState(0)
   const [activeIndex, setActiveIndex] = useState(0)
+
+  const journeyStops = useMemo<JourneyFootprintStop[]>(() => {
+    const stops: JourneyFootprintStop[] = []
+
+    data.encounters.forEach((encounter, index) => {
+      stops.push({
+        id: encounter.slug,
+        label: encounter.guestName,
+      })
+
+      crossCutNavQuestions
+        .filter((question) => question.insertAfterEncounterIndex === index)
+        .forEach((question) => {
+          const sequence = crossCutNavQuestions.findIndex((item) => item.id === question.id) + 1
+
+          stops.push({
+            id: `cross-cut-${question.id}`,
+            label: crossCutNavLabel(question, sequence),
+          })
+        })
+    })
+
+    stops.push({ id: 'analysis-camp', label: 'Analysis camp' })
+
+    return stops
+  }, [data.encounters])
 
   const updateProgress = useCallback(() => {
     const walk = walkRef.current
@@ -93,6 +125,8 @@ export const ExpeditionClient = ({ data }: ExpeditionClientProps) => {
         />
         <ExpeditionNav activeIndex={activeIndex} encounters={data.encounters} />
       </div>
+
+      <JourneyFootprintsNav headerRef={headerRef} stops={journeyStops} />
 
       <div className={EXPEDITION_HEADER_OFFSET_CLASS}>
         <Trailhead meta={data.meta} />

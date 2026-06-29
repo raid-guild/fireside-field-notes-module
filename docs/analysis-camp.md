@@ -18,7 +18,6 @@ Analysis camp hero
 ├── Output funnel — session → field note → recap → full interview
 ├── Publication lag — session to first Portal field note
 ├── Cohort vs industry — dual-sided contrast pairs (#analysis-camp-contrast)
-├── Industry signals — big-name stats grid (#analysis-camp-industry)
 ├── Field voice on X — curated link cards (#analysis-camp-field-voice)
 ├── Portal wiki further reading (#analysis-camp-wiki)
 └── Through-line pattern cards — qualitative synthesis
@@ -39,11 +38,10 @@ Implemented in:
 | Publication lag | `src/components/analysis/PublicationLagChart.tsx` |
 | External context | `src/components/analysis/ExternalContextSection.tsx` |
 | Cohort vs industry | `src/components/analysis/CohortIndustryContrast.tsx` |
-| Industry signals | `src/components/analysis/IndustrySignalsGrid.tsx` |
 | Field voice X | `src/components/analysis/FieldVoicePosts.tsx` |
 | Wiki further reading | `src/components/analysis/WikiFurtherReading.tsx` |
 | Curated data | `content/analysis-curated.json` |
-| Industry signals data | `content/industry-signals.json` |
+| Cohort/industry contrast data | `content/industry-signals.json` |
 | X research data | `content/x-post-research.json` |
 | Curated loader | `src/lib/analysisCurated.ts` |
 | External context builder | `src/lib/externalContext.ts` |

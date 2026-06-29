@@ -1,6 +1,5 @@
 import { CohortIndustryContrast } from '@/components/analysis/CohortIndustryContrast'
 import { FieldVoicePosts } from '@/components/analysis/FieldVoicePosts'
-import { IndustrySignalsGrid } from '@/components/analysis/IndustrySignalsGrid'
 import { WikiFurtherReading } from '@/components/analysis/WikiFurtherReading'
 import type { ExternalContextData } from '@/lib/externalContext'
 
@@ -19,17 +18,6 @@ export const ExternalContextSection = ({ data }: ExternalContextSectionProps) =>
         </p>
         <div className="mt-8">
           <CohortIndustryContrast pairs={data.contrastPairs} />
-        </div>
-      </section>
-
-      <section id="analysis-camp-industry">
-        <h3 className="font-display text-2xl font-semibold">Industry signals</h3>
-        <p className="mt-3 max-w-3xl text-sm leading-7 text-trail-parchment/75">
-          Big-name opinions and hard numbers from Stack Overflow, METR, HEPI, Anthropic, Microsoft, and
-          Karpathy — each links to a primary source.
-        </p>
-        <div className="mt-8">
-          <IndustrySignalsGrid signals={data.industrySignals} />
         </div>
       </section>
 
