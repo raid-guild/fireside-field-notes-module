@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import type { Encounter } from '@/lib/encounters'
 import { EXPEDITION_SCROLL_MARGIN } from '@/lib/expeditionNav'
+import { encounterRevealRootMargin } from '@/lib/expeditionScroll'
 import { EncounterParchment } from '@/components/EncounterParchment'
 import { HeroDialogue } from '@/components/HeroDialogue'
 
@@ -12,12 +13,11 @@ type ViewMode = 'dialogue' | 'parchment'
 type EncounterSectionProps = {
   encounter: Encounter
   index: number
-  onVisible: (index: number) => void
 }
 
 const viewModeKey = (slug: string) => `edge-report-view:${slug}`
 
-export const EncounterSection = ({ encounter, index, onVisible }: EncounterSectionProps) => {
+export const EncounterSection = ({ encounter, index }: EncounterSectionProps) => {
   const sectionRef = useRef<HTMLElement>(null)
   const [isVisible, setIsVisible] = useState(false)
   const [viewMode, setViewMode] = useState<ViewMode>('dialogue')
@@ -33,19 +33,27 @@ export const EncounterSection = ({ encounter, index, onVisible }: EncounterSecti
     const node = sectionRef.current
     if (!node) return
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry?.isIntersecting) {
-          setIsVisible(true)
-          onVisible(index)
-        }
-      },
-      { threshold: 0.2, rootMargin: '-15% 0px -55% 0px' },
-    )
+    let observer: IntersectionObserver | null = null
 
-    observer.observe(node)
-    return () => observer.disconnect()
-  }, [index, onVisible])
+    const mountObserver = () => {
+      observer?.disconnect()
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry?.isIntersecting) setIsVisible(true)
+        },
+        { threshold: 0.12, rootMargin: encounterRevealRootMargin() },
+      )
+      observer.observe(node)
+    }
+
+    mountObserver()
+    window.addEventListener('resize', mountObserver)
+
+    return () => {
+      observer?.disconnect()
+      window.removeEventListener('resize', mountObserver)
+    }
+  }, [])
 
   const setMode = (mode: ViewMode) => {
     setViewMode(mode)

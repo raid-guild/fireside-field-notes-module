@@ -5,7 +5,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import type { Encounter } from '@/lib/encounters'
 import { formatSessionDate } from '@/lib/encounters'
 import { buildDialogSteps } from '@/lib/dialogSteps'
-import { pickRandomGreeting } from '@/lib/greetings'
+import { greetingForEncounter, pickRandomGreeting } from '@/lib/greetings'
 import { EncounterLinks } from '@/components/EncounterParchment'
 import { PixelSprite } from '@/components/PixelSprite'
 import { YouTubeEmbed } from '@/components/YouTubeEmbed'
@@ -16,7 +16,9 @@ type HeroDialogueProps = {
 }
 
 export const HeroDialogue = ({ encounter, index }: HeroDialogueProps) => {
-  const [greetingLine, setGreetingLine] = useState(() => pickRandomGreeting(encounter.guestName))
+  const [greetingLine, setGreetingLine] = useState(() =>
+    greetingForEncounter(encounter.slug, encounter.guestName),
+  )
   const steps = useMemo(() => buildDialogSteps(encounter, greetingLine), [encounter, greetingLine])
   const [stepIndex, setStepIndex] = useState(0)
   const [bubbleKey, setBubbleKey] = useState(0)

@@ -13,7 +13,7 @@ export const RaiderPath = ({ progress, activeIndex, totalStops }: RaiderPathProp
   const raiderLeft = `calc(${clamped * 100}% - ${clamped * 2.5}rem)`
 
   return (
-    <div className="pointer-events-none sticky top-0 z-40 border-b border-trail-border/80 bg-trail-parchment/92 backdrop-blur-md">
+    <div className="pointer-events-none border-b border-trail-border/80 bg-trail-parchment/92 backdrop-blur-md">
       <div
         className="pixel-sprite absolute inset-0 opacity-25"
         style={{

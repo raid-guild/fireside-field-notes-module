@@ -1,7 +1,9 @@
 import { crossCutData, type CrossCutQuestion } from '@/lib/crossCut'
 
-/** Offset for in-page anchors below RaiderPath + two-row sticky nav */
-export const EXPEDITION_SCROLL_MARGIN = 'scroll-mt-[11.5rem]'
+/** Offset for in-page anchors below fixed RaiderPath + two-row expedition nav */
+export const EXPEDITION_HEADER_OFFSET_VAR = '--expedition-header-h'
+export const EXPEDITION_HEADER_OFFSET_CLASS = 'pt-[var(--expedition-header-h,11.5rem)]'
+export const EXPEDITION_SCROLL_MARGIN = 'scroll-mt-[var(--expedition-header-h,11.5rem)]'
 
 export const crossCutNavQuestions = [...crossCutData.questions].sort(
   (a, b) => a.insertAfterEncounterIndex - b.insertAfterEncounterIndex,

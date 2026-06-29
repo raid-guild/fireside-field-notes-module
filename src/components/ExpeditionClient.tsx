@@ -12,12 +12,15 @@ import { ParallaxDungeon } from '@/components/ParallaxDungeon'
 import { RaiderPath } from '@/components/RaiderPath'
 import { ExpeditionFooter } from '@/components/ExpeditionFooter'
 import { Trailhead } from '@/components/Trailhead'
+import { EXPEDITION_HEADER_OFFSET_CLASS, EXPEDITION_HEADER_OFFSET_VAR } from '@/lib/expeditionNav'
+import { getHeaderHeight, resolveActiveEncounterIndex } from '@/lib/expeditionScroll'
 
 type ExpeditionClientProps = {
   data: ExpeditionData
 }
 
 export const ExpeditionClient = ({ data }: ExpeditionClientProps) => {
+  const headerRef = useRef<HTMLDivElement>(null)
   const walkRef = useRef<HTMLDivElement>(null)
   const [scrollProgress, setScrollProgress] = useState(0)
   const [journeyScrollY, setJourneyScrollY] = useState(0)
@@ -25,19 +28,26 @@ export const ExpeditionClient = ({ data }: ExpeditionClientProps) => {
 
   const updateProgress = useCallback(() => {
     const walk = walkRef.current
+    const header = headerRef.current
     const viewport = window.innerHeight
     const pageScrollY = window.scrollY
 
     if (!walk) return
 
+    const headerHeight = getHeaderHeight(header)
     const rect = walk.getBoundingClientRect()
     const walkTop = pageScrollY + rect.top
     const walkHeight = walk.offsetHeight
-    const scrolled = pageScrollY - walkTop + viewport * 0.35
+    const scrolled = pageScrollY - walkTop + headerHeight + (viewport - headerHeight) * 0.35
     const progress = scrolled / Math.max(walkHeight, 1)
 
     setScrollProgress(Math.min(1, Math.max(0, progress)))
     setJourneyScrollY(Math.max(0, pageScrollY - walkTop + viewport * 0.2))
+
+    const encounterSections = Array.from(
+      walk.querySelectorAll<HTMLElement>('section[id]'),
+    )
+    setActiveIndex(resolveActiveEncounterIndex(encounterSections, viewport, headerHeight))
   }, [])
 
   useEffect(() => {
@@ -50,56 +60,76 @@ export const ExpeditionClient = ({ data }: ExpeditionClientProps) => {
     }
   }, [updateProgress])
 
-  const handleVisible = useCallback((index: number) => {
-    setActiveIndex(index)
-  }, [])
+  useEffect(() => {
+    const header = headerRef.current
+    if (!header) return
+
+    const syncHeaderOffset = () => {
+      document.documentElement.style.setProperty(EXPEDITION_HEADER_OFFSET_VAR, `${header.offsetHeight}px`)
+      updateProgress()
+    }
+
+    syncHeaderOffset()
+    const observer = new ResizeObserver(syncHeaderOffset)
+    observer.observe(header)
+    window.addEventListener('resize', syncHeaderOffset)
+
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('resize', syncHeaderOffset)
+      document.documentElement.style.removeProperty(EXPEDITION_HEADER_OFFSET_VAR)
+    }
+  }, [updateProgress])
 
   let crossCutSequence = 0
 
   return (
-    <main className="min-h-screen w-full max-w-[100vw] overflow-x-hidden">
-      <RaiderPath
-        activeIndex={activeIndex}
-        progress={scrollProgress}
-        totalStops={data.encounters.length}
-      />
-
-      <Trailhead meta={data.meta} />
-
-      <ExpeditionNav activeIndex={activeIndex} encounters={data.encounters} />
-
-      <div className="relative w-full overflow-x-hidden" ref={walkRef}>
-        <ParallaxDungeon scrollY={journeyScrollY} />
-
-        <div className="relative z-10">
-          <JourneySpacer leg={0} totalLegs={data.encounters.length - 1} />
-          {data.encounters.map((encounter, index) => {
-            const crossCut = crossCutByInsertIndex[index]
-            const crossCutOrder = crossCut ? ++crossCutSequence : null
-
-            return (
-              <Fragment key={encounter.slug}>
-                <EncounterSection encounter={encounter} index={index} onVisible={handleVisible} />
-                {index < data.encounters.length - 1 ? (
-                  <JourneySpacer
-                    crossCut={
-                      crossCut && crossCutOrder
-                        ? { question: crossCut, sequence: crossCutOrder }
-                        : undefined
-                    }
-                    leg={index + 1}
-                    totalLegs={data.encounters.length - 1}
-                  />
-                ) : null}
-              </Fragment>
-            )
-          })}
-        </div>
+    <main className="min-h-screen w-full max-w-[100vw]">
+      <div className="fixed inset-x-0 top-0 z-40" ref={headerRef}>
+        <RaiderPath
+          activeIndex={activeIndex}
+          progress={scrollProgress}
+          totalStops={data.encounters.length}
+        />
+        <ExpeditionNav activeIndex={activeIndex} encounters={data.encounters} />
       </div>
 
-      <AnalysisCamp encounters={data.encounters} throughLines={data.throughLines} />
+      <div className={EXPEDITION_HEADER_OFFSET_CLASS}>
+        <Trailhead meta={data.meta} />
 
-      <ExpeditionFooter threadURL={data.meta.threadURL} />
+        <div className="relative w-full overflow-x-hidden" ref={walkRef}>
+          <ParallaxDungeon scrollY={journeyScrollY} />
+
+          <div className="relative z-10">
+            <JourneySpacer leg={0} totalLegs={data.encounters.length - 1} />
+            {data.encounters.map((encounter, index) => {
+              const crossCut = crossCutByInsertIndex[index]
+              const crossCutOrder = crossCut ? ++crossCutSequence : null
+
+              return (
+                <Fragment key={encounter.slug}>
+                  <EncounterSection encounter={encounter} index={index} />
+                  {index < data.encounters.length - 1 ? (
+                    <JourneySpacer
+                      crossCut={
+                        crossCut && crossCutOrder
+                          ? { question: crossCut, sequence: crossCutOrder }
+                          : undefined
+                      }
+                      leg={index + 1}
+                      totalLegs={data.encounters.length - 1}
+                    />
+                  ) : null}
+                </Fragment>
+              )
+            })}
+          </div>
+        </div>
+
+        <AnalysisCamp encounters={data.encounters} throughLines={data.throughLines} />
+
+        <ExpeditionFooter threadURL={data.meta.threadURL} />
+      </div>
     </main>
   )
 }

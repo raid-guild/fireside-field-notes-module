@@ -30,7 +30,8 @@ export const JourneySpacer = ({ leg, totalLegs, crossCut }: JourneySpacerProps) 
   const flavor = isTrailhead
     ? 'Thirteen camps line the corridor. Each holds a fireside voice from the edge.'
     : FLAVOR_LINES[(leg - 1) % FLAVOR_LINES.length]
-  const flairEvents = useMemo(() => buildJourneyFlair(leg, isTrailhead ? 3 : 5), [isTrailhead, leg])
+  const flairCount = isTrailhead ? 7 : crossCut ? 12 : 10
+  const flairEvents = useMemo(() => buildJourneyFlair(leg, flairCount), [crossCut, flairCount, leg])
   const usesScrollLayout = !crossCut
 
   const legPlaque = (
@@ -69,8 +70,8 @@ export const JourneySpacer = ({ leg, totalLegs, crossCut }: JourneySpacerProps) 
     <div
       className={
         usesScrollLayout
-          ? 'relative min-h-[240vh] w-full overflow-x-hidden sm:min-h-[280vh]'
-          : 'relative w-full overflow-x-hidden py-12 sm:min-h-[360vh] sm:py-0'
+          ? 'relative min-h-[240vh] w-full overflow-x-clip overflow-y-visible sm:min-h-[280vh]'
+          : 'relative w-full overflow-x-clip overflow-y-visible py-12 sm:min-h-[360vh] sm:py-0'
       }
     >
       <div

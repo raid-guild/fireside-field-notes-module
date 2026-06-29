@@ -8,6 +8,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--expedition-header-h, 11.5rem);
   overflow-x: hidden;
 }
 
@@ -212,14 +213,13 @@ body {
   opacity: 1;
 }
 
-.journey-flair[data-kind='fireball'].journey-flair-revealed .flair-fireball-core,
-.journey-flair[data-kind='fireball'].journey-flair-revealed .flair-fireball-trail,
-.journey-flair[data-kind='arrows'].journey-flair-revealed .flair-arrow,
-.journey-flair[data-kind='coins'].journey-flair-revealed .flair-coin,
-.journey-flair[data-kind='sparkles'].journey-flair-revealed .flair-spark,
+.journey-flair[data-kind='fireball'].journey-flair-revealed .flair-sprite-fireball,
+.journey-flair[data-kind='arrows'].journey-flair-revealed .flair-sprite-arrow,
+.journey-flair[data-kind='coins'].journey-flair-revealed .flair-sprite-coin,
+.journey-flair[data-kind='sparkles'].journey-flair-revealed .flair-sprite-sparkle,
 .journey-flair[data-kind='chest'].journey-flair-revealed .flair-chest-closed,
 .journey-flair[data-kind='chest'].journey-flair-revealed .flair-chest-open,
-.journey-flair[data-kind='chest'].journey-flair-revealed .flair-chest-sparkles .flair-spark {
+.journey-flair[data-kind='chest'].journey-flair-revealed .flair-chest-sparkles .flair-sprite-sparkle {
   animation-play-state: running;
 }
 
@@ -229,64 +229,36 @@ body {
   height: 5.75rem;
 }
 
-.flair-coin {
+.flair-sprite-particle {
   --i: 0;
   --rot: 0deg;
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 18px;
-  height: 14px;
-  margin: -8px -11px;
-  border-radius: 50%;
-  border: 3px solid #9a6b14;
-  background: radial-gradient(ellipse at 32% 28%, #fff0a8 0%, #ffd84a 38%, #d4a017 72%, #8a5f10 100%);
-  box-shadow:
-    inset 0 -3px 0 rgba(120, 78, 8, 0.45),
-    0 3px 0 rgba(0, 0, 0, 0.35);
   opacity: 0;
-  animation: coin-burst 1.5s ease-out both;
-  animation-delay: calc(var(--i) * 75ms);
   animation-play-state: paused;
 }
 
-.flair-coin::after {
-  content: '';
-  position: absolute;
-  inset: 5px 7px;
-  border-top: 2px solid rgba(255, 255, 255, 0.55);
-  border-radius: 50%;
+.flair-sprite-coin {
+  margin: -13px -13px;
+  animation: coin-burst 1.2s ease-out forwards, coin-shimmer 2.8s ease-in-out 1.2s infinite;
+  animation-delay: calc(var(--i) * 75ms), calc(1.2s + var(--i) * 75ms);
+}
+
+.flair-sprite-sparkle {
+  margin: -12px -12px;
+  animation: sparkle-burst 1.2s ease-out forwards, sparkle-twinkle 2.2s ease-in-out 1.2s infinite;
+  animation-delay: calc(var(--i) * 65ms), calc(1.2s + var(--i) * 65ms);
+}
+
+.flair-sprite-sparkle-small {
+  margin: -9px -9px;
 }
 
 .flair-sparkles {
   position: relative;
   width: 5.75rem;
   height: 5.75rem;
-}
-
-.flair-spark {
-  --i: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  margin: -4px;
-  background: #c8e8ff;
-  box-shadow:
-    0 0 10px #8fd3ff,
-    0 0 18px #5eb8ff;
-  transform: rotate(45deg) translate(0, 0) scale(0.2);
-  opacity: 0;
-  animation: sparkle-burst 1.5s ease-out both;
-  animation-delay: calc(var(--i) * 65ms);
-  animation-play-state: paused;
-}
-
-.flair-spark-small {
-  width: 7px;
-  height: 7px;
-  margin: -3px;
 }
 
 .flair-chest {
@@ -318,50 +290,29 @@ body {
   inset: -1rem;
 }
 
-.flair-chest-sparkles .flair-spark {
+.flair-chest-sparkles .flair-sprite-sparkle {
   animation-delay: calc(520ms + var(--i) * 70ms);
 }
 
 .flair-fireball {
   position: relative;
   width: 7.25rem;
-  height: 2.25rem;
+  height: 3rem;
 }
 
-.flair-fireball-core {
+.flair-sprite-fireball {
   position: absolute;
   top: 50%;
   left: 0;
-  width: 20px;
-  height: 20px;
-  margin-top: -10px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #fff6a8 0%, #ff8a2a 45%, #d43800 100%);
-  box-shadow: 0 0 22px #ff6a00;
+  margin-top: -23px;
   opacity: 0;
-  animation: fireball-fly 1.5s ease-out both;
+  filter: drop-shadow(0 0 10px rgba(255, 106, 0, 0.55));
+  animation: fireball-fly 2.4s ease-in-out infinite;
   animation-play-state: paused;
 }
 
-.flair-fireball-trail {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 48px;
-  height: 8px;
-  margin-top: -4px;
-  background: linear-gradient(to right, transparent, rgba(255, 120, 40, 0.75));
-  opacity: 0;
-  animation: fireball-trail 1.5s ease-out both;
-  animation-play-state: paused;
-}
-
-.flair-fireball-right .flair-fireball-core {
+.flair-fireball-right .flair-sprite-fireball {
   animation-name: fireball-fly-right;
-}
-
-.flair-fireball-right .flair-fireball-trail {
-  animation-name: fireball-trail-right;
 }
 
 .flair-arrows {
@@ -370,72 +321,79 @@ body {
   height: 4.5rem;
 }
 
-.flair-arrow {
-  --i: 0;
-  position: absolute;
+.flair-sprite-arrow {
   top: calc(6px + var(--i) * 16px);
   left: -40px;
-  width: 30px;
-  height: 4px;
-  background: #c9b08c;
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
-  opacity: 0;
-  animation: arrow-shot 1.4s ease-out both;
+  margin: -16px -16px;
+  animation: arrow-shot 1.8s ease-out infinite;
   animation-delay: calc(var(--i) * 110ms);
-  animation-play-state: paused;
 }
 
-.flair-arrow::after {
-  content: '';
-  position: absolute;
-  right: -8px;
-  top: -5px;
-  border-width: 7px 0 7px 12px;
-  border-style: solid;
-  border-color: transparent transparent transparent #d8c4a0;
+.flair-arrows-right {
+  transform: scaleX(-1);
 }
 
-.flair-arrows-right .flair-arrow {
-  left: auto;
-  right: -40px;
-  animation-name: arrow-shot-right;
+.flair-arrows-right .flair-sprite-arrow {
+  animation-name: arrow-shot;
 }
 
 @keyframes coin-burst {
   0% {
     opacity: 0;
-    transform: translate(0, 16px) scale(0.35) rotate(0deg);
+    transform: translate(-50%, calc(-50% + 16px)) scale(0.35) rotate(0deg);
   }
   28% {
     opacity: 1;
-    transform: translate(var(--tx), var(--ty)) scale(1.05) rotate(var(--rot));
+    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1.05) rotate(var(--rot));
   }
   62% {
     opacity: 1;
-    transform: translate(var(--tx), var(--ty)) scale(1) rotate(var(--rot));
+    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1) rotate(var(--rot));
   }
   100% {
-    opacity: 0;
-    transform: translate(calc(var(--tx) * 1.15), calc(var(--ty) * 1.15)) scale(0.55) rotate(var(--rot));
+    opacity: 0.95;
+    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1) rotate(var(--rot));
+  }
+}
+
+@keyframes coin-shimmer {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
   }
 }
 
 @keyframes sparkle-burst {
   0% {
     opacity: 0;
-    transform: rotate(45deg) translate(0, 0) scale(0.2);
+    transform: translate(-50%, -50%) scale(0.2);
   }
   28% {
     opacity: 1;
-    transform: rotate(45deg) translate(var(--tx), var(--ty)) scale(1.1);
+    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1.1);
   }
   55% {
     opacity: 1;
-    transform: rotate(45deg) translate(var(--tx), var(--ty)) scale(1);
+    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1);
   }
   100% {
-    opacity: 0;
-    transform: rotate(45deg) translate(calc(var(--tx) * 1.35), calc(var(--ty) * 1.35)) scale(0.3);
+    opacity: 0.95;
+    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1);
+  }
+}
+
+@keyframes sparkle-twinkle {
+  0%,
+  100% {
+    filter: brightness(1);
+    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1);
+  }
+  50% {
+    filter: brightness(1.25);
+    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1.08);
   }
 }
 
@@ -483,113 +441,51 @@ body {
 
 @keyframes fireball-fly {
   0% {
-    opacity: 0;
-    transform: translateX(-28px) scale(0.45);
+    opacity: 0.35;
+    transform: translateX(-28px) scale(0.75);
   }
-  22% {
-    opacity: 1;
-    transform: translateX(20px) scale(1);
-  }
-  55% {
+  50% {
     opacity: 1;
     transform: translateX(80px) scale(1.05);
   }
   100% {
-    opacity: 0;
+    opacity: 0.35;
     transform: translateX(168px) scale(0.85);
-  }
-}
-
-@keyframes fireball-trail {
-  0% {
-    opacity: 0;
-    transform: translateX(-36px) scaleX(0.25);
-  }
-  22% {
-    opacity: 0.85;
-  }
-  55% {
-    opacity: 0.7;
-    transform: translateX(60px) scaleX(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(140px) scaleX(0.8);
   }
 }
 
 @keyframes fireball-fly-right {
   0% {
-    opacity: 0;
-    transform: translateX(28px) scale(0.45);
+    opacity: 0.35;
+    transform: translateX(28px) scale(0.75);
   }
-  22% {
-    opacity: 1;
-    transform: translateX(-20px) scale(1);
-  }
-  55% {
+  50% {
     opacity: 1;
     transform: translateX(-80px) scale(1.05);
   }
   100% {
-    opacity: 0;
+    opacity: 0.35;
     transform: translateX(-168px) scale(0.85);
   }
 }
 
-@keyframes fireball-trail-right {
-  0% {
-    opacity: 0;
-    transform: translateX(36px) scaleX(0.25);
-  }
-  22% {
-    opacity: 0.85;
-  }
-  55% {
-    opacity: 0.7;
-    transform: translateX(-60px) scaleX(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-140px) scaleX(0.8);
-  }
-}
-
+/* Sprite tip points right — fire into corridor from the left wall */
 @keyframes arrow-shot {
   0% {
     opacity: 0;
-    transform: translateX(-18px) scale(0.85);
+    transform: translateX(-36px) scale(0.9);
   }
-  22% {
+  12% {
     opacity: 1;
-    transform: translateX(8px) scale(1);
+    transform: translateX(-18px) scale(1);
   }
-  55% {
+  88% {
     opacity: 1;
-    transform: translateX(56px) scale(1);
+    transform: translateX(120px) scale(1);
   }
   100% {
     opacity: 0;
-    transform: translateX(108px) scale(0.9);
-  }
-}
-
-@keyframes arrow-shot-right {
-  0% {
-    opacity: 0;
-    transform: scaleX(-1) translateX(-18px);
-  }
-  22% {
-    opacity: 1;
-    transform: scaleX(-1) translateX(8px);
-  }
-  55% {
-    opacity: 1;
-    transform: scaleX(-1) translateX(56px);
-  }
-  100% {
-    opacity: 0;
-    transform: scaleX(-1) translateX(108px);
+    transform: translateX(132px) scale(0.9);
   }
 }
 
@@ -603,15 +499,20 @@ body {
     transform: translateX(-50%) scale(1);
   }
 
-  .flair-coin,
-  .flair-spark,
-  .flair-chest-closed,
-  .flair-chest-open,
-  .flair-fireball-core,
-  .flair-fireball-trail,
-  .flair-arrow,
-  .flair-chest-closed {
+  .journey-flair-revealed .flair-sprite-particle,
+  .journey-flair-revealed .flair-sprite-fireball {
+    opacity: 0.9;
+    animation: none;
+  }
+
+  .journey-flair-revealed .flair-chest-closed,
+  .journey-flair-revealed .flair-chest-open {
     display: none;
+  }
+
+  .journey-flair-revealed[data-kind='chest'] .flair-chest-open {
+    display: inline-block;
+    opacity: 1;
   }
 }
 

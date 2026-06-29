@@ -8,7 +8,7 @@ type ExpeditionNavProps = {
 
 export const ExpeditionNav = ({ encounters, activeIndex }: ExpeditionNavProps) => {
   return (
-    <nav className="sticky top-[5.75rem] z-30 border-b border-trail-border/60 bg-trail-parchment/95 backdrop-blur-sm">
+    <nav className="border-b border-trail-border/60 bg-trail-parchment/95 backdrop-blur-sm">
       <div className="border-b border-trail-border/40">
         <div className="mx-auto flex max-w-5xl gap-2 overflow-x-auto px-4 py-2.5 sm:px-6">
           <span className="shrink-0 self-center font-pixel text-xs uppercase tracking-[0.18em] text-trail-ink/45">

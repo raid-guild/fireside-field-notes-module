@@ -3,7 +3,8 @@ export type FlairKind = 'coins' | 'sparkles' | 'chest' | 'fireball' | 'arrows'
 export type FlairEvent = {
   id: string
   kind: FlairKind
-  topVh: number
+  /** Position along the spacer container (0–100), not viewport height */
+  topPercent: number
   side: 'left' | 'right' | 'center'
   laneOffset: number
 }
@@ -20,15 +21,15 @@ const createRng = (seed: number) => {
 
 export const buildJourneyFlair = (leg: number, count = 4): FlairEvent[] => {
   const rng = createRng(leg * 9_871 + 42)
-  const usedTops = new Set<number>()
+  const spanStart = 8
+  const spanEnd = 92
+  const span = spanEnd - spanStart
 
   return Array.from({ length: count }, (_, index) => {
-    let topVh = 0
-    for (let attempt = 0; attempt < 8; attempt += 1) {
-      topVh = 22 + Math.floor(rng() * 58)
-      if (!usedTops.has(topVh)) break
-    }
-    usedTops.add(topVh)
+    const bandSize = span / count
+    const bandCenter = spanStart + bandSize * index + bandSize * 0.5
+    const jitter = (rng() - 0.5) * bandSize * 0.55
+    const topPercent = Math.round(Math.min(spanEnd, Math.max(spanStart, bandCenter + jitter)))
 
     const sideRoll = rng()
     const side: FlairEvent['side'] =
@@ -39,7 +40,7 @@ export const buildJourneyFlair = (leg: number, count = 4): FlairEvent[] => {
     return {
       id: `leg-${leg}-flair-${index}`,
       kind,
-      topVh,
+      topPercent,
       side,
       laneOffset,
     }
