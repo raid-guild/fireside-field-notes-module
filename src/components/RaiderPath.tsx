@@ -4,13 +4,14 @@ import { PixelSprite } from '@/components/PixelSprite'
 
 type RaiderPathProps = {
   progress: number
-  activeIndex: number
+  activeIndex: number | null
   totalStops: number
 }
 
 export const RaiderPath = ({ progress, activeIndex, totalStops }: RaiderPathProps) => {
   const clamped = Math.min(1, Math.max(0, progress))
   const raiderLeft = `calc(${clamped * 100}% - ${clamped * 2.5}rem)`
+  const displayIndex = activeIndex ?? Math.min(totalStops - 1, Math.max(0, Math.floor(clamped * totalStops)))
 
   return (
     <div className="pointer-events-none border-b border-trail-border/80 bg-trail-parchment/92 backdrop-blur-md">
@@ -27,7 +28,7 @@ export const RaiderPath = ({ progress, activeIndex, totalStops }: RaiderPathProp
         <div className="mb-2 flex items-center justify-between font-pixel text-sm uppercase tracking-wide text-trail-ink/70">
           <span>Edge trail</span>
           <span>
-            Stop {Math.min(activeIndex + 1, totalStops)} / {totalStops}
+            Stop {Math.min(displayIndex + 1, totalStops)} / {totalStops}
           </span>
         </div>
         <div className="relative h-14 rounded-lg border border-trail-border/70 bg-trail-panel/70 shadow-inner">

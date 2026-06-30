@@ -31,7 +31,7 @@ export const resolveActiveEncounterIndex = (
   headerHeight: number,
 ) => {
   const marker = getReadingMarker(viewportHeight, headerHeight)
-  let activeIndex = 0
+  let activeIndex: number | null = null
   let bestDistance = Number.POSITIVE_INFINITY
 
   sections.forEach((section, index) => {

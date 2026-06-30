@@ -30,7 +30,7 @@ export const ExpeditionClient = ({ data }: ExpeditionClientProps) => {
   const walkRef = useRef<HTMLDivElement>(null)
   const [scrollProgress, setScrollProgress] = useState(0)
   const [journeyScrollY, setJourneyScrollY] = useState(0)
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const [activeJourneyStopIndex, setActiveJourneyStopIndex] = useState(-1)
 
   const journeyStops = useMemo<JourneyFootprintStop[]>(() => {

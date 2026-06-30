@@ -3,7 +3,7 @@ import { crossCutNavLabel, crossCutNavQuestions } from '@/lib/expeditionNav'
 
 type ExpeditionNavProps = {
   encounters: Encounter[]
-  activeIndex: number
+  activeIndex: number | null
   activeJourneyStopId: string | null
 }
 
@@ -13,6 +13,7 @@ export const ExpeditionNav = ({
   activeJourneyStopId,
 }: ExpeditionNavProps) => {
   const activeEncounter = encounters.find((encounter) => encounter.slug === activeJourneyStopId)
+  const activeHeroSlug = activeIndex === null ? activeEncounter?.slug : encounters[activeIndex]?.slug
 
   return (
     <nav className="border-b border-trail-border/60 bg-trail-parchment/95 backdrop-blur-sm">
@@ -24,7 +25,7 @@ export const ExpeditionNav = ({
           {encounters.map((encounter, index) => (
             <a
               className={`shrink-0 rounded-full border px-3 py-1 font-pixel text-sm transition-colors ${
-                activeJourneyStopId ? activeEncounter?.slug === encounter.slug : activeIndex === index
+                activeHeroSlug === encounter.slug
                   ? 'border-trail-accent bg-trail-accent/10 text-trail-accent'
                   : 'border-trail-border text-trail-ink/65 hover:border-trail-ink/30'
               }`}
