@@ -1,17 +1,12 @@
 'use client'
 
-import { useCallback, useEffect, useState, type RefObject } from 'react'
-
-import { getHeaderHeight } from '@/lib/expeditionScroll'
-
 export type JourneyFootprintStop = {
   id: string
   label: string
 }
 
 type JourneyFootprintsNavProps = {
-  headerRef: RefObject<HTMLDivElement | null>
-  onActiveStopChange: (id: string | null) => void
+  activeStopIndex: number
   stops: JourneyFootprintStop[]
 }
 
@@ -21,41 +16,7 @@ const StepArrowIcon = ({ direction }: { direction: 'back' | 'next' }) => (
   </span>
 )
 
-export const JourneyFootprintsNav = ({
-  headerRef,
-  onActiveStopChange,
-  stops,
-}: JourneyFootprintsNavProps) => {
-  const [activeStopIndex, setActiveStopIndex] = useState(-1)
-
-  const updateActiveStop = useCallback(() => {
-    const headerHeight = getHeaderHeight(headerRef.current)
-    const marker = window.scrollY + headerHeight + (window.innerHeight - headerHeight) * 0.35
-    let activeIndex = -1
-
-    stops.forEach((stop, index) => {
-      const node = document.getElementById(stop.id)
-      if (!node) return
-
-      const top = node.getBoundingClientRect().top + window.scrollY
-      if (top <= marker) activeIndex = index
-    })
-
-    setActiveStopIndex(activeIndex)
-    onActiveStopChange(stops[activeIndex]?.id ?? null)
-  }, [headerRef, onActiveStopChange, stops])
-
-  useEffect(() => {
-    updateActiveStop()
-    window.addEventListener('scroll', updateActiveStop, { passive: true })
-    window.addEventListener('resize', updateActiveStop)
-
-    return () => {
-      window.removeEventListener('scroll', updateActiveStop)
-      window.removeEventListener('resize', updateActiveStop)
-    }
-  }, [updateActiveStop])
-
+export const JourneyFootprintsNav = ({ activeStopIndex, stops }: JourneyFootprintsNavProps) => {
   const scrollToStop = (index: number) => {
     const stop = stops[index]
     if (!stop) return

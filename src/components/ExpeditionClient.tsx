@@ -31,7 +31,7 @@ export const ExpeditionClient = ({ data }: ExpeditionClientProps) => {
   const [scrollProgress, setScrollProgress] = useState(0)
   const [journeyScrollY, setJourneyScrollY] = useState(0)
   const [activeIndex, setActiveIndex] = useState(0)
-  const [activeJourneyStopId, setActiveJourneyStopId] = useState<string | null>(null)
+  const [activeJourneyStopIndex, setActiveJourneyStopIndex] = useState(-1)
 
   const journeyStops = useMemo<JourneyFootprintStop[]>(() => {
     const stops: JourneyFootprintStop[] = []
@@ -59,6 +59,8 @@ export const ExpeditionClient = ({ data }: ExpeditionClientProps) => {
     return stops
   }, [data.encounters])
 
+  const activeJourneyStopId = journeyStops[activeJourneyStopIndex]?.id ?? null
+
   const updateProgress = useCallback(() => {
     const walk = walkRef.current
     const header = headerRef.current
@@ -81,7 +83,20 @@ export const ExpeditionClient = ({ data }: ExpeditionClientProps) => {
       walk.querySelectorAll<HTMLElement>('section[id]'),
     )
     setActiveIndex(resolveActiveEncounterIndex(encounterSections, viewport, headerHeight))
-  }, [])
+
+    const journeyMarker = pageScrollY + headerHeight + (viewport - headerHeight) * 0.35
+    let journeyStopIndex = -1
+
+    journeyStops.forEach((stop, index) => {
+      const node = document.getElementById(stop.id)
+      if (!node) return
+
+      const top = node.getBoundingClientRect().top + pageScrollY
+      if (top <= journeyMarker) journeyStopIndex = index
+    })
+
+    setActiveJourneyStopIndex(journeyStopIndex)
+  }, [journeyStops])
 
   useEffect(() => {
     updateProgress()
@@ -131,11 +146,7 @@ export const ExpeditionClient = ({ data }: ExpeditionClientProps) => {
         />
       </div>
 
-      <JourneyFootprintsNav
-        headerRef={headerRef}
-        onActiveStopChange={setActiveJourneyStopId}
-        stops={journeyStops}
-      />
+      <JourneyFootprintsNav activeStopIndex={activeJourneyStopIndex} stops={journeyStops} />
 
       <div className={EXPEDITION_HEADER_OFFSET_CLASS}>
         <Trailhead meta={data.meta} />

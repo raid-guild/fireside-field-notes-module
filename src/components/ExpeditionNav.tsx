@@ -12,8 +12,6 @@ export const ExpeditionNav = ({
   activeIndex,
   activeJourneyStopId,
 }: ExpeditionNavProps) => {
-  const activeEncounter = encounters.find((encounter) => encounter.slug === activeJourneyStopId)
-
   return (
     <nav className="border-b border-trail-border/60 bg-trail-parchment/95 backdrop-blur-sm">
       <div className="border-b border-trail-border/40">
@@ -24,7 +22,7 @@ export const ExpeditionNav = ({
           {encounters.map((encounter, index) => (
             <a
               className={`shrink-0 rounded-full border px-3 py-1 font-pixel text-sm transition-colors ${
-                activeJourneyStopId ? activeEncounter?.slug === encounter.slug : activeIndex === index
+                activeIndex === index
                   ? 'border-trail-accent bg-trail-accent/10 text-trail-accent'
                   : 'border-trail-border text-trail-ink/65 hover:border-trail-ink/30'
               }`}
