@@ -7,7 +7,7 @@ const HIRE_URL = 'https://raidguild.ai/'
 
 export const ExpeditionFooter = ({ threadURL }: ExpeditionFooterProps) => {
   return (
-    <footer className="relative z-10 border-t border-trail-border bg-trail-parchment px-4 py-14 sm:px-6 sm:py-20" id="keep-going">
+    <footer className="relative z-30 border-t border-trail-border bg-trail-parchment px-4 py-14 sm:px-6 sm:py-20" id="keep-going">
       <div className="mx-auto max-w-5xl">
         <section className="rounded-3xl border border-trail-border bg-trail-panel p-8 shadow-panel sm:p-10">
           <p className="font-pixel text-sm uppercase tracking-[0.2em] text-trail-accent">Keep going</p>

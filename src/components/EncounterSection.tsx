@@ -62,12 +62,12 @@ export const EncounterSection = ({ encounter, index }: EncounterSectionProps) =>
 
   return (
     <section
-      className={`${EXPEDITION_SCROLL_MARGIN} px-4 py-8 sm:px-6 sm:py-10`}
+      className={`relative z-40 ${EXPEDITION_SCROLL_MARGIN} px-4 py-8 sm:px-6 sm:py-10`}
       id={encounter.slug}
       ref={sectionRef}
     >
       <div
-        className={`encounter-panel mx-auto max-w-5xl rounded-3xl border border-trail-border bg-trail-panel p-6 shadow-panel sm:p-10 ${
+        className={`encounter-panel relative isolate mx-auto max-w-5xl rounded-3xl border border-trail-border bg-trail-panel p-6 shadow-panel sm:p-10 ${
           isVisible ? 'translate-y-0' : 'translate-y-10'
         } transition-transform duration-700 motion-reduce:transition-none`}
       >

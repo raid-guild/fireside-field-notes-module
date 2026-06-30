@@ -22,7 +22,7 @@ export const AnalysisCamp = ({ encounters, throughLines }: AnalysisCampProps) =>
 
   return (
     <section
-      className={`border-b border-trail-border bg-trail-ink px-4 py-16 text-trail-parchment sm:px-6 sm:py-24 ${EXPEDITION_SCROLL_MARGIN}`}
+      className={`relative z-30 border-b border-trail-border bg-trail-ink px-4 py-16 text-trail-parchment sm:px-6 sm:py-24 ${EXPEDITION_SCROLL_MARGIN}`}
       id="analysis-camp"
     >
       <div className="mx-auto max-w-5xl">

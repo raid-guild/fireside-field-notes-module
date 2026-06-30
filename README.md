@@ -13,7 +13,7 @@ Next.js local dev prototype — scroll expedition with 13 NPC encounters, YouTub
 ## Local dev
 
 ```bash
-cd edge-report-module
+cd fireside-field-notes-module
 pnpm install
 pnpm dev
 ```

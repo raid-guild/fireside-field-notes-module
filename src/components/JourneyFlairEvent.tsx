@@ -61,7 +61,7 @@ export const JourneyFlairEvent = ({ event }: JourneyFlairEventProps) => {
 
   return (
     <div
-      className={`journey-flair pointer-events-none absolute z-[5] ${
+      className={`journey-flair pointer-events-none absolute z-0 ${
         event.side === 'center' ? 'journey-flair-center' : ''
       } ${revealed ? 'journey-flair-revealed' : ''}`}
       data-kind={event.kind}

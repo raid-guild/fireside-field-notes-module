@@ -24,8 +24,9 @@ type BuildJourneyFlairOptions = {
   corridorOnly?: boolean
 }
 
-const UPPER_CORRIDOR_BAND = { start: 8, end: 24 }
-const LOWER_CORRIDOR_BAND = { start: 76, end: 92 }
+/** Keep flair off the embedded cross-cut card (~58vh in a 360vh leg ≈ 16% from top). */
+const CROSS_CUT_UPPER_BAND = { start: 4, end: 10 }
+const CROSS_CUT_LOWER_BAND = { start: 84, end: 94 }
 const FULL_LEG_BAND = { start: 8, end: 92 }
 
 export const buildJourneyFlair = (
@@ -35,7 +36,9 @@ export const buildJourneyFlair = (
 ): FlairEvent[] => {
   const rng = createRng(leg * 9_871 + 42)
   const corridorOnly = options.corridorOnly ?? false
-  const bands = corridorOnly ? [UPPER_CORRIDOR_BAND, LOWER_CORRIDOR_BAND] : [FULL_LEG_BAND]
+  const bands = corridorOnly
+    ? [CROSS_CUT_UPPER_BAND, CROSS_CUT_LOWER_BAND]
+    : [FULL_LEG_BAND]
 
   return Array.from({ length: count }, (_, index) => {
     const band = bands[index % bands.length]
@@ -58,8 +61,11 @@ export const buildJourneyFlair = (
         : sideRoll < 0.56
           ? 'right'
           : 'center'
-    const kind = FLAIR_KINDS[Math.floor(rng() * FLAIR_KINDS.length)] ?? 'sparkles'
-    const laneOffset = corridorOnly ? 20 + Math.floor(rng() * 12) : 8 + Math.floor(rng() * 16)
+    let kind = FLAIR_KINDS[Math.floor(rng() * FLAIR_KINDS.length)] ?? 'sparkles'
+    if ((kind === 'arrows' || kind === 'fireball') && side === 'center') {
+      kind = rng() < 0.5 ? 'sparkles' : 'coins'
+    }
+    const laneOffset = corridorOnly ? 34 + Math.floor(rng() * 8) : 8 + Math.floor(rng() * 16)
 
     return {
       id: `leg-${leg}-flair-${index}`,

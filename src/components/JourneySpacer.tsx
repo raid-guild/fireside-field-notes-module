@@ -73,8 +73,10 @@ export const JourneySpacer = ({ leg, totalLegs, crossCut }: JourneySpacerProps) 
     <div
       className={
         usesScrollLayout
-          ? 'relative min-h-[240vh] w-full overflow-x-clip overflow-y-visible sm:min-h-[280vh]'
-          : 'relative w-full overflow-x-clip overflow-y-visible py-12 sm:min-h-[360vh] sm:py-0'
+          ? 'relative z-0 min-h-[240vh] w-full overflow-x-clip overflow-y-visible sm:min-h-[280vh]'
+          : `relative w-full overflow-x-clip overflow-y-visible py-12 sm:min-h-[360vh] sm:py-0 ${
+              crossCut ? 'z-20' : 'z-0'
+            }`
       }
     >
       <div
@@ -83,49 +85,37 @@ export const JourneySpacer = ({ leg, totalLegs, crossCut }: JourneySpacerProps) 
         }`}
       />
 
-      <div aria-hidden className="pointer-events-none absolute inset-0 z-[5]">
+      <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
         {flairEvents.map((event) => (
           <JourneyFlairEvent event={event} key={event.id} />
         ))}
       </div>
 
-      <div className="relative z-20">
-        <div
-          className={
-            usesScrollLayout
-              ? 'absolute left-1/2 top-[12vh] -translate-x-1/2'
-              : 'relative mx-auto w-full max-w-md px-4 sm:absolute sm:left-1/2 sm:top-[12vh] sm:-translate-x-1/2 sm:px-0'
-          }
-        >
-          {legPlaque}
+      {usesScrollLayout ? (
+        <div className="relative z-0 flex min-h-[240vh] flex-col items-center justify-between px-4 py-[12vh] sm:min-h-[280vh] sm:py-[14vh]">
+          <div className="w-full max-w-md">{transitionPlaque}</div>
+          <div className="opacity-80">{pathWalker}</div>
+          <div className="w-full max-w-md">{legPlaque}</div>
         </div>
+      ) : (
+        <div className="absolute inset-0 z-0">
+          <div className="relative mx-auto w-full max-w-md px-4 sm:absolute sm:left-1/2 sm:top-[12vh] sm:-translate-x-1/2 sm:px-0">
+            {legPlaque}
+          </div>
 
-        <div
-          className={
-            usesScrollLayout
-              ? 'absolute left-1/2 top-[48vh] -translate-x-1/2 opacity-80'
-              : 'relative mx-auto mt-8 sm:absolute sm:left-1/2 sm:top-[48vh] sm:mt-0 sm:-translate-x-1/2'
-          }
-        >
-          {pathWalker}
-        </div>
+          <div className="relative mx-auto mt-8 sm:absolute sm:left-1/2 sm:top-[48vh] sm:mt-0 sm:-translate-x-1/2">
+            {pathWalker}
+          </div>
 
-        {crossCut ? (
-          <div className="relative isolate z-30 mx-auto mt-10 w-full max-w-4xl px-4 sm:absolute sm:left-1/2 sm:top-[58vh] sm:mt-0 sm:-translate-x-1/2 sm:px-6">
+          <div className="relative z-30 mx-auto mt-10 w-full max-w-4xl px-4 sm:absolute sm:left-1/2 sm:top-[58vh] sm:mt-0 sm:-translate-x-1/2 sm:px-6">
             <CrossCutParchment embedded question={crossCut.question} sequence={crossCut.sequence} />
           </div>
-        ) : null}
 
-        <div
-          className={
-            usesScrollLayout
-              ? 'absolute bottom-[18vh] left-1/2 w-full max-w-md -translate-x-1/2 px-4'
-              : 'relative mx-auto mt-10 w-full max-w-md px-4 sm:absolute sm:bottom-[18vh] sm:left-1/2 sm:mt-0 sm:-translate-x-1/2'
-          }
-        >
-          {transitionPlaque}
+          <div className="relative mx-auto mt-10 w-full max-w-md px-4 sm:absolute sm:bottom-[18vh] sm:left-1/2 sm:mt-0 sm:-translate-x-1/2">
+            {transitionPlaque}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }
