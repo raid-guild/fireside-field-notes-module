@@ -11,18 +11,21 @@ export type JourneyFootprintStop = {
 
 type JourneyFootprintsNavProps = {
   headerRef: RefObject<HTMLDivElement | null>
+  onActiveStopChange: (id: string | null) => void
   stops: JourneyFootprintStop[]
 }
 
-const FootprintIcon = ({ direction }: { direction: 'back' | 'next' }) => (
-  <span aria-hidden="true" className={`footprint-icon footprint-icon-${direction}`}>
-    <span />
-    <span />
-    <span />
+const StepArrowIcon = ({ direction }: { direction: 'back' | 'next' }) => (
+  <span aria-hidden="true" className="journey-step-arrow">
+    {direction === 'back' ? '←' : '→'}
   </span>
 )
 
-export const JourneyFootprintsNav = ({ headerRef, stops }: JourneyFootprintsNavProps) => {
+export const JourneyFootprintsNav = ({
+  headerRef,
+  onActiveStopChange,
+  stops,
+}: JourneyFootprintsNavProps) => {
   const [activeStopIndex, setActiveStopIndex] = useState(-1)
 
   const updateActiveStop = useCallback(() => {
@@ -39,7 +42,8 @@ export const JourneyFootprintsNav = ({ headerRef, stops }: JourneyFootprintsNavP
     })
 
     setActiveStopIndex(activeIndex)
-  }, [headerRef, stops])
+    onActiveStopChange(stops[activeIndex]?.id ?? null)
+  }, [headerRef, onActiveStopChange, stops])
 
   useEffect(() => {
     updateActiveStop()
@@ -73,23 +77,23 @@ export const JourneyFootprintsNav = ({ headerRef, stops }: JourneyFootprintsNavP
     >
       <button
         aria-label={previousStop ? `Back to ${previousStop.label}` : 'No previous journey stop'}
-        className="journey-footprint-button"
+        className="journey-step-button"
         disabled={!previousStop}
         onClick={() => scrollToStop(activeStopIndex - 1)}
         title={previousStop ? `Back to ${previousStop.label}` : undefined}
         type="button"
       >
-        <FootprintIcon direction="back" />
+        <StepArrowIcon direction="back" />
       </button>
       <button
         aria-label={nextStop ? `Next: ${nextStop.label}` : 'No next journey stop'}
-        className="journey-footprint-button"
+        className="journey-step-button"
         disabled={!nextStop}
         onClick={() => scrollToStop(activeStopIndex + 1)}
         title={nextStop ? `Next: ${nextStop.label}` : undefined}
         type="button"
       >
-        <FootprintIcon direction="next" />
+        <StepArrowIcon direction="next" />
       </button>
     </div>
   )

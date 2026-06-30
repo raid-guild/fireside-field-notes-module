@@ -31,6 +31,7 @@ export const ExpeditionClient = ({ data }: ExpeditionClientProps) => {
   const [scrollProgress, setScrollProgress] = useState(0)
   const [journeyScrollY, setJourneyScrollY] = useState(0)
   const [activeIndex, setActiveIndex] = useState(0)
+  const [activeJourneyStopId, setActiveJourneyStopId] = useState<string | null>(null)
 
   const journeyStops = useMemo<JourneyFootprintStop[]>(() => {
     const stops: JourneyFootprintStop[] = []
@@ -123,10 +124,18 @@ export const ExpeditionClient = ({ data }: ExpeditionClientProps) => {
           progress={scrollProgress}
           totalStops={data.encounters.length}
         />
-        <ExpeditionNav activeIndex={activeIndex} encounters={data.encounters} />
+        <ExpeditionNav
+          activeIndex={activeIndex}
+          activeJourneyStopId={activeJourneyStopId}
+          encounters={data.encounters}
+        />
       </div>
 
-      <JourneyFootprintsNav headerRef={headerRef} stops={journeyStops} />
+      <JourneyFootprintsNav
+        headerRef={headerRef}
+        onActiveStopChange={setActiveJourneyStopId}
+        stops={journeyStops}
+      />
 
       <div className={EXPEDITION_HEADER_OFFSET_CLASS}>
         <Trailhead meta={data.meta} />

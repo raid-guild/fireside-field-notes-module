@@ -4,9 +4,16 @@ import { crossCutNavLabel, crossCutNavQuestions } from '@/lib/expeditionNav'
 type ExpeditionNavProps = {
   encounters: Encounter[]
   activeIndex: number
+  activeJourneyStopId: string | null
 }
 
-export const ExpeditionNav = ({ encounters, activeIndex }: ExpeditionNavProps) => {
+export const ExpeditionNav = ({
+  encounters,
+  activeIndex,
+  activeJourneyStopId,
+}: ExpeditionNavProps) => {
+  const activeEncounter = encounters.find((encounter) => encounter.slug === activeJourneyStopId)
+
   return (
     <nav className="border-b border-trail-border/60 bg-trail-parchment/95 backdrop-blur-sm">
       <div className="border-b border-trail-border/40">
@@ -17,7 +24,7 @@ export const ExpeditionNav = ({ encounters, activeIndex }: ExpeditionNavProps) =
           {encounters.map((encounter, index) => (
             <a
               className={`shrink-0 rounded-full border px-3 py-1 font-pixel text-sm transition-colors ${
-                activeIndex === index
+                activeJourneyStopId ? activeEncounter?.slug === encounter.slug : activeIndex === index
                   ? 'border-trail-accent bg-trail-accent/10 text-trail-accent'
                   : 'border-trail-border text-trail-ink/65 hover:border-trail-ink/30'
               }`}
@@ -36,7 +43,11 @@ export const ExpeditionNav = ({ encounters, activeIndex }: ExpeditionNavProps) =
         </span>
         {crossCutNavQuestions.map((question, index) => (
           <a
-            className="shrink-0 rounded-full border border-trail-border px-3 py-1 font-pixel text-sm text-trail-ink/70 transition-colors hover:border-trail-accent/50 hover:text-trail-accent"
+            className={`shrink-0 rounded-full border px-3 py-1 font-pixel text-sm transition-colors ${
+              activeJourneyStopId === `cross-cut-${question.id}`
+                ? 'border-trail-accent bg-trail-accent/10 text-trail-accent'
+                : 'border-trail-border text-trail-ink/70 hover:border-trail-accent/50 hover:text-trail-accent'
+            }`}
             href={`#cross-cut-${question.id}`}
             key={question.id}
             title={question.question}
@@ -46,7 +57,11 @@ export const ExpeditionNav = ({ encounters, activeIndex }: ExpeditionNavProps) =
         ))}
         <span className="shrink-0 text-trail-border/80">|</span>
         <a
-          className="shrink-0 rounded-full border border-trail-accent/40 bg-trail-accent/10 px-3 py-1 font-pixel text-sm text-trail-accent transition-colors hover:border-trail-accent hover:bg-trail-accent/15"
+          className={`shrink-0 rounded-full border px-3 py-1 font-pixel text-sm transition-colors ${
+            activeJourneyStopId === 'analysis-camp'
+              ? 'border-trail-accent bg-trail-accent/15 text-trail-accent'
+              : 'border-trail-accent/40 bg-trail-accent/10 text-trail-accent hover:border-trail-accent hover:bg-trail-accent/15'
+          }`}
           href="#analysis-camp"
         >
           Analysis camp

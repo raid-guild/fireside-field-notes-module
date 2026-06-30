@@ -213,7 +213,7 @@ body {
   opacity: 1;
 }
 
-.journey-footprint-button {
+.journey-step-button {
   display: grid;
   height: 2.5rem;
   width: 2.5rem;
@@ -229,65 +229,29 @@ body {
     transform 160ms ease;
 }
 
-.journey-footprint-button:hover:not(:disabled) {
+.journey-step-button:hover:not(:disabled) {
   border-color: rgba(196, 92, 42, 0.85);
   background: rgba(196, 92, 42, 0.12);
   color: #1a2233;
   transform: translateY(-1px);
 }
 
-.journey-footprint-button:focus-visible {
+.journey-step-button:focus-visible {
   outline: 2px solid #c45c2a;
   outline-offset: 3px;
 }
 
-.journey-footprint-button:disabled {
+.journey-step-button:disabled {
   cursor: not-allowed;
   opacity: 0.38;
 }
 
-.footprint-icon {
-  position: relative;
+.journey-step-arrow {
   display: block;
-  height: 1.55rem;
-  width: 1.2rem;
-  transform: rotate(12deg);
-}
-
-.footprint-icon-back {
-  transform: rotate(192deg);
-}
-
-.footprint-icon span {
-  position: absolute;
-  display: block;
-  border-radius: 9999px;
-  background: currentColor;
-}
-
-.footprint-icon span:nth-child(1) {
-  bottom: 0.08rem;
-  left: 0.12rem;
-  height: 0.5rem;
-  width: 0.36rem;
-  transform: rotate(-18deg);
-}
-
-.footprint-icon span:nth-child(2) {
-  bottom: 0.58rem;
-  right: 0.1rem;
-  height: 0.5rem;
-  width: 0.36rem;
-  transform: rotate(18deg);
-}
-
-.footprint-icon span:nth-child(3) {
-  left: 0.38rem;
-  top: 0.08rem;
-  height: 0.42rem;
-  width: 0.32rem;
-  opacity: 0.82;
-  transform: rotate(-8deg);
+  font-family: var(--font-vt323), monospace;
+  font-size: 1.65rem;
+  line-height: 1;
+  transform: translateY(-1px);
 }
 
 .journey-flair[data-kind='fireball'].journey-flair-revealed .flair-sprite-fireball,
