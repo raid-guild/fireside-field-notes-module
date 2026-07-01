@@ -75,6 +75,24 @@
             "title": "Agentic Coding Works Better as a Doer/Reviewer Pipeline",
             "url": "https://portal.raidguild.org/posts/agentic-coding-doer-reviewer-pipeline"
           }
+        ],
+        "shared": [
+          {
+            "title": "Spencer Graham site",
+            "url": "https://spengrah.com/"
+          },
+          {
+            "title": "Spencer Graham X",
+            "url": "https://x.com/spengrah"
+          },
+          {
+            "title": "Spencer Graham LinkedIn",
+            "url": "https://www.linkedin.com/in/spencergraham/"
+          },
+          {
+            "title": "Spencer Graham GitHub",
+            "url": "https://github.com/slgraham"
+          }
         ]
       },
       "bio": "RaidGuild veteran and DAOhaus alum building a self-hosted personal CRM. Daily driver: Claude Code with doer/reviewer agent loops."
@@ -190,6 +208,12 @@
           {
             "title": "Without Friction, There Is No Moat",
             "url": "https://portal.raidguild.org/posts/without-friction-there-is-no-moat"
+          }
+        ],
+        "shared": [
+          {
+            "title": "Justice Conder LinkedIn",
+            "url": "https://www.linkedin.com/in/justiceconder"
           }
         ]
       },
@@ -309,6 +333,24 @@
             "title": "AI Can Shorten Alignment, But It Cannot Choose The Taste",
             "url": "https://portal.raidguild.org/posts/ai-can-shorten-alignment-but-it-cannot-choose-the-taste"
           }
+        ],
+        "shared": [
+          {
+            "title": "Deep Work Network",
+            "url": "https://deepwork.studio/"
+          },
+          {
+            "title": "Andrej Berlin X",
+            "url": "https://x.com/kischiman"
+          },
+          {
+            "title": "Andrej Berlin LinkedIn",
+            "url": "https://de.linkedin.com/in/andrejberlin"
+          },
+          {
+            "title": "Andrej Berlin Substack",
+            "url": "https://andrejberlin.substack.com/"
+          }
         ]
       },
       "bio": "Community and alignment builder exploring taste, contributor matchmaking, and tools beyond chat rooms."
@@ -351,6 +393,20 @@
           {
             "title": "The Middle Is Easy Now. The Edges Are The Work.",
             "url": "https://portal.raidguild.org/posts/the-middle-is-easy-now-the-edges-are-the-work"
+          }
+        ],
+        "shared": [
+          {
+            "title": "Victor Ginelli GitHub",
+            "url": "https://github.com/youngkidwarrior"
+          },
+          {
+            "title": "Victor Ginelli X",
+            "url": "https://x.com/send2vic"
+          },
+          {
+            "title": "SHE",
+            "url": "https://she.energy/"
           }
         ]
       },
@@ -436,6 +492,16 @@
           {
             "title": "Reviewed AI Support Agents Start As Coworkers",
             "url": "https://portal.raidguild.org/posts/the-first-useful-ai-support-agent-is-a-coworker-not-a-replacement"
+          }
+        ],
+        "shared": [
+          {
+            "title": "Jake Winckowski LinkedIn",
+            "url": "https://www.linkedin.com/in/jakewinckowski"
+          },
+          {
+            "title": "HackerOne",
+            "url": "https://www.hackerone.com/"
           }
         ]
       },
@@ -593,6 +659,20 @@
             "title": "After the Prototype, Judgment Does the Work",
             "url": "https://portal.raidguild.org/posts/after-the-prototype-judgment-does-the-work"
           }
+        ],
+        "shared": [
+          {
+            "title": "Bill Warren LinkedIn",
+            "url": "https://www.linkedin.com/in/bill-warren-product"
+          },
+          {
+            "title": "Summon",
+            "url": "https://www.summon.xyz/"
+          },
+          {
+            "title": "Game7",
+            "url": "https://game7.io/"
+          }
         ]
       },
       "bio": "Product lead with Protocol Labs background — brain dump to PRD to prototype is the new loop."
@@ -690,6 +770,18 @@
           {
             "title": "UX Magazine Podcasts",
             "url": "https://uxmag.com/podcasts"
+          },
+          {
+            "title": "Josh Tyson LinkedIn",
+            "url": "https://www.linkedin.com/in/josh-tyson-1132a27"
+          },
+          {
+            "title": "Josh Tyson UX Magazine",
+            "url": "https://uxmag.com/contributors/josh-tyson-ux-magazine"
+          },
+          {
+            "title": "Age of Invisible Machines",
+            "url": "https://onereach.ai/invisible-machines/"
           }
         ]
       },
