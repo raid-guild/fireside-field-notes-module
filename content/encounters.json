@@ -257,6 +257,16 @@
             "title": "The Hard Part Of Agent Orchestration Is Shared State",
             "url": "https://portal.raidguild.org/posts/hard-part-agent-orchestration-shared-state"
           }
+        ],
+        "shared": [
+          {
+            "title": "Elco site",
+            "url": "http://www.elco.work/"
+          },
+          {
+            "title": "Elco X",
+            "url": "https://x.com/elementcomplex"
+          }
         ]
       },
       "bio": "RaidGuild builder working on agent orchestration, shared state, and coordination harnesses for multi-agent work."
@@ -294,6 +304,12 @@
           {
             "title": "The Premium Is the Human Edit",
             "url": "https://portal.raidguild.org/posts/fireside-cj-miller-premium-human-edit"
+          }
+        ],
+        "shared": [
+          {
+            "title": "TMCO",
+            "url": "https://tmco.io/"
           }
         ]
       },
@@ -455,9 +471,19 @@
             "title": "Context Transfer Is The New Agency Bottleneck",
             "url": "https://portal.raidguild.org/posts/context-transfer-is-the-new-agency-bottleneck"
           }
+        ],
+        "shared": [
+          {
+            "title": "DDLS Consulting",
+            "url": "https://ddls.consulting/"
+          },
+          {
+            "title": "hunter.cafe",
+            "url": "https://hunter.cafe/"
+          }
         ]
       },
-      "bio": "Founder of Datalist Consulting — custom software, self-hosting, and Codex-heavy workflows for operational clients."
+      "bio": "Founder of DDLS Consulting — custom software, self-hosting, and Codex-heavy workflows for operational clients."
     },
     {
       "eventId": 68,
@@ -710,6 +736,12 @@
           {
             "title": "The First Useful Ad Ops Agent Is A QA Auditor",
             "url": "https://portal.raidguild.org/posts/first-useful-ad-ops-agent-qa-auditor"
+          }
+        ],
+        "shared": [
+          {
+            "title": "Sara Brown LinkedIn",
+            "url": "https://www.linkedin.com/in/sara-b-876693120/"
           }
         ]
       },
