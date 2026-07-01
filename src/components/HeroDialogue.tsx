@@ -153,7 +153,7 @@ export const HeroDialogue = ({ encounter, index }: HeroDialogueProps) => {
                     Read more from this fireside
                   </p>
                   <p className="text-sm leading-6 text-trail-ink/75">
-                    Field notes, the full interview, and session artifacts live on Portal.
+                    Field notes, session pages, shared artifacts, and guest links from the conversation.
                   </p>
                   <EncounterLinks encounter={encounter} />
                 </div>

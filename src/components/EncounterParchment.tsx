@@ -77,36 +77,68 @@ export const EncounterParchment = ({ encounter, index }: EncounterParchmentProps
   )
 }
 
-export const EncounterLinks = ({ encounter }: { encounter: Encounter }) => (
-  <div className="flex flex-wrap gap-4 text-sm font-medium">
-    {encounter.media.fullInterviewURL ? (
-      <a
-        className="text-trail-accent underline-offset-4 hover:underline"
-        href={encounter.media.fullInterviewURL}
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        Watch full interview →
-      </a>
-    ) : null}
-    <a
-      className="text-trail-ink/75 underline-offset-4 hover:text-trail-ink hover:underline"
-      href={encounter.links.eventURL}
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      Session page
-    </a>
-    {encounter.links.posts.map((post) => (
-      <a
-        className="text-trail-ink/75 underline-offset-4 hover:text-trail-ink hover:underline"
-        href={post.url}
-        key={post.url}
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        {post.title}
-      </a>
-    ))}
-  </div>
-)
+export const EncounterLinks = ({ encounter }: { encounter: Encounter }) => {
+  const sharedLinks = encounter.links.shared ?? []
+
+  return (
+    <div className="grid gap-4 md:grid-cols-2">
+      <div>
+        <p className="mb-2 font-pixel text-xs uppercase tracking-[0.16em] text-trail-ink/50">
+          Session links
+        </p>
+        <div className="flex flex-wrap gap-3 text-sm font-medium">
+          {encounter.media.fullInterviewURL ? (
+            <a
+              className="text-trail-accent underline-offset-4 hover:underline"
+              href={encounter.media.fullInterviewURL}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Watch full interview →
+            </a>
+          ) : null}
+          <a
+            className="text-trail-ink/75 underline-offset-4 hover:text-trail-ink hover:underline"
+            href={encounter.links.eventURL}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Session page
+          </a>
+          {encounter.links.posts.map((post) => (
+            <a
+              className="text-trail-ink/75 underline-offset-4 hover:text-trail-ink hover:underline"
+              href={post.url}
+              key={post.url}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              {post.title}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {sharedLinks.length > 0 ? (
+        <div>
+          <p className="mb-2 font-pixel text-xs uppercase tracking-[0.16em] text-trail-ink/50">
+            Shared links
+          </p>
+          <div className="flex flex-wrap gap-3 text-sm font-medium">
+            {sharedLinks.map((link) => (
+              <a
+                className="text-trail-ink/75 underline-offset-4 hover:text-trail-ink hover:underline"
+                href={link.url}
+                key={link.url}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {link.title}
+              </a>
+            ))}
+          </div>
+        </div>
+      ) : null}
+    </div>
+  )
+}

@@ -11,6 +11,11 @@ export type SessionMedia = {
   fullInterviewURL: string | null
 }
 
+export type EncounterLink = {
+  title: string
+  url: string
+}
+
 export type Encounter = {
   eventId: number
   guestName: string
@@ -25,7 +30,8 @@ export type Encounter = {
   media: SessionMedia
   links: {
     eventURL: string
-    posts: Array<{ title: string; url: string }>
+    posts: EncounterLink[]
+    shared?: EncounterLink[]
   }
 }
 
