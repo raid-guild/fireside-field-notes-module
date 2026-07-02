@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Fraunces, VT323 } from 'next/font/google'
+import Script from 'next/script'
 
 import './globals.css'
 
@@ -30,7 +31,18 @@ export const viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html className={`${fraunces.variable} ${vt323.variable}`} lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script
+          async
+          src="https://plausible-production-78b3.up.railway.app/js/pa-KYW36-GkWGjPJD0jNcybG.js"
+          strategy="afterInteractive"
+        />
+        <Script id="plausible-init" strategy="afterInteractive">
+          {`window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+plausible.init()`}
+        </Script>
+      </body>
     </html>
   )
 }
