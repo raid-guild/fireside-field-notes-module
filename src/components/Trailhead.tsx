@@ -46,8 +46,8 @@ export const Trailhead = ({ meta }: TrailheadProps) => {
           >
             View cohort thread on Portal
           </a>
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            <div className="max-w-xl">
+          <div className="mt-6 flex max-w-2xl flex-col gap-3 lg:flex-row lg:items-end">
+            <div className="min-w-0 flex-1">
               <p className="font-pixel text-base uppercase tracking-[0.2em] text-trail-ink/55">
                 Chat with this report
               </p>
@@ -55,18 +55,20 @@ export const Trailhead = ({ meta }: TrailheadProps) => {
                 Paste this page into your agent chat, or point agents at the context feed.
               </p>
             </div>
-            <a
-              className="rounded-full border border-trail-accent bg-trail-parchment px-4 py-2 font-pixel text-base text-trail-accent transition hover:bg-trail-accent hover:text-white"
-              href="/api/agent-context"
-            >
-              Context JSON
-            </a>
-            <a
-              className="rounded-full border border-trail-border bg-trail-parchment px-4 py-2 font-pixel text-base text-trail-ink/75 transition hover:border-trail-accent hover:text-trail-accent"
-              href="/api/agent-context/openapi.json"
-            >
-              OpenAPI
-            </a>
+            <div className="flex shrink-0 flex-wrap gap-2">
+              <a
+                className="rounded-full border border-trail-accent bg-trail-parchment px-4 py-2 font-pixel text-base text-trail-accent transition hover:bg-trail-accent hover:text-white"
+                href="/api/agent-context"
+              >
+                Context JSON
+              </a>
+              <a
+                className="rounded-full border border-trail-border bg-trail-parchment px-4 py-2 font-pixel text-base text-trail-ink/75 transition hover:border-trail-accent hover:text-trail-accent"
+                href="/api/agent-context/openapi.json"
+              >
+                OpenAPI
+              </a>
+            </div>
           </div>
         </div>
         <div className="flex flex-col items-center justify-end gap-4 rounded-2xl border border-trail-border bg-trail-parchment/80 p-8 shadow-panel">
