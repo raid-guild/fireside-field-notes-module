@@ -46,16 +46,23 @@ export const Trailhead = ({ meta }: TrailheadProps) => {
           >
             View cohort thread on Portal
           </a>
-          <div className="mt-6 flex flex-wrap items-center gap-3 font-pixel text-base">
-            <span className="uppercase tracking-[0.2em] text-trail-ink/55">Agents start here</span>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <div className="max-w-xl">
+              <p className="font-pixel text-base uppercase tracking-[0.2em] text-trail-ink/55">
+                Chat with this report
+              </p>
+              <p className="mt-1 text-sm leading-6 text-trail-ink/70">
+                Paste this page into your agent chat, or point agents at the context feed.
+              </p>
+            </div>
             <a
-              className="rounded-full border border-trail-accent bg-trail-parchment px-4 py-2 text-trail-accent transition hover:bg-trail-accent hover:text-white"
+              className="rounded-full border border-trail-accent bg-trail-parchment px-4 py-2 font-pixel text-base text-trail-accent transition hover:bg-trail-accent hover:text-white"
               href="/api/agent-context"
             >
               Context JSON
             </a>
             <a
-              className="rounded-full border border-trail-border bg-trail-parchment px-4 py-2 text-trail-ink/75 transition hover:border-trail-accent hover:text-trail-accent"
+              className="rounded-full border border-trail-border bg-trail-parchment px-4 py-2 font-pixel text-base text-trail-ink/75 transition hover:border-trail-accent hover:text-trail-accent"
               href="/api/agent-context/openapi.json"
             >
               OpenAPI
