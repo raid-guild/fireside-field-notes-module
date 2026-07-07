@@ -98,20 +98,20 @@ export const JourneySpacer = ({ leg, totalLegs, crossCut }: JourneySpacerProps) 
           <div className="w-full max-w-md">{legPlaque}</div>
         </div>
       ) : (
-        <div className="absolute inset-0 z-0">
+        <div className="relative z-0 flex flex-col items-center gap-8 sm:absolute sm:inset-0 sm:block">
           <div className="relative mx-auto w-full max-w-md px-4 sm:absolute sm:left-1/2 sm:top-[12vh] sm:-translate-x-1/2 sm:px-0">
             {legPlaque}
           </div>
 
-          <div className="relative mx-auto mt-8 sm:absolute sm:left-1/2 sm:top-[48vh] sm:mt-0 sm:-translate-x-1/2">
+          <div className="relative mx-auto sm:absolute sm:left-1/2 sm:top-[48vh] sm:-translate-x-1/2">
             {pathWalker}
           </div>
 
-          <div className="relative z-30 mx-auto mt-10 w-full max-w-4xl px-4 sm:absolute sm:left-1/2 sm:top-[58vh] sm:mt-0 sm:-translate-x-1/2 sm:px-6">
+          <div className="relative z-30 mx-auto w-full max-w-4xl px-4 sm:absolute sm:left-1/2 sm:top-[58vh] sm:-translate-x-1/2 sm:px-6">
             <CrossCutParchment embedded question={crossCut.question} sequence={crossCut.sequence} />
           </div>
 
-          <div className="relative mx-auto mt-10 w-full max-w-md px-4 sm:absolute sm:bottom-[18vh] sm:left-1/2 sm:mt-0 sm:-translate-x-1/2">
+          <div className="relative mx-auto w-full max-w-md px-4 sm:absolute sm:bottom-[18vh] sm:left-1/2 sm:-translate-x-1/2">
             {transitionPlaque}
           </div>
         </div>
