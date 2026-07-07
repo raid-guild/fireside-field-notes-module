@@ -71,8 +71,8 @@ export const HeroDialogue = ({ encounter, index }: HeroDialogueProps) => {
         </p>
       </div>
 
-      <div className="flex items-end gap-4 sm:gap-6">
-        <div className="flex shrink-0 flex-col items-center gap-2">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:gap-6">
+        <div className="flex shrink-0 flex-col items-start gap-2 sm:items-center">
           <div
             className={`rounded-2xl border border-trail-border bg-trail-parchment p-3 transition-transform duration-300 ${
               canAdvance ? 'scale-100' : 'scale-95'

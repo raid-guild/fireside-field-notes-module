@@ -42,7 +42,7 @@ export const YouTubeEmbed = ({ videoId, title }: YouTubeEmbedProps) => {
 
   return (
     <div className="overflow-hidden rounded-xl border border-trail-border bg-black/5 shadow-panel" ref={containerRef}>
-      <div className="relative aspect-video w-full">
+      <div className="relative aspect-video min-h-[220px] w-full sm:min-h-0">
         {shouldLoad ? (
           <iframe
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
